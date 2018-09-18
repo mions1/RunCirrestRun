@@ -1,0 +1,187 @@
+\hypertarget{design_8h}{\section{/home/simone/\-Developer/\-Project/eclipse/\-Run Circlest, Run/bin/headers/design.h File Reference}
+\label{design_8h}\index{/home/simone/\-Developer/\-Project/eclipse/\-Run Circlest, Run/bin/headers/design.\-h@{/home/simone/\-Developer/\-Project/eclipse/\-Run Circlest, Run/bin/headers/design.\-h}}
+}
+{\ttfamily \#include $<$allegro5/allegro\-\_\-font.\-h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{design_8h_a8c70394d8fe5bdb9395f8e104e19a2ec}{circle} (int cx, int cy, int rad, int color)
+\item 
+void \hyperlink{design_8h_a17c00e6c7ed655d15dc3065e7973081b}{sword} (int x1, int y1, int x2, int y2, int color, int width)
+\item 
+void \hyperlink{design_8h_a3182bebfaaa03a9e6481054aa678ff73}{triangle} (int x, int tip, int side)
+\item 
+void \hyperlink{design_8h_a610846ac760bbf825b2b32c682d9c03f}{wall} (int x, int height)
+\item 
+void \hyperlink{design_8h_a09ac45d399c41fc6c676f68910606cc3}{dflag} (int x, int y)
+\item 
+void \hyperlink{design_8h_a9a49e91d1e30d3bc085582f757b203b1}{draw\-Buttons} (const \hyperlink{struct_button}{Button} button\mbox{[}$\,$\mbox{]}, int size)
+\item 
+void \hyperlink{design_8h_a3771280978a66c8ef8f7fc4961320b52}{draw\-Levels} (const \hyperlink{struct_button}{Button} button\mbox{[}$\,$\mbox{]}, int num\-\_\-levels)
+\item 
+void \hyperlink{design_8h_a154806612750b32a1b1b01804f309f9a}{loading} (A\-L\-L\-E\-G\-R\-O\-\_\-\-F\-O\-N\-T $\ast$font, int color)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+A\-L\-L\-E\-G\-R\-O\-\_\-\-C\-O\-L\-O\-R \hyperlink{design_8h_a30f55827657659560704faae3f41b589}{my\-Colors} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{design_8h_a8c70394d8fe5bdb9395f8e104e19a2ec}{\index{design.\-h@{design.\-h}!circle@{circle}}
+\index{circle@{circle}!design.h@{design.\-h}}
+\subsubsection[{circle}]{\setlength{\rightskip}{0pt plus 5cm}void circle (
+\begin{DoxyParamCaption}
+\item[{int}]{cx, }
+\item[{int}]{cy, }
+\item[{int}]{rad, }
+\item[{int}]{color}
+\end{DoxyParamCaption}
+)}}\label{design_8h_a8c70394d8fe5bdb9395f8e104e19a2ec}
+draw filled circle 
+\begin{DoxyParams}{Parameters}
+{\em cx} & center x \\
+\hline
+{\em cy} & center y \\
+\hline
+{\em rad} & radious \\
+\hline
+{\em color} & color of circle \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{design_8h_a30f55827657659560704faae3f41b589}{my\-Colors} 
+\end{DoxySeeAlso}
+\hypertarget{design_8h_a09ac45d399c41fc6c676f68910606cc3}{\index{design.\-h@{design.\-h}!dflag@{dflag}}
+\index{dflag@{dflag}!design.h@{design.\-h}}
+\subsubsection[{dflag}]{\setlength{\rightskip}{0pt plus 5cm}void dflag (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}}\label{design_8h_a09ac45d399c41fc6c676f68910606cc3}
+draw flag 
+\begin{DoxyParams}{Parameters}
+{\em x} & x left \\
+\hline
+{\em y} & y of flag \\
+\hline
+\end{DoxyParams}
+\hypertarget{design_8h_a9a49e91d1e30d3bc085582f757b203b1}{\index{design.\-h@{design.\-h}!draw\-Buttons@{draw\-Buttons}}
+\index{draw\-Buttons@{draw\-Buttons}!design.h@{design.\-h}}
+\subsubsection[{draw\-Buttons}]{\setlength{\rightskip}{0pt plus 5cm}void draw\-Buttons (
+\begin{DoxyParamCaption}
+\item[{const {\bf Button}}]{button\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{size}
+\end{DoxyParamCaption}
+)}}\label{design_8h_a9a49e91d1e30d3bc085582f757b203b1}
+crate group of button 
+\begin{DoxyParams}{Parameters}
+{\em button} & group of buttons \\
+\hline
+{\em size} & number of buttons \\
+\hline
+\end{DoxyParams}
+\hypertarget{design_8h_a3771280978a66c8ef8f7fc4961320b52}{\index{design.\-h@{design.\-h}!draw\-Levels@{draw\-Levels}}
+\index{draw\-Levels@{draw\-Levels}!design.h@{design.\-h}}
+\subsubsection[{draw\-Levels}]{\setlength{\rightskip}{0pt plus 5cm}void draw\-Levels (
+\begin{DoxyParamCaption}
+\item[{const {\bf Button}}]{button\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{num\-\_\-levels}
+\end{DoxyParamCaption}
+)}}\label{design_8h_a3771280978a66c8ef8f7fc4961320b52}
+draw levels buttons 
+\begin{DoxyParams}{Parameters}
+{\em button} & buttons of levels \\
+\hline
+{\em num\-\_\-levels} & size of group buttons \\
+\hline
+\end{DoxyParams}
+\hypertarget{design_8h_a154806612750b32a1b1b01804f309f9a}{\index{design.\-h@{design.\-h}!loading@{loading}}
+\index{loading@{loading}!design.h@{design.\-h}}
+\subsubsection[{loading}]{\setlength{\rightskip}{0pt plus 5cm}void loading (
+\begin{DoxyParamCaption}
+\item[{A\-L\-L\-E\-G\-R\-O\-\_\-\-F\-O\-N\-T $\ast$}]{font, }
+\item[{int}]{color}
+\end{DoxyParamCaption}
+)}}\label{design_8h_a154806612750b32a1b1b01804f309f9a}
+Draw loading written 
+\begin{DoxyParams}{Parameters}
+{\em font} & font of written \\
+\hline
+{\em color} & color of written \\
+\hline
+\end{DoxyParams}
+\hypertarget{design_8h_a17c00e6c7ed655d15dc3065e7973081b}{\index{design.\-h@{design.\-h}!sword@{sword}}
+\index{sword@{sword}!design.h@{design.\-h}}
+\subsubsection[{sword}]{\setlength{\rightskip}{0pt plus 5cm}void sword (
+\begin{DoxyParamCaption}
+\item[{int}]{x1, }
+\item[{int}]{y1, }
+\item[{int}]{x2, }
+\item[{int}]{y2, }
+\item[{int}]{color, }
+\item[{int}]{width}
+\end{DoxyParamCaption}
+)}}\label{design_8h_a17c00e6c7ed655d15dc3065e7973081b}
+Draw player' sword, used for draw hilt and blade 
+\begin{DoxyParams}{Parameters}
+{\em x1} & start x \\
+\hline
+{\em y1} & start y \\
+\hline
+{\em x2} & end x \\
+\hline
+{\em y2} & end y \\
+\hline
+{\em color} & color \\
+\hline
+{\em width} & width \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{design_8h_a30f55827657659560704faae3f41b589}{my\-Colors} 
+\end{DoxySeeAlso}
+\hypertarget{design_8h_a3182bebfaaa03a9e6481054aa678ff73}{\index{design.\-h@{design.\-h}!triangle@{triangle}}
+\index{triangle@{triangle}!design.h@{design.\-h}}
+\subsubsection[{triangle}]{\setlength{\rightskip}{0pt plus 5cm}void triangle (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{tip, }
+\item[{int}]{side}
+\end{DoxyParamCaption}
+)}}\label{design_8h_a3182bebfaaa03a9e6481054aa678ff73}
+draw eq triangle 
+\begin{DoxyParams}{Parameters}
+{\em x} & left x \\
+\hline
+{\em tip} & y of triangle tip \\
+\hline
+{\em side} & width of side \\
+\hline
+\end{DoxyParams}
+\hypertarget{design_8h_a610846ac760bbf825b2b32c682d9c03f}{\index{design.\-h@{design.\-h}!wall@{wall}}
+\index{wall@{wall}!design.h@{design.\-h}}
+\subsubsection[{wall}]{\setlength{\rightskip}{0pt plus 5cm}void wall (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{height}
+\end{DoxyParamCaption}
+)}}\label{design_8h_a610846ac760bbf825b2b32c682d9c03f}
+draw wall(vertical line) 
+\begin{DoxyParams}{Parameters}
+{\em x} & left x \\
+\hline
+{\em height} & wall height(height as display) \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Variable Documentation}
+\hypertarget{design_8h_a30f55827657659560704faae3f41b589}{\index{design.\-h@{design.\-h}!my\-Colors@{my\-Colors}}
+\index{my\-Colors@{my\-Colors}!design.h@{design.\-h}}
+\subsubsection[{my\-Colors}]{\setlength{\rightskip}{0pt plus 5cm}A\-L\-L\-E\-G\-R\-O\-\_\-\-C\-O\-L\-O\-R my\-Colors\mbox{[}$\,$\mbox{]}}}\label{design_8h_a30f55827657659560704faae3f41b589}
+My Colors \begin{DoxySeeAlso}{See Also}
+\hyperlink{objects_8h_aedd64c3f92da850b93776c65fd1cced3}{colors} 
+\end{DoxySeeAlso}

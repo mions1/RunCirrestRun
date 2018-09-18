@@ -1,0 +1,157 @@
+.TH "/home/simone/Developer/Project/eclipse/Run Circlest, Run/bin/headers/objects.h" 3 "Mon Oct 12 2015" "Run Cirrest, Run" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/simone/Developer/Project/eclipse/Run Circlest, Run/bin/headers/objects.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <allegro5/allegro\&.h>\fP
+.br
+\fC#include <allegro5/allegro_font\&.h>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBPlayer\fP"
+.br
+.ti -1c
+.RI "struct \fBEnemy\fP"
+.br
+.ti -1c
+.RI "struct \fBLevel\fP"
+.br
+.ti -1c
+.RI "struct \fBFlag\fP"
+.br
+.ti -1c
+.RI "struct \fBButton\fP"
+.br
+.ti -1c
+.RI "struct \fBButtons\fP"
+.br
+.ti -1c
+.RI "struct \fBImage\fP"
+.br
+.ti -1c
+.RI "struct \fBImages\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBcolors\fP { \fBRED\fP, \fBGREEN\fP, \fBBLUE\fP, \fBWHITE\fP, \fBBLACK\fP, \fBGREY\fP, \fBDEFAULT_FOCUS_COLOR\fP, \fBDEFAULT_COLOR\fP }"
+.br
+.ti -1c
+.RI "enum \fBenemyTypes\fP { \fBTRIANGLE\fP, \fBWALL\fP }"
+.br
+.ti -1c
+.RI "enum \fBnameImages\fP { \fBSKY\fP }"
+.br
+.ti -1c
+.RI "enum \fBstartGameContext\fP { \fBSTARTARCADE\fP, \fBSTARTLEVEL\fP }"
+.br
+.ti -1c
+.RI "enum \fBconfig\fP { \fBSCORE\fP, \fBLASTLEVELPASSED\fP, \fBFULLSCREENOFF\fP, \fBMUSICOFF\fP }"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "const int \fBNUM_ENEMIES\fP = 3"
+.br
+.ti -1c
+.RI "const int \fBNUM_IMAGES\fP = 5"
+.br
+.in -1c
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBcolors\fP"
+My default colors 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIRED \fP\fP
+rgb(255,0,0) 
+.TP
+\fB\fIGREEN \fP\fP
+rgb(0,255,0) 
+.TP
+\fB\fIBLUE \fP\fP
+rgb(0,0,255) 
+.TP
+\fB\fIWHITE \fP\fP
+rgb(255,255,255) 
+.TP
+\fB\fIBLACK \fP\fP
+rgb(0,0,0) 
+.TP
+\fB\fIGREY \fP\fP
+rgb(30,30,30) 
+.TP
+\fB\fIDEFAULT_FOCUS_COLOR \fP\fP
+DEFAULT THEME FOCUS COLOR 
+.TP
+\fB\fIDEFAULT_COLOR \fP\fP
+DEFAULT THEME COLOR 
+.SS "enum \fBconfig\fP"
+Config file 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fISCORE \fP\fP
+Arcade Score 
+.TP
+\fB\fILASTLEVELPASSED \fP\fP
+\fBLevel\fP reached 
+.TP
+\fB\fIFULLSCREENOFF \fP\fP
+Fullscreen mode 
+.TP
+\fB\fIMUSICOFF \fP\fP
+Music mode 
+.SS "enum \fBenemyTypes\fP"
+\fBEnemy\fP Types 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fITRIANGLE \fP\fP
+Triangle enemy 
+.TP
+\fB\fIWALL \fP\fP
+Wall enemy 
+.SS "enum \fBnameImages\fP"
+Name of gruop images 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fISKY \fP\fP
+SKY 
+.SS "enum \fBstartGameContext\fP"
+Context which start game 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fISTARTARCADE \fP\fP
+If start game in Arcade mode 
+.TP
+\fB\fISTARTLEVEL \fP\fP
+If start game in \fBLevel\fP mode 
+.SH "Variable Documentation"
+.PP 
+.SS "const int NUM_ENEMIES = 3"
+Max enemies that can live together 
+.SS "const int NUM_IMAGES = 5"
+Max images that can showed together 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Run Cirrest, Run from the source code\&.

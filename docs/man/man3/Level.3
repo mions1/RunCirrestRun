@@ -1,0 +1,48 @@
+.TH "Level" 3 "Mon Oct 12 2015" "Run Cirrest, Run" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Level \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <objects\&.h>\fP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBEnemy\fP \fBenemy\fP [\fBNUM_ENEMIES\fP]"
+.br
+.ti -1c
+.RI "int \fBenemies\fP"
+.br
+.ti -1c
+.RI "int \fBhowLive\fP"
+.br
+.ti -1c
+.RI "int \fBhowDied\fP"
+.br
+.ti -1c
+.RI "float \fBspeed\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBLevel\fP Attribute of this level 
+.SH "Member Data Documentation"
+.PP 
+.SS "int Level::enemies"
+size of enemy array 
+.SS "\fBEnemy\fP Level::enemy[\fBNUM_ENEMIES\fP]"
+Enemies of level that can be alive together 
+.SS "int Level::howDied"
+how enemy died in this session 
+.SS "int Level::howLive"
+how enemy is living now 
+.SS "float Level::speed"
+movement speed of enemy 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Run Cirrest, Run from the source code\&.

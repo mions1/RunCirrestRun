@@ -1,0 +1,174 @@
+.TH "/home/simone/Developer/Project/eclipse/Run Circlest, Run/bin/headers/design.h" 3 "Mon Oct 12 2015" "Run Cirrest, Run" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/simone/Developer/Project/eclipse/Run Circlest, Run/bin/headers/design.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <allegro5/allegro_font\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcircle\fP (int cx, int cy, int rad, int color)"
+.br
+.ti -1c
+.RI "void \fBsword\fP (int x1, int y1, int x2, int y2, int color, int width)"
+.br
+.ti -1c
+.RI "void \fBtriangle\fP (int x, int tip, int side)"
+.br
+.ti -1c
+.RI "void \fBwall\fP (int x, int height)"
+.br
+.ti -1c
+.RI "void \fBdflag\fP (int x, int y)"
+.br
+.ti -1c
+.RI "void \fBdrawButtons\fP (const \fBButton\fP button[], int size)"
+.br
+.ti -1c
+.RI "void \fBdrawLevels\fP (const \fBButton\fP button[], int num_levels)"
+.br
+.ti -1c
+.RI "void \fBloading\fP (ALLEGRO_FONT *font, int color)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "ALLEGRO_COLOR \fBmyColors\fP []"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void circle (intcx, intcy, intrad, intcolor)"
+draw filled circle 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcx\fP center x 
+.br
+\fIcy\fP center y 
+.br
+\fIrad\fP radious 
+.br
+\fIcolor\fP color of circle 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBmyColors\fP 
+.RE
+.PP
+
+.SS "void dflag (intx, inty)"
+draw flag 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIx\fP x left 
+.br
+\fIy\fP y of flag 
+.RE
+.PP
+
+.SS "void drawButtons (const \fBButton\fPbutton[], intsize)"
+crate group of button 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbutton\fP group of buttons 
+.br
+\fIsize\fP number of buttons 
+.RE
+.PP
+
+.SS "void drawLevels (const \fBButton\fPbutton[], intnum_levels)"
+draw levels buttons 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbutton\fP buttons of levels 
+.br
+\fInum_levels\fP size of group buttons 
+.RE
+.PP
+
+.SS "void loading (ALLEGRO_FONT *font, intcolor)"
+Draw loading written 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfont\fP font of written 
+.br
+\fIcolor\fP color of written 
+.RE
+.PP
+
+.SS "void sword (intx1, inty1, intx2, inty2, intcolor, intwidth)"
+Draw player' sword, used for draw hilt and blade 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIx1\fP start x 
+.br
+\fIy1\fP start y 
+.br
+\fIx2\fP end x 
+.br
+\fIy2\fP end y 
+.br
+\fIcolor\fP color 
+.br
+\fIwidth\fP width 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBmyColors\fP 
+.RE
+.PP
+
+.SS "void triangle (intx, inttip, intside)"
+draw eq triangle 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIx\fP left x 
+.br
+\fItip\fP y of triangle tip 
+.br
+\fIside\fP width of side 
+.RE
+.PP
+
+.SS "void wall (intx, intheight)"
+draw wall(vertical line) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIx\fP left x 
+.br
+\fIheight\fP wall height(height as display) 
+.RE
+.PP
+
+.SH "Variable Documentation"
+.PP 
+.SS "ALLEGRO_COLOR myColors[]"
+My Colors 
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBcolors\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Run Cirrest, Run from the source code\&.

@@ -1,0 +1,417 @@
+.TH "/home/simone/Developer/Project/eclipse/Run Circlest, Run/bin/startGame.cc" 3 "Mon Oct 12 2015" "Run Cirrest, Run" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/simone/Developer/Project/eclipse/Run Circlest, Run/bin/startGame.cc \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <iostream>\fP
+.br
+\fC#include <allegro5/allegro\&.h>\fP
+.br
+\fC#include <allegro5/allegro_primitives\&.h>\fP
+.br
+\fC#include <allegro5/allegro_font\&.h>\fP
+.br
+\fC#include <allegro5/allegro_native_dialog\&.h>\fP
+.br
+\fC#include <allegro5/allegro_ttf\&.h>\fP
+.br
+\fC#include <allegro5/allegro_audio\&.h>\fP
+.br
+\fC#include <allegro5/allegro_acodec\&.h>\fP
+.br
+\fC#include <allegro5/allegro_image\&.h>\fP
+.br
+\fC#include <cstring>\fP
+.br
+\fC#include 'headers/objects\&.h'\fP
+.br
+\fC#include 'headers/engine\&.h'\fP
+.br
+\fC#include 'headers/design\&.h'\fP
+.br
+\fC#include 'headers/io\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBDBG\fP(A, B)"
+.br
+.ti -1c
+.RI "#define \fBD1\fP(a)   \fBDBG\fP(1, a)"
+.br
+.ti -1c
+.RI "#define \fBD2\fP(a)   \fBDBG\fP(2, a)"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBskyObject\fP { \fBPLANE\fP, \fBCLOUD\fP }"
+.br
+.ti -1c
+.RI "enum \fBoptionsButton\fP { \fBCLOSE\fP, \fBFULLSCREEN\fP, \fBMUTE\fP, \fBRESET\fP, \fBCLOSE\fP, \fBMUTE\fP, \fBEXIT\fP }"
+.br
+.ti -1c
+.RI "enum \fBkey\fP { \fBUP\fP, \fBDOWN\fP, \fBESC\fP }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "static bool \fBcheckCountDown\fP (int countDown)"
+.br
+.ti -1c
+.RI "static bool \fBsetScore\fP (int new_score, int &old_score)"
+.br
+.ti -1c
+.RI "static void \fBoptionsButtonManage\fP (int button)"
+.br
+.ti -1c
+.RI "static bool \fBeventManage\fP (ALLEGRO_EVENT &ev)"
+.br
+.ti -1c
+.RI "static void \fBallFalse\fP (bool v[], int size)"
+.br
+.ti -1c
+.RI "static void \fBinitAll\fP (\fBPlayer\fP &player, \fBLevel\fP &level, int num, \fBEnemy\fP &enemy, \fBFlag\fP &flag)"
+.br
+.ti -1c
+.RI "void \fBinitSkyObjectsImages\fP (\fBImages\fP images)"
+.br
+.ti -1c
+.RI "int \fBstartGame\fP (ALLEGRO_DISPLAY *display, int \fBconfig\fP[], int num, int \fBcontext\fP)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "const int \fBWIDTH\fP"
+.br
+.ti -1c
+.RI "const int \fBHEIGHT\fP"
+.br
+.ti -1c
+.RI "const char \fBfileScore\fP []"
+.br
+.ti -1c
+.RI "const char \fBfileLevel\fP []"
+.br
+.ti -1c
+.RI "const char \fBfileMute\fP []"
+.br
+.ti -1c
+.RI "ALLEGRO_COLOR \fBmyColors\fP []"
+.br
+.ti -1c
+.RI "const char \fBDEFAULT_TTF\fP []"
+.br
+.ti -1c
+.RI "const int \fBDEFAULT_Y\fP"
+.br
+.ti -1c
+.RI "int \fBconfig\fP [\fBMUSICOFF\fP]"
+.br
+.ti -1c
+.RI "int \fBIMAGE_SPEED\fP"
+.br
+.ti -1c
+.RI "const int \fBNUM_LEVELS\fP"
+.br
+.ti -1c
+.RI "static bool \fBpaused\fP"
+.br
+.ti -1c
+.RI "static bool \fBover\fP"
+.br
+.ti -1c
+.RI "static const int \fBNUM_KEY\fP = 3"
+.br
+.ti -1c
+.RI "static const int \fBNUM_SKY_OBJECTS\fP = 2"
+.br
+.ti -1c
+.RI "static char \fBskyObjectsPath\fP [\fBNUM_SKY_OBJECTS\fP][50]"
+.br
+.ti -1c
+.RI "static bool \fBKEY\fP [\fBNUM_KEY\fP]"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define D1(a)   \fBDBG\fP(1, a)"
+
+.SS "#define D2(a)   \fBDBG\fP(2, a)"
+
+.SS "#define DBG(A, B)"
+
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBkey\fP"
+Key pressed 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIUP \fP\fP
+UP key 
+.TP
+\fB\fIDOWN \fP\fP
+DOWN key 
+.TP
+\fB\fIESC \fP\fP
+ESCAPE key 
+.SS "enum \fBoptionsButton\fP"
+\fBButtons\fP in dialog box 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fICLOSE \fP\fP
+Close dialog 
+.TP
+\fB\fIFULLSCREEN \fP\fP
+Set Fullscreen mode 
+.TP
+\fB\fIMUTE \fP\fP
+Set mute mode 
+.TP
+\fB\fIRESET \fP\fP
+Reset level reached and best score 
+.TP
+\fB\fICLOSE \fP\fP
+Close Dialog 
+.TP
+\fB\fIMUTE \fP\fP
+Mute Music 
+.TP
+\fB\fIEXIT \fP\fP
+Exit game 
+.SS "enum \fBskyObject\fP"
+Name Sky Objects 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIPLANE \fP\fP
+Plane 
+.TP
+\fB\fICLOUD \fP\fP
+Cloud 
+.SH "Function Documentation"
+.PP 
+.SS "static void allFalse (boolv[], intsize)\fC [static]\fP"
+All false every record on array 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIv\fP array 
+.br
+\fIsize\fP size of array 
+.RE
+.PP
+
+.SS "bool checkCountDown (intcountDown)\fC [static]\fP"
+Check if countDown finished, so start game 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcountDown\fP countdown to check 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if countdown finished 
+.RE
+.PP
+
+.SS "static bool eventManage (ALLEGRO_EVENT &ev)\fC [static]\fP"
+
+.SS "void initAll (\fBPlayer\fP &player, \fBLevel\fP &level, intnum, \fBEnemy\fP &enemy, \fBFlag\fP &flag)\fC [static]\fP"
+Init all those objects 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIplayer\fP player 
+.br
+\fIlevel\fP level 
+.br
+\fInum\fP level number (if i'm not in arcade) 
+.br
+\fIenemy\fP enemy 
+.br
+\fIflag\fP flag 
+.RE
+.PP
+
+.SS "void initSkyObjectsImages (\fBImages\fPimages)"
+Init sky images 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimages\fP group of images 
+.RE
+.PP
+
+.SS "static void optionsButtonManage (intbutton)\fC [static]\fP"
+Manage dialog button 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbutton\fP button pressed \fBoptionsButton\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+optionsButton enum 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBoptionsButton\fP 
+.RE
+.PP
+
+.SS "bool setScore (intnew_score, int &old_score)\fC [static]\fP"
+Set new score if it's greater than old 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInew_score\fP New score done 
+.br
+\fIold_score\fP Actual best score 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if new_score if greater than old 
+.RE
+.PP
+
+.SS "int startGame (ALLEGRO_DISPLAY *display, intconfig[], intnum, intcontext)"
+Start the real game\&. If I'm in arcade mode, game haven't end, when player die check if defeat best score, in case save it\&. If I'm in level mode, when i finish flag is created, and when it go out of screen start next level and save level reached\&. Going on with game, enemies' speed and probability that a enemy is create increases\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdisplay\fP display to draw 
+.br
+\fIconfig\fP used for check mute,fullscreen and score 
+.br
+\fInum\fP num of level (0 if arcade) 
+.br
+\fIcontext\fP if arcade or level \fBstartGameContext\fP 
+.RE
+.PP
+< If display need to redraw
+.PP
+< Frame for seconds
+.PP
+< Seconds of count down
+.PP
+< Every frame decrease count down so secs must be moltiplied by fps
+.PP
+< Background music file
+.PP
+< Count down bip music file
+.PP
+< \fBPlayer\fP (Hero) 
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBPlayer\fP
+.RE
+.PP
+< \fBEnemy\fP (obstacle) 
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBEnemy\fP
+.RE
+.PP
+< \fBLevel\fP 
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBLevel\fP
+.RE
+.PP
+< Victory flag 
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBFlag\fP
+.RE
+.PP
+< Group of sky images 
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBImages\fP
+.RE
+.PP
+< Background image 
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBImage\fP 
+.RE
+.PP
+
+.SH "Variable Documentation"
+.PP 
+.SS "int \fBconfig\fP[\fBMUSICOFF\fP]"
+Configs saved of game (Fullscreen,mute,score etc) 
+.SS "const char DEFAULT_TTF[]"
+Theme TTF 
+.SS "const int DEFAULT_Y"
+Default height of floor 
+.SS "const char fileLevel[]"
+File to save level reached 
+.SS "const char fileMute[]"
+File to save if mute or not 
+.SS "const char fileScore[]"
+File to save best score 
+.SS "const int HEIGHT"
+Actual HEIGHT of screen 
+.SS "int IMAGE_SPEED"
+\fBImage\fP speed, it rises as enemy speed 
+.SS "bool KEY[\fBNUM_KEY\fP]\fC [static]\fP"
+What key pressed 
+.SS "ALLEGRO_COLOR myColors[]"
+My Colors 
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBcolors\fP 
+.RE
+.PP
+
+.SS "const int NUM_KEY = 3\fC [static]\fP"
+Number of key on keyboard that do something when pressed 
+.SS "const int NUM_LEVELS"
+Number of levels 
+.SS "const int NUM_SKY_OBJECTS = 2\fC [static]\fP"
+Number of sky images Path of images for draw sky objects 
+.SS "bool over\fC [static]\fP"
+Check end of game, so return to menu 
+.SS "bool paused\fC [static]\fP"
+If game paused 
+.SS "char skyObjectsPath[\fBNUM_SKY_OBJECTS\fP][50]\fC [static]\fP"
+\fBInitial value:\fP
+.PP
+.nf
+=
+        {"\&.\&./res/img/skyObjects/plane\&.png","\&.\&./res/img/skyObjects/cloud\&.png"}
+.fi
+.SS "const int WIDTH"
+Actual WIDTH of screen 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Run Cirrest, Run from the source code\&.

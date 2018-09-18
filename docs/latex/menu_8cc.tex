@@ -1,0 +1,526 @@
+\hypertarget{menu_8cc}{\section{/home/simone/\-Developer/\-Project/eclipse/\-Run Circlest, Run/bin/menu.cc File Reference}
+\label{menu_8cc}\index{/home/simone/\-Developer/\-Project/eclipse/\-Run Circlest, Run/bin/menu.\-cc@{/home/simone/\-Developer/\-Project/eclipse/\-Run Circlest, Run/bin/menu.\-cc}}
+}
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$allegro5/allegro.\-h$>$}\\*
+{\ttfamily \#include $<$allegro5/allegro\-\_\-primitives.\-h$>$}\\*
+{\ttfamily \#include $<$allegro5/allegro\-\_\-font.\-h$>$}\\*
+{\ttfamily \#include $<$allegro5/allegro\-\_\-ttf.\-h$>$}\\*
+{\ttfamily \#include $<$allegro5/allegro\-\_\-native\-\_\-dialog.\-h$>$}\\*
+{\ttfamily \#include $<$allegro5/allegro\-\_\-acodec.\-h$>$}\\*
+{\ttfamily \#include $<$allegro5/allegro\-\_\-audio.\-h$>$}\\*
+{\ttfamily \#include $<$cstdlib$>$}\\*
+{\ttfamily \#include $<$cstdio$>$}\\*
+{\ttfamily \#include \char`\"{}headers/objects.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}headers/engine.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}headers/io.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}headers/design.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{menu_8cc_a9fd176efd6d22cb809550f0271c2a93d}{D\-B\-G}(A, B)
+\item 
+\#define \hyperlink{menu_8cc_a330bea9b36f638349fec0d06c8ab4c38}{D1}(a)~\hyperlink{start_game_8cc_a9fd176efd6d22cb809550f0271c2a93d}{D\-B\-G}(1, a)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{menu_8cc_ab1f00069d86d1b1307d0b5e13a9765ae}{btn} \{ \\*
+\hyperlink{menu_8cc_ab1f00069d86d1b1307d0b5e13a9765aeac933d00334a7676a18550d7e3dd3ec91}{A\-R\-C\-A\-D\-E}, 
+\hyperlink{menu_8cc_ab1f00069d86d1b1307d0b5e13a9765aea2d31bf71d068ed802a18e984232998df}{L\-E\-V\-E\-L\-S}, 
+\hyperlink{menu_8cc_ab1f00069d86d1b1307d0b5e13a9765aea1b20f1b4adb6ff9778b284fb46f6f99d}{O\-P\-T\-I\-O\-N\-S}, 
+\hyperlink{menu_8cc_ab1f00069d86d1b1307d0b5e13a9765aeacc7488e57f07fe0693ec0f72d186c300}{I\-N\-S\-T\-R\-U\-C\-T\-I\-O\-N}, 
+\\*
+\hyperlink{menu_8cc_ab1f00069d86d1b1307d0b5e13a9765aeacb9e6f410cf374803d7ff561a15bc4ef}{C\-R\-E\-D\-I\-T\-S}, 
+\hyperlink{menu_8cc_ab1f00069d86d1b1307d0b5e13a9765aea7a10b5d68d31711288e1fe0fa17dbf4f}{E\-X\-I\-T}
+ \}
+\item 
+enum \hyperlink{menu_8cc_ae28f0b8e62d0d09242b136db47ee9387}{options\-Button} \{ \\*
+\hyperlink{menu_8cc_ae28f0b8e62d0d09242b136db47ee9387a685f73194ad125cbc784c3210cdb3449}{C\-L\-O\-S\-E}, 
+\hyperlink{menu_8cc_ae28f0b8e62d0d09242b136db47ee9387a5f039f23ee85ddea038ca1ab88ca6755}{F\-U\-L\-L\-S\-C\-R\-E\-E\-N}, 
+\hyperlink{menu_8cc_ae28f0b8e62d0d09242b136db47ee9387a271edf5041b6e7d6307edccd670dc8dc}{M\-U\-T\-E}, 
+\hyperlink{menu_8cc_ae28f0b8e62d0d09242b136db47ee9387a589b7d94a3d91d145720e2fed0eb3a05}{R\-E\-S\-E\-T}, 
+\\*
+\hyperlink{start_game_8cc_ae28f0b8e62d0d09242b136db47ee9387a685f73194ad125cbc784c3210cdb3449}{C\-L\-O\-S\-E}, 
+\hyperlink{start_game_8cc_ae28f0b8e62d0d09242b136db47ee9387a271edf5041b6e7d6307edccd670dc8dc}{M\-U\-T\-E}, 
+\hyperlink{start_game_8cc_ae28f0b8e62d0d09242b136db47ee9387a7a10b5d68d31711288e1fe0fa17dbf4f}{E\-X\-I\-T}
+ \}
+\item 
+enum \hyperlink{menu_8cc_a261f9f58ccbeaa962c4e675e4212c9cc}{context} \{ \hyperlink{menu_8cc_a261f9f58ccbeaa962c4e675e4212c9cca4c40e60bc71a32b924ce1f08d57f9721}{M\-E\-N\-U}, 
+\hyperlink{menu_8cc_a261f9f58ccbeaa962c4e675e4212c9ccaa4b1e64b6e370537f87e5806385ee069}{L\-E\-V\-E\-L}
+ \}
+\item 
+enum \hyperlink{menu_8cc_a3017adf344c435005db11e8c0d8c03bd}{event\-Type} \{ \\*
+\hyperlink{menu_8cc_a3017adf344c435005db11e8c0d8c03bdacfe24a7b308a82835c8a9a9a89bc4ca2}{N\-O\-T\-H\-I\-N\-G}, 
+\hyperlink{menu_8cc_a3017adf344c435005db11e8c0d8c03bda6c2b4c00c5e2deeb1870289f4eaa22f6}{D\-I\-S\-P\-L\-A\-Y\-\_\-\-C\-L\-O\-S\-E}, 
+\hyperlink{menu_8cc_a3017adf344c435005db11e8c0d8c03bda6225590ae6caaccd86633209772d5b47}{K\-E\-Y\-D\-O\-W\-N}, 
+\hyperlink{menu_8cc_a3017adf344c435005db11e8c0d8c03bda8179d413773e511bbd7d842903345ad4}{K\-E\-Y\-U\-P}, 
+\\*
+\hyperlink{menu_8cc_a3017adf344c435005db11e8c0d8c03bdaf33118f5fff8a9038bda49d7b5f027da}{R\-E\-S\-I\-Z\-E}, 
+\hyperlink{menu_8cc_a3017adf344c435005db11e8c0d8c03bdabe3017d8d6750341be3581e77fe9da35}{M\-O\-V\-E\-M\-O\-U\-S\-E}, 
+\hyperlink{menu_8cc_a3017adf344c435005db11e8c0d8c03bda3f4032d72d8b1e1161d074921801817b}{M\-O\-U\-S\-E\-D\-O\-W\-N}, 
+\hyperlink{menu_8cc_a3017adf344c435005db11e8c0d8c03bda91bc82b2fa812ca903bf57bcd76b52e3}{M\-O\-U\-S\-E\-U\-P}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{menu_8cc_aca0b9cec36412a6ba7cff84467cb3b15}{start\-Game} (A\-L\-L\-E\-G\-R\-O\-\_\-\-D\-I\-S\-P\-L\-A\-Y $\ast$, int \hyperlink{objects_8h_ad2256458892609d0533df5d72a7257ad}{config}\mbox{[}$\,$\mbox{]}, int num, int \hyperlink{menu_8cc_a261f9f58ccbeaa962c4e675e4212c9cc}{context})
+\item 
+static int \hyperlink{menu_8cc_ab3c18055624008e892a12e9d400f466f}{event\-Manager} (\hyperlink{struct_buttons}{Buttons} \&buttons, A\-L\-L\-E\-G\-R\-O\-\_\-\-E\-V\-E\-N\-T \&ev, bool \hyperlink{menu_8cc_a3017adf344c435005db11e8c0d8c03bd}{event\-Type}\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{menu_8cc_a019ba3dc7e0d1dc2cafb55effe3adaf2}{clicked\-Button\-Manager} (\hyperlink{struct_buttons}{Buttons} \&buttons, int x, int y)
+\item 
+void \hyperlink{menu_8cc_a068be345011bf78a2f54efdee51e99ad}{button\-Focus} (\hyperlink{struct_buttons}{Buttons} buttons, int x, int y)
+\item 
+static void \hyperlink{menu_8cc_afdbc420d0e8174ae92d39de4e03aee29}{options\-Button\-Manager} (int button, A\-L\-L\-E\-G\-R\-O\-\_\-\-D\-I\-S\-P\-L\-A\-Y $\ast$display)
+\item 
+void \hyperlink{menu_8cc_a267bb7a72183a9e7187d8dd24e6190ef}{init\-Menu\-Buttons} (\hyperlink{struct_buttons}{Buttons} buttons, A\-L\-L\-E\-G\-R\-O\-\_\-\-F\-O\-N\-T $\ast$text\-Font, int x, int y)
+\item 
+void \hyperlink{menu_8cc_a1497b78efa376690dc73911a51246994}{init\-Levels\-Buttons} (\hyperlink{struct_buttons}{Buttons} buttons, A\-L\-L\-E\-G\-R\-O\-\_\-\-F\-O\-N\-T $\ast$font)
+\item 
+static void \hyperlink{menu_8cc_a21caf5bb8fa314d58896af235e647811}{all\-False} (bool v\mbox{[}$\,$\mbox{]}, int size)
+\item 
+static void \hyperlink{menu_8cc_a22e9fe7af980fe7a17abd62d72dad69f}{resize\-Local\-Dependences} (int width, int height, int \&menu\-\_\-x, int \&menu\-\_\-y)
+\item 
+int \hyperlink{menu_8cc_aee5c0adae0ccd18885a93f0d8005d94b}{menu} (A\-L\-L\-E\-G\-R\-O\-\_\-\-D\-I\-S\-P\-L\-A\-Y $\ast$display)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{menu_8cc_a59c3bba4b17cd5e19f149ea175fa6989}{W\-I\-D\-T\-H}
+\item 
+int \hyperlink{menu_8cc_a4e81322eb1085aca9cd7c5527f5e4c6b}{H\-E\-I\-G\-H\-T}
+\item 
+const char \hyperlink{menu_8cc_a8ae96d3af19b68f7a7b3899336636bcf}{file\-Score} \mbox{[}$\,$\mbox{]}
+\item 
+const char \hyperlink{menu_8cc_a45e68afca1d760850728659b3b2d1f04}{file\-Level} \mbox{[}$\,$\mbox{]}
+\item 
+const char \hyperlink{menu_8cc_acb27551003bb4acedaf1b6a6081d8c33}{file\-Mute} \mbox{[}$\,$\mbox{]}
+\item 
+const char \hyperlink{menu_8cc_afbf942eb237364a26bd0ead2432edbf9}{file\-Full\-Screen} \mbox{[}$\,$\mbox{]}
+\item 
+const char \hyperlink{menu_8cc_ad8d9c377863d04922dfd37ced584b8ef}{D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-T\-F} \mbox{[}$\,$\mbox{]}
+\item 
+A\-L\-L\-E\-G\-R\-O\-\_\-\-F\-O\-N\-T $\ast$ \hyperlink{menu_8cc_a958e091f8929b457621de326b2fde553}{title\-Font}
+\item 
+A\-L\-L\-E\-G\-R\-O\-\_\-\-C\-O\-L\-O\-R \hyperlink{menu_8cc_a86cbea09bea0e26896cfbd020c2081c3}{my\-Colors} \mbox{[}8\mbox{]}
+\item 
+int \hyperlink{menu_8cc_af03e834a3f29344fdb0a45d663749ae7}{config} \mbox{[}$\,$\mbox{]}
+\item 
+int \hyperlink{menu_8cc_ae095a82c1f3ab6027cee862b7a6e1d3c}{D\-E\-F\-A\-U\-L\-T\-\_\-\-J\-U\-M\-P\-\_\-\-S\-P\-E\-E\-D} = 8
+\item 
+int \hyperlink{menu_8cc_a273d8efe7a3232f0e573c278d00c16de}{D\-E\-F\-A\-U\-L\-T\-\_\-\-J\-U\-M\-P\-\_\-\-H\-E\-I\-G\-H\-T} = 55
+\item 
+int \hyperlink{menu_8cc_ac8076d88b688dce5f6c8d4e171067b3f}{D\-E\-F\-A\-U\-L\-T\-\_\-\-Y}
+\item 
+int \hyperlink{menu_8cc_a509c736c7e43e35f227eabf3856d6137}{N\-U\-M\-\_\-\-L\-E\-V\-E\-L\-S} = 5
+\item 
+static const int \hyperlink{menu_8cc_a8b6d05aff7343292629a96c3f85f8e89}{N\-U\-M\-\_\-\-M\-E\-N\-U\-\_\-\-B\-U\-T\-T\-O\-N\-S} = 6
+\item 
+static const int \hyperlink{menu_8cc_a5da6d9ec042926de0511396589d1a77a}{N\-U\-M\-\_\-\-E\-V\-E\-N\-T\-S} = 8
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{menu_8cc_a330bea9b36f638349fec0d06c8ab4c38}{\index{menu.\-cc@{menu.\-cc}!D1@{D1}}
+\index{D1@{D1}!menu.cc@{menu.\-cc}}
+\subsubsection[{D1}]{\setlength{\rightskip}{0pt plus 5cm}\#define D1(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf D\-B\-G}(1, a)}}\label{menu_8cc_a330bea9b36f638349fec0d06c8ab4c38}
+\hypertarget{menu_8cc_a9fd176efd6d22cb809550f0271c2a93d}{\index{menu.\-cc@{menu.\-cc}!D\-B\-G@{D\-B\-G}}
+\index{D\-B\-G@{D\-B\-G}!menu.cc@{menu.\-cc}}
+\subsubsection[{D\-B\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-B\-G(
+\begin{DoxyParamCaption}
+\item[{}]{A, }
+\item[{}]{B}
+\end{DoxyParamCaption}
+)}}\label{menu_8cc_a9fd176efd6d22cb809550f0271c2a93d}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{menu_8cc_ab1f00069d86d1b1307d0b5e13a9765ae}{\index{menu.\-cc@{menu.\-cc}!btn@{btn}}
+\index{btn@{btn}!menu.cc@{menu.\-cc}}
+\subsubsection[{btn}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf btn}}}\label{menu_8cc_ab1f00069d86d1b1307d0b5e13a9765ae}
+Menu button \begin{DoxySeeAlso}{See Also}
+draw\-Menu() 
+
+\hyperlink{engine_8cc_a84ca1ff59c1d71e62a0fd688410312d4}{set\-Button()}; 
+\end{DoxySeeAlso}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{A\-R\-C\-A\-D\-E@{A\-R\-C\-A\-D\-E}!menu.\-cc@{menu.\-cc}}\index{menu.\-cc@{menu.\-cc}!A\-R\-C\-A\-D\-E@{A\-R\-C\-A\-D\-E}}\item[{\em 
+\hypertarget{menu_8cc_ab1f00069d86d1b1307d0b5e13a9765aeac933d00334a7676a18550d7e3dd3ec91}{A\-R\-C\-A\-D\-E}\label{menu_8cc_ab1f00069d86d1b1307d0b5e13a9765aeac933d00334a7676a18550d7e3dd3ec91}
+}]Start Arcade Game \index{L\-E\-V\-E\-L\-S@{L\-E\-V\-E\-L\-S}!menu.\-cc@{menu.\-cc}}\index{menu.\-cc@{menu.\-cc}!L\-E\-V\-E\-L\-S@{L\-E\-V\-E\-L\-S}}\item[{\em 
+\hypertarget{menu_8cc_ab1f00069d86d1b1307d0b5e13a9765aea2d31bf71d068ed802a18e984232998df}{L\-E\-V\-E\-L\-S}\label{menu_8cc_ab1f00069d86d1b1307d0b5e13a9765aea2d31bf71d068ed802a18e984232998df}
+}]\hyperlink{struct_level}{Level} selection \index{O\-P\-T\-I\-O\-N\-S@{O\-P\-T\-I\-O\-N\-S}!menu.\-cc@{menu.\-cc}}\index{menu.\-cc@{menu.\-cc}!O\-P\-T\-I\-O\-N\-S@{O\-P\-T\-I\-O\-N\-S}}\item[{\em 
+\hypertarget{menu_8cc_ab1f00069d86d1b1307d0b5e13a9765aea1b20f1b4adb6ff9778b284fb46f6f99d}{O\-P\-T\-I\-O\-N\-S}\label{menu_8cc_ab1f00069d86d1b1307d0b5e13a9765aea1b20f1b4adb6ff9778b284fb46f6f99d}
+}]Game Options \index{I\-N\-S\-T\-R\-U\-C\-T\-I\-O\-N@{I\-N\-S\-T\-R\-U\-C\-T\-I\-O\-N}!menu.\-cc@{menu.\-cc}}\index{menu.\-cc@{menu.\-cc}!I\-N\-S\-T\-R\-U\-C\-T\-I\-O\-N@{I\-N\-S\-T\-R\-U\-C\-T\-I\-O\-N}}\item[{\em 
+\hypertarget{menu_8cc_ab1f00069d86d1b1307d0b5e13a9765aeacc7488e57f07fe0693ec0f72d186c300}{I\-N\-S\-T\-R\-U\-C\-T\-I\-O\-N}\label{menu_8cc_ab1f00069d86d1b1307d0b5e13a9765aeacc7488e57f07fe0693ec0f72d186c300}
+}]Instructions for user \index{C\-R\-E\-D\-I\-T\-S@{C\-R\-E\-D\-I\-T\-S}!menu.\-cc@{menu.\-cc}}\index{menu.\-cc@{menu.\-cc}!C\-R\-E\-D\-I\-T\-S@{C\-R\-E\-D\-I\-T\-S}}\item[{\em 
+\hypertarget{menu_8cc_ab1f00069d86d1b1307d0b5e13a9765aeacb9e6f410cf374803d7ff561a15bc4ef}{C\-R\-E\-D\-I\-T\-S}\label{menu_8cc_ab1f00069d86d1b1307d0b5e13a9765aeacb9e6f410cf374803d7ff561a15bc4ef}
+}]Credits \index{E\-X\-I\-T@{E\-X\-I\-T}!menu.\-cc@{menu.\-cc}}\index{menu.\-cc@{menu.\-cc}!E\-X\-I\-T@{E\-X\-I\-T}}\item[{\em 
+\hypertarget{menu_8cc_ab1f00069d86d1b1307d0b5e13a9765aea7a10b5d68d31711288e1fe0fa17dbf4f}{E\-X\-I\-T}\label{menu_8cc_ab1f00069d86d1b1307d0b5e13a9765aea7a10b5d68d31711288e1fe0fa17dbf4f}
+}]Exit game \end{description}
+\end{Desc}
+\hypertarget{menu_8cc_a261f9f58ccbeaa962c4e675e4212c9cc}{\index{menu.\-cc@{menu.\-cc}!context@{context}}
+\index{context@{context}!menu.cc@{menu.\-cc}}
+\subsubsection[{context}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf context}}}\label{menu_8cc_a261f9f58ccbeaa962c4e675e4212c9cc}
+If screen is in menu or in level selection \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{M\-E\-N\-U@{M\-E\-N\-U}!menu.\-cc@{menu.\-cc}}\index{menu.\-cc@{menu.\-cc}!M\-E\-N\-U@{M\-E\-N\-U}}\item[{\em 
+\hypertarget{menu_8cc_a261f9f58ccbeaa962c4e675e4212c9cca4c40e60bc71a32b924ce1f08d57f9721}{M\-E\-N\-U}\label{menu_8cc_a261f9f58ccbeaa962c4e675e4212c9cca4c40e60bc71a32b924ce1f08d57f9721}
+}]Menu Screen \index{L\-E\-V\-E\-L@{L\-E\-V\-E\-L}!menu.\-cc@{menu.\-cc}}\index{menu.\-cc@{menu.\-cc}!L\-E\-V\-E\-L@{L\-E\-V\-E\-L}}\item[{\em 
+\hypertarget{menu_8cc_a261f9f58ccbeaa962c4e675e4212c9ccaa4b1e64b6e370537f87e5806385ee069}{L\-E\-V\-E\-L}\label{menu_8cc_a261f9f58ccbeaa962c4e675e4212c9ccaa4b1e64b6e370537f87e5806385ee069}
+}]\hyperlink{struct_level}{Level} Selection Screen \end{description}
+\end{Desc}
+\hypertarget{menu_8cc_a3017adf344c435005db11e8c0d8c03bd}{\index{menu.\-cc@{menu.\-cc}!event\-Type@{event\-Type}}
+\index{event\-Type@{event\-Type}!menu.cc@{menu.\-cc}}
+\subsubsection[{event\-Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf event\-Type}}}\label{menu_8cc_a3017adf344c435005db11e8c0d8c03bd}
+What event happened \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{N\-O\-T\-H\-I\-N\-G@{N\-O\-T\-H\-I\-N\-G}!menu.\-cc@{menu.\-cc}}\index{menu.\-cc@{menu.\-cc}!N\-O\-T\-H\-I\-N\-G@{N\-O\-T\-H\-I\-N\-G}}\item[{\em 
+\hypertarget{menu_8cc_a3017adf344c435005db11e8c0d8c03bdacfe24a7b308a82835c8a9a9a89bc4ca2}{N\-O\-T\-H\-I\-N\-G}\label{menu_8cc_a3017adf344c435005db11e8c0d8c03bdacfe24a7b308a82835c8a9a9a89bc4ca2}
+}]If nothing happened \index{D\-I\-S\-P\-L\-A\-Y\-\_\-\-C\-L\-O\-S\-E@{D\-I\-S\-P\-L\-A\-Y\-\_\-\-C\-L\-O\-S\-E}!menu.\-cc@{menu.\-cc}}\index{menu.\-cc@{menu.\-cc}!D\-I\-S\-P\-L\-A\-Y\-\_\-\-C\-L\-O\-S\-E@{D\-I\-S\-P\-L\-A\-Y\-\_\-\-C\-L\-O\-S\-E}}\item[{\em 
+\hypertarget{menu_8cc_a3017adf344c435005db11e8c0d8c03bda6c2b4c00c5e2deeb1870289f4eaa22f6}{D\-I\-S\-P\-L\-A\-Y\-\_\-\-C\-L\-O\-S\-E}\label{menu_8cc_a3017adf344c435005db11e8c0d8c03bda6c2b4c00c5e2deeb1870289f4eaa22f6}
+}]Close display \index{K\-E\-Y\-D\-O\-W\-N@{K\-E\-Y\-D\-O\-W\-N}!menu.\-cc@{menu.\-cc}}\index{menu.\-cc@{menu.\-cc}!K\-E\-Y\-D\-O\-W\-N@{K\-E\-Y\-D\-O\-W\-N}}\item[{\em 
+\hypertarget{menu_8cc_a3017adf344c435005db11e8c0d8c03bda6225590ae6caaccd86633209772d5b47}{K\-E\-Y\-D\-O\-W\-N}\label{menu_8cc_a3017adf344c435005db11e8c0d8c03bda6225590ae6caaccd86633209772d5b47}
+}]Key down \index{K\-E\-Y\-U\-P@{K\-E\-Y\-U\-P}!menu.\-cc@{menu.\-cc}}\index{menu.\-cc@{menu.\-cc}!K\-E\-Y\-U\-P@{K\-E\-Y\-U\-P}}\item[{\em 
+\hypertarget{menu_8cc_a3017adf344c435005db11e8c0d8c03bda8179d413773e511bbd7d842903345ad4}{K\-E\-Y\-U\-P}\label{menu_8cc_a3017adf344c435005db11e8c0d8c03bda8179d413773e511bbd7d842903345ad4}
+}]Release key \index{R\-E\-S\-I\-Z\-E@{R\-E\-S\-I\-Z\-E}!menu.\-cc@{menu.\-cc}}\index{menu.\-cc@{menu.\-cc}!R\-E\-S\-I\-Z\-E@{R\-E\-S\-I\-Z\-E}}\item[{\em 
+\hypertarget{menu_8cc_a3017adf344c435005db11e8c0d8c03bdaf33118f5fff8a9038bda49d7b5f027da}{R\-E\-S\-I\-Z\-E}\label{menu_8cc_a3017adf344c435005db11e8c0d8c03bdaf33118f5fff8a9038bda49d7b5f027da}
+}]Resize display \index{M\-O\-V\-E\-M\-O\-U\-S\-E@{M\-O\-V\-E\-M\-O\-U\-S\-E}!menu.\-cc@{menu.\-cc}}\index{menu.\-cc@{menu.\-cc}!M\-O\-V\-E\-M\-O\-U\-S\-E@{M\-O\-V\-E\-M\-O\-U\-S\-E}}\item[{\em 
+\hypertarget{menu_8cc_a3017adf344c435005db11e8c0d8c03bdabe3017d8d6750341be3581e77fe9da35}{M\-O\-V\-E\-M\-O\-U\-S\-E}\label{menu_8cc_a3017adf344c435005db11e8c0d8c03bdabe3017d8d6750341be3581e77fe9da35}
+}]Move cursor \index{M\-O\-U\-S\-E\-D\-O\-W\-N@{M\-O\-U\-S\-E\-D\-O\-W\-N}!menu.\-cc@{menu.\-cc}}\index{menu.\-cc@{menu.\-cc}!M\-O\-U\-S\-E\-D\-O\-W\-N@{M\-O\-U\-S\-E\-D\-O\-W\-N}}\item[{\em 
+\hypertarget{menu_8cc_a3017adf344c435005db11e8c0d8c03bda3f4032d72d8b1e1161d074921801817b}{M\-O\-U\-S\-E\-D\-O\-W\-N}\label{menu_8cc_a3017adf344c435005db11e8c0d8c03bda3f4032d72d8b1e1161d074921801817b}
+}]Mouse key down \index{M\-O\-U\-S\-E\-U\-P@{M\-O\-U\-S\-E\-U\-P}!menu.\-cc@{menu.\-cc}}\index{menu.\-cc@{menu.\-cc}!M\-O\-U\-S\-E\-U\-P@{M\-O\-U\-S\-E\-U\-P}}\item[{\em 
+\hypertarget{menu_8cc_a3017adf344c435005db11e8c0d8c03bda91bc82b2fa812ca903bf57bcd76b52e3}{M\-O\-U\-S\-E\-U\-P}\label{menu_8cc_a3017adf344c435005db11e8c0d8c03bda91bc82b2fa812ca903bf57bcd76b52e3}
+}]Mouse key up \end{description}
+\end{Desc}
+\hypertarget{menu_8cc_ae28f0b8e62d0d09242b136db47ee9387}{\index{menu.\-cc@{menu.\-cc}!options\-Button@{options\-Button}}
+\index{options\-Button@{options\-Button}!menu.cc@{menu.\-cc}}
+\subsubsection[{options\-Button}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf options\-Button}}}\label{menu_8cc_ae28f0b8e62d0d09242b136db47ee9387}
+Dialog options box buttons \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{C\-L\-O\-S\-E@{C\-L\-O\-S\-E}!menu.\-cc@{menu.\-cc}}\index{menu.\-cc@{menu.\-cc}!C\-L\-O\-S\-E@{C\-L\-O\-S\-E}}\item[{\em 
+\hypertarget{menu_8cc_ae28f0b8e62d0d09242b136db47ee9387a685f73194ad125cbc784c3210cdb3449}{C\-L\-O\-S\-E}\label{menu_8cc_ae28f0b8e62d0d09242b136db47ee9387a685f73194ad125cbc784c3210cdb3449}
+}]Close dialog \index{F\-U\-L\-L\-S\-C\-R\-E\-E\-N@{F\-U\-L\-L\-S\-C\-R\-E\-E\-N}!menu.\-cc@{menu.\-cc}}\index{menu.\-cc@{menu.\-cc}!F\-U\-L\-L\-S\-C\-R\-E\-E\-N@{F\-U\-L\-L\-S\-C\-R\-E\-E\-N}}\item[{\em 
+\hypertarget{menu_8cc_ae28f0b8e62d0d09242b136db47ee9387a5f039f23ee85ddea038ca1ab88ca6755}{F\-U\-L\-L\-S\-C\-R\-E\-E\-N}\label{menu_8cc_ae28f0b8e62d0d09242b136db47ee9387a5f039f23ee85ddea038ca1ab88ca6755}
+}]Set Fullscreen mode \index{M\-U\-T\-E@{M\-U\-T\-E}!menu.\-cc@{menu.\-cc}}\index{menu.\-cc@{menu.\-cc}!M\-U\-T\-E@{M\-U\-T\-E}}\item[{\em 
+\hypertarget{menu_8cc_ae28f0b8e62d0d09242b136db47ee9387a271edf5041b6e7d6307edccd670dc8dc}{M\-U\-T\-E}\label{menu_8cc_ae28f0b8e62d0d09242b136db47ee9387a271edf5041b6e7d6307edccd670dc8dc}
+}]Set mute mode \index{R\-E\-S\-E\-T@{R\-E\-S\-E\-T}!menu.\-cc@{menu.\-cc}}\index{menu.\-cc@{menu.\-cc}!R\-E\-S\-E\-T@{R\-E\-S\-E\-T}}\item[{\em 
+\hypertarget{menu_8cc_ae28f0b8e62d0d09242b136db47ee9387a589b7d94a3d91d145720e2fed0eb3a05}{R\-E\-S\-E\-T}\label{menu_8cc_ae28f0b8e62d0d09242b136db47ee9387a589b7d94a3d91d145720e2fed0eb3a05}
+}]Reset level reached and best score \index{C\-L\-O\-S\-E@{C\-L\-O\-S\-E}!menu.\-cc@{menu.\-cc}}\index{menu.\-cc@{menu.\-cc}!C\-L\-O\-S\-E@{C\-L\-O\-S\-E}}\item[{\em 
+\hypertarget{menu_8cc_ae28f0b8e62d0d09242b136db47ee9387a685f73194ad125cbc784c3210cdb3449}{C\-L\-O\-S\-E}\label{menu_8cc_ae28f0b8e62d0d09242b136db47ee9387a685f73194ad125cbc784c3210cdb3449}
+}]Close Dialog \index{M\-U\-T\-E@{M\-U\-T\-E}!menu.\-cc@{menu.\-cc}}\index{menu.\-cc@{menu.\-cc}!M\-U\-T\-E@{M\-U\-T\-E}}\item[{\em 
+\hypertarget{menu_8cc_ae28f0b8e62d0d09242b136db47ee9387a271edf5041b6e7d6307edccd670dc8dc}{M\-U\-T\-E}\label{menu_8cc_ae28f0b8e62d0d09242b136db47ee9387a271edf5041b6e7d6307edccd670dc8dc}
+}]Mute Music \index{E\-X\-I\-T@{E\-X\-I\-T}!menu.\-cc@{menu.\-cc}}\index{menu.\-cc@{menu.\-cc}!E\-X\-I\-T@{E\-X\-I\-T}}\item[{\em 
+\hypertarget{menu_8cc_ae28f0b8e62d0d09242b136db47ee9387a7a10b5d68d31711288e1fe0fa17dbf4f}{E\-X\-I\-T}\label{menu_8cc_ae28f0b8e62d0d09242b136db47ee9387a7a10b5d68d31711288e1fe0fa17dbf4f}
+}]Exit game \end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{menu_8cc_a21caf5bb8fa314d58896af235e647811}{\index{menu.\-cc@{menu.\-cc}!all\-False@{all\-False}}
+\index{all\-False@{all\-False}!menu.cc@{menu.\-cc}}
+\subsubsection[{all\-False}]{\setlength{\rightskip}{0pt plus 5cm}static void all\-False (
+\begin{DoxyParamCaption}
+\item[{bool}]{v\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{menu_8cc_a21caf5bb8fa314d58896af235e647811}
+Set false to all bool variables in array 
+\begin{DoxyParams}{Parameters}
+{\em v} & Array of bool \\
+\hline
+{\em size} & array size \\
+\hline
+\end{DoxyParams}
+\hypertarget{menu_8cc_a068be345011bf78a2f54efdee51e99ad}{\index{menu.\-cc@{menu.\-cc}!button\-Focus@{button\-Focus}}
+\index{button\-Focus@{button\-Focus}!menu.cc@{menu.\-cc}}
+\subsubsection[{button\-Focus}]{\setlength{\rightskip}{0pt plus 5cm}void button\-Focus (
+\begin{DoxyParamCaption}
+\item[{{\bf Buttons}}]{buttons, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}}\label{menu_8cc_a068be345011bf78a2f54efdee51e99ad}
+says what button focused, run when movemouse event is true 
+\begin{DoxyParams}{Parameters}
+{\em buttons} & group of buttons to check \\
+\hline
+{\em x} & point x of mouse \\
+\hline
+{\em y} & point y of mouse \\
+\hline
+\end{DoxyParams}
+\hypertarget{menu_8cc_a019ba3dc7e0d1dc2cafb55effe3adaf2}{\index{menu.\-cc@{menu.\-cc}!clicked\-Button\-Manager@{clicked\-Button\-Manager}}
+\index{clicked\-Button\-Manager@{clicked\-Button\-Manager}!menu.cc@{menu.\-cc}}
+\subsubsection[{clicked\-Button\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}void clicked\-Button\-Manager (
+\begin{DoxyParamCaption}
+\item[{{\bf Buttons} \&}]{buttons, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}}\label{menu_8cc_a019ba3dc7e0d1dc2cafb55effe3adaf2}
+Says what button clicked, run when mousedown event is true 
+\begin{DoxyParams}{Parameters}
+{\em buttons} & group of buttons to check \\
+\hline
+{\em x} & point x of mouse click \\
+\hline
+{\em y} & point y of mouse click \\
+\hline
+\end{DoxyParams}
+\hypertarget{menu_8cc_ab3c18055624008e892a12e9d400f466f}{\index{menu.\-cc@{menu.\-cc}!event\-Manager@{event\-Manager}}
+\index{event\-Manager@{event\-Manager}!menu.cc@{menu.\-cc}}
+\subsubsection[{event\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}static int event\-Manager (
+\begin{DoxyParamCaption}
+\item[{{\bf Buttons} \&}]{buttons, }
+\item[{A\-L\-L\-E\-G\-R\-O\-\_\-\-E\-V\-E\-N\-T \&}]{ev, }
+\item[{bool}]{event\-Type\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{menu_8cc_ab3c18055624008e892a12e9d400f466f}
+Manage event in relative context -\/\-If left buttons on mouse pressed check what button pressed (depend by context) -\/\-If mouse is moving, check if it's on a button and focus it -\/\-Close display if press X -\/\-Manage resize dependencies if display is resizing 
+\begin{DoxyParams}{Parameters}
+{\em buttons} & group of buttons that can be pressed \\
+\hline
+{\em ev} & event \\
+\hline
+{\em event\-Type} & array that contains what event happens \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return what happens 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{menu_8cc_a019ba3dc7e0d1dc2cafb55effe3adaf2}{clicked\-Button\-Manager()} 
+
+\hyperlink{menu_8cc_a068be345011bf78a2f54efdee51e99ad}{button\-Focus()} 
+
+resize\-Dependencies() 
+\end{DoxySeeAlso}
+\hypertarget{menu_8cc_a1497b78efa376690dc73911a51246994}{\index{menu.\-cc@{menu.\-cc}!init\-Levels\-Buttons@{init\-Levels\-Buttons}}
+\index{init\-Levels\-Buttons@{init\-Levels\-Buttons}!menu.cc@{menu.\-cc}}
+\subsubsection[{init\-Levels\-Buttons}]{\setlength{\rightskip}{0pt plus 5cm}void init\-Levels\-Buttons (
+\begin{DoxyParamCaption}
+\item[{{\bf Buttons}}]{buttons, }
+\item[{A\-L\-L\-E\-G\-R\-O\-\_\-\-F\-O\-N\-T $\ast$}]{font}
+\end{DoxyParamCaption}
+)}}\label{menu_8cc_a1497b78efa376690dc73911a51246994}
+Inits levels\-Buttons 
+\begin{DoxyParams}{Parameters}
+{\em buttons} & group of buttons \\
+\hline
+{\em font} & font of text buttons \\
+\hline
+\end{DoxyParams}
+\hypertarget{menu_8cc_a267bb7a72183a9e7187d8dd24e6190ef}{\index{menu.\-cc@{menu.\-cc}!init\-Menu\-Buttons@{init\-Menu\-Buttons}}
+\index{init\-Menu\-Buttons@{init\-Menu\-Buttons}!menu.cc@{menu.\-cc}}
+\subsubsection[{init\-Menu\-Buttons}]{\setlength{\rightskip}{0pt plus 5cm}void init\-Menu\-Buttons (
+\begin{DoxyParamCaption}
+\item[{{\bf Buttons}}]{buttons, }
+\item[{A\-L\-L\-E\-G\-R\-O\-\_\-\-F\-O\-N\-T $\ast$}]{text\-Font, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}}\label{menu_8cc_a267bb7a72183a9e7187d8dd24e6190ef}
+Inits menu buttons, they have got same x and different y 
+\begin{DoxyParams}{Parameters}
+{\em buttons} & group of buttons \\
+\hline
+{\em text\-Font} & font of menu buttons \\
+\hline
+{\em x} & x of buttons \\
+\hline
+{\em y} & y of buttons \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{menu_8cc_a1497b78efa376690dc73911a51246994}{init\-Levels\-Buttons()} 
+\end{DoxySeeAlso}
+\hypertarget{menu_8cc_aee5c0adae0ccd18885a93f0d8005d94b}{\index{menu.\-cc@{menu.\-cc}!menu@{menu}}
+\index{menu@{menu}!menu.cc@{menu.\-cc}}
+\subsubsection[{menu}]{\setlength{\rightskip}{0pt plus 5cm}int menu (
+\begin{DoxyParamCaption}
+\item[{A\-L\-L\-E\-G\-R\-O\-\_\-\-D\-I\-S\-P\-L\-A\-Y $\ast$}]{display}
+\end{DoxyParamCaption}
+)}}\label{menu_8cc_aee5c0adae0ccd18885a93f0d8005d94b}
+Start menu, show menu buttons and levels button and allow to manage resize and start new game. 
+\begin{DoxyParams}{Parameters}
+{\em display} & display to draw \\
+\hline
+\end{DoxyParams}
+$<$ Checks main cycle
+
+$<$ Checks if display need to redraw
+
+$<$ X Position of menu buttons
+
+$<$ Y Position of menu buttons
+
+$<$ X Position of mouse
+
+$<$ Y Position of mouse
+
+$<$ Group of menu buttons \begin{DoxySeeAlso}{See Also}
+\hyperlink{struct_buttons}{Buttons} 
+
+\hyperlink{struct_button}{Button}
+\end{DoxySeeAlso}
+$<$ Group of level selection buttons \begin{DoxySeeAlso}{See Also}
+\hyperlink{struct_buttons}{Buttons} 
+
+\hyperlink{struct_button}{Button}
+\end{DoxySeeAlso}
+$<$ What's event happened \begin{DoxySeeAlso}{See Also}
+\hyperlink{menu_8cc_a3017adf344c435005db11e8c0d8c03bd}{event\-Type} 
+\end{DoxySeeAlso}
+\hypertarget{menu_8cc_afdbc420d0e8174ae92d39de4e03aee29}{\index{menu.\-cc@{menu.\-cc}!options\-Button\-Manager@{options\-Button\-Manager}}
+\index{options\-Button\-Manager@{options\-Button\-Manager}!menu.cc@{menu.\-cc}}
+\subsubsection[{options\-Button\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}static void options\-Button\-Manager (
+\begin{DoxyParamCaption}
+\item[{int}]{button, }
+\item[{A\-L\-L\-E\-G\-R\-O\-\_\-\-D\-I\-S\-P\-L\-A\-Y $\ast$}]{display}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{menu_8cc_afdbc420d0e8174ae92d39de4e03aee29}
+Manage buttons in dialog options 
+\begin{DoxyParams}{Parameters}
+{\em button} & dialog options button pressed \hyperlink{start_game_8cc_ae28f0b8e62d0d09242b136db47ee9387}{options\-Button} \\
+\hline
+{\em display} & dispay which draw dialog \\
+\hline
+\end{DoxyParams}
+\hypertarget{menu_8cc_a22e9fe7af980fe7a17abd62d72dad69f}{\index{menu.\-cc@{menu.\-cc}!resize\-Local\-Dependences@{resize\-Local\-Dependences}}
+\index{resize\-Local\-Dependences@{resize\-Local\-Dependences}!menu.cc@{menu.\-cc}}
+\subsubsection[{resize\-Local\-Dependences}]{\setlength{\rightskip}{0pt plus 5cm}static void resize\-Local\-Dependences (
+\begin{DoxyParamCaption}
+\item[{int}]{width, }
+\item[{int}]{height, }
+\item[{int \&}]{menu\-\_\-x, }
+\item[{int \&}]{menu\-\_\-y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{menu_8cc_a22e9fe7af980fe7a17abd62d72dad69f}
+there are many variables need to update after resize display 
+\begin{DoxyParams}{Parameters}
+{\em width} & new width \\
+\hline
+{\em height} & new height \\
+\hline
+{\em menu\-\_\-x} & variable to update \\
+\hline
+{\em menu\-\_\-y} & variable to update \\
+\hline
+\end{DoxyParams}
+\hypertarget{menu_8cc_aca0b9cec36412a6ba7cff84467cb3b15}{\index{menu.\-cc@{menu.\-cc}!start\-Game@{start\-Game}}
+\index{start\-Game@{start\-Game}!menu.cc@{menu.\-cc}}
+\subsubsection[{start\-Game}]{\setlength{\rightskip}{0pt plus 5cm}int start\-Game (
+\begin{DoxyParamCaption}
+\item[{A\-L\-L\-E\-G\-R\-O\-\_\-\-D\-I\-S\-P\-L\-A\-Y $\ast$}]{display, }
+\item[{int}]{config\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{num, }
+\item[{int}]{context}
+\end{DoxyParamCaption}
+)}}\label{menu_8cc_aca0b9cec36412a6ba7cff84467cb3b15}
+Start the real game. If I'm in arcade mode, game haven't end, when player die check if defeat best score, in case save it. If I'm in level mode, when i finish flag is created, and when it go out of screen start next level and save level reached. Going on with game, enemies' speed and probability that a enemy is create increases. 
+\begin{DoxyParams}{Parameters}
+{\em display} & display to draw \\
+\hline
+{\em config} & used for check mute,fullscreen and score \\
+\hline
+{\em num} & num of level (0 if arcade) \\
+\hline
+{\em context} & if arcade or level \hyperlink{objects_8h_a1a9f233dc4cf5918a7dbaa99574c10c6}{start\-Game\-Context} \\
+\hline
+\end{DoxyParams}
+$<$ If display need to redraw
+
+$<$ Frame for seconds
+
+$<$ Seconds of count down
+
+$<$ Every frame decrease count down so secs must be moltiplied by fps
+
+$<$ Background music file
+
+$<$ Count down bip music file
+
+$<$ \hyperlink{struct_player}{Player} (Hero) \begin{DoxySeeAlso}{See Also}
+\hyperlink{struct_player}{Player}
+\end{DoxySeeAlso}
+$<$ \hyperlink{struct_enemy}{Enemy} (obstacle) \begin{DoxySeeAlso}{See Also}
+\hyperlink{struct_enemy}{Enemy}
+\end{DoxySeeAlso}
+$<$ \hyperlink{struct_level}{Level} \begin{DoxySeeAlso}{See Also}
+\hyperlink{struct_level}{Level}
+\end{DoxySeeAlso}
+$<$ Victory flag \begin{DoxySeeAlso}{See Also}
+\hyperlink{struct_flag}{Flag}
+\end{DoxySeeAlso}
+$<$ Group of sky images \begin{DoxySeeAlso}{See Also}
+\hyperlink{struct_images}{Images}
+\end{DoxySeeAlso}
+$<$ Background image \begin{DoxySeeAlso}{See Also}
+\hyperlink{struct_image}{Image} 
+\end{DoxySeeAlso}
+
+
+\subsection{Variable Documentation}
+\hypertarget{menu_8cc_af03e834a3f29344fdb0a45d663749ae7}{\index{menu.\-cc@{menu.\-cc}!config@{config}}
+\index{config@{config}!menu.cc@{menu.\-cc}}
+\subsubsection[{config}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf config}\mbox{[}$\,$\mbox{]}}}\label{menu_8cc_af03e834a3f29344fdb0a45d663749ae7}
+Configs saved of game (Fullscreen,mute,score etc) \hypertarget{menu_8cc_a273d8efe7a3232f0e573c278d00c16de}{\index{menu.\-cc@{menu.\-cc}!D\-E\-F\-A\-U\-L\-T\-\_\-\-J\-U\-M\-P\-\_\-\-H\-E\-I\-G\-H\-T@{D\-E\-F\-A\-U\-L\-T\-\_\-\-J\-U\-M\-P\-\_\-\-H\-E\-I\-G\-H\-T}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-J\-U\-M\-P\-\_\-\-H\-E\-I\-G\-H\-T@{D\-E\-F\-A\-U\-L\-T\-\_\-\-J\-U\-M\-P\-\_\-\-H\-E\-I\-G\-H\-T}!menu.cc@{menu.\-cc}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-J\-U\-M\-P\-\_\-\-H\-E\-I\-G\-H\-T}]{\setlength{\rightskip}{0pt plus 5cm}int D\-E\-F\-A\-U\-L\-T\-\_\-\-J\-U\-M\-P\-\_\-\-H\-E\-I\-G\-H\-T = 55}}\label{menu_8cc_a273d8efe7a3232f0e573c278d00c16de}
+Default height of player jump \hypertarget{menu_8cc_ae095a82c1f3ab6027cee862b7a6e1d3c}{\index{menu.\-cc@{menu.\-cc}!D\-E\-F\-A\-U\-L\-T\-\_\-\-J\-U\-M\-P\-\_\-\-S\-P\-E\-E\-D@{D\-E\-F\-A\-U\-L\-T\-\_\-\-J\-U\-M\-P\-\_\-\-S\-P\-E\-E\-D}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-J\-U\-M\-P\-\_\-\-S\-P\-E\-E\-D@{D\-E\-F\-A\-U\-L\-T\-\_\-\-J\-U\-M\-P\-\_\-\-S\-P\-E\-E\-D}!menu.cc@{menu.\-cc}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-J\-U\-M\-P\-\_\-\-S\-P\-E\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}int D\-E\-F\-A\-U\-L\-T\-\_\-\-J\-U\-M\-P\-\_\-\-S\-P\-E\-E\-D = 8}}\label{menu_8cc_ae095a82c1f3ab6027cee862b7a6e1d3c}
+Default speed of player jump \hypertarget{menu_8cc_ad8d9c377863d04922dfd37ced584b8ef}{\index{menu.\-cc@{menu.\-cc}!D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-T\-F@{D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-T\-F}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-T\-F@{D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-T\-F}!menu.cc@{menu.\-cc}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-T\-F}]{\setlength{\rightskip}{0pt plus 5cm}const char D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-T\-F\mbox{[}$\,$\mbox{]}}}\label{menu_8cc_ad8d9c377863d04922dfd37ced584b8ef}
+Theme T\-T\-F \hypertarget{menu_8cc_ac8076d88b688dce5f6c8d4e171067b3f}{\index{menu.\-cc@{menu.\-cc}!D\-E\-F\-A\-U\-L\-T\-\_\-\-Y@{D\-E\-F\-A\-U\-L\-T\-\_\-\-Y}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-Y@{D\-E\-F\-A\-U\-L\-T\-\_\-\-Y}!menu.cc@{menu.\-cc}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-Y}]{\setlength{\rightskip}{0pt plus 5cm}int D\-E\-F\-A\-U\-L\-T\-\_\-\-Y}}\label{menu_8cc_ac8076d88b688dce5f6c8d4e171067b3f}
+Default height of floor \hypertarget{menu_8cc_afbf942eb237364a26bd0ead2432edbf9}{\index{menu.\-cc@{menu.\-cc}!file\-Full\-Screen@{file\-Full\-Screen}}
+\index{file\-Full\-Screen@{file\-Full\-Screen}!menu.cc@{menu.\-cc}}
+\subsubsection[{file\-Full\-Screen}]{\setlength{\rightskip}{0pt plus 5cm}const char file\-Full\-Screen\mbox{[}$\,$\mbox{]}}}\label{menu_8cc_afbf942eb237364a26bd0ead2432edbf9}
+File to save if fullscreen or not \hypertarget{menu_8cc_a45e68afca1d760850728659b3b2d1f04}{\index{menu.\-cc@{menu.\-cc}!file\-Level@{file\-Level}}
+\index{file\-Level@{file\-Level}!menu.cc@{menu.\-cc}}
+\subsubsection[{file\-Level}]{\setlength{\rightskip}{0pt plus 5cm}const char file\-Level\mbox{[}$\,$\mbox{]}}}\label{menu_8cc_a45e68afca1d760850728659b3b2d1f04}
+File to save level reached \hypertarget{menu_8cc_acb27551003bb4acedaf1b6a6081d8c33}{\index{menu.\-cc@{menu.\-cc}!file\-Mute@{file\-Mute}}
+\index{file\-Mute@{file\-Mute}!menu.cc@{menu.\-cc}}
+\subsubsection[{file\-Mute}]{\setlength{\rightskip}{0pt plus 5cm}const char file\-Mute\mbox{[}$\,$\mbox{]}}}\label{menu_8cc_acb27551003bb4acedaf1b6a6081d8c33}
+File to save if mute or not \hypertarget{menu_8cc_a8ae96d3af19b68f7a7b3899336636bcf}{\index{menu.\-cc@{menu.\-cc}!file\-Score@{file\-Score}}
+\index{file\-Score@{file\-Score}!menu.cc@{menu.\-cc}}
+\subsubsection[{file\-Score}]{\setlength{\rightskip}{0pt plus 5cm}const char file\-Score\mbox{[}$\,$\mbox{]}}}\label{menu_8cc_a8ae96d3af19b68f7a7b3899336636bcf}
+File to save best score \hypertarget{menu_8cc_a4e81322eb1085aca9cd7c5527f5e4c6b}{\index{menu.\-cc@{menu.\-cc}!H\-E\-I\-G\-H\-T@{H\-E\-I\-G\-H\-T}}
+\index{H\-E\-I\-G\-H\-T@{H\-E\-I\-G\-H\-T}!menu.cc@{menu.\-cc}}
+\subsubsection[{H\-E\-I\-G\-H\-T}]{\setlength{\rightskip}{0pt plus 5cm}int H\-E\-I\-G\-H\-T}}\label{menu_8cc_a4e81322eb1085aca9cd7c5527f5e4c6b}
+Actual H\-E\-I\-G\-H\-T of screen \hypertarget{menu_8cc_a86cbea09bea0e26896cfbd020c2081c3}{\index{menu.\-cc@{menu.\-cc}!my\-Colors@{my\-Colors}}
+\index{my\-Colors@{my\-Colors}!menu.cc@{menu.\-cc}}
+\subsubsection[{my\-Colors}]{\setlength{\rightskip}{0pt plus 5cm}A\-L\-L\-E\-G\-R\-O\-\_\-\-C\-O\-L\-O\-R my\-Colors\mbox{[}8\mbox{]}}}\label{menu_8cc_a86cbea09bea0e26896cfbd020c2081c3}
+My Colors \begin{DoxySeeAlso}{See Also}
+\hyperlink{objects_8h_aedd64c3f92da850b93776c65fd1cced3}{colors} 
+\end{DoxySeeAlso}
+\hypertarget{menu_8cc_a5da6d9ec042926de0511396589d1a77a}{\index{menu.\-cc@{menu.\-cc}!N\-U\-M\-\_\-\-E\-V\-E\-N\-T\-S@{N\-U\-M\-\_\-\-E\-V\-E\-N\-T\-S}}
+\index{N\-U\-M\-\_\-\-E\-V\-E\-N\-T\-S@{N\-U\-M\-\_\-\-E\-V\-E\-N\-T\-S}!menu.cc@{menu.\-cc}}
+\subsubsection[{N\-U\-M\-\_\-\-E\-V\-E\-N\-T\-S}]{\setlength{\rightskip}{0pt plus 5cm}const int N\-U\-M\-\_\-\-E\-V\-E\-N\-T\-S = 8\hspace{0.3cm}{\ttfamily [static]}}}\label{menu_8cc_a5da6d9ec042926de0511396589d1a77a}
+Number of event to manage \hypertarget{menu_8cc_a509c736c7e43e35f227eabf3856d6137}{\index{menu.\-cc@{menu.\-cc}!N\-U\-M\-\_\-\-L\-E\-V\-E\-L\-S@{N\-U\-M\-\_\-\-L\-E\-V\-E\-L\-S}}
+\index{N\-U\-M\-\_\-\-L\-E\-V\-E\-L\-S@{N\-U\-M\-\_\-\-L\-E\-V\-E\-L\-S}!menu.cc@{menu.\-cc}}
+\subsubsection[{N\-U\-M\-\_\-\-L\-E\-V\-E\-L\-S}]{\setlength{\rightskip}{0pt plus 5cm}int N\-U\-M\-\_\-\-L\-E\-V\-E\-L\-S = 5}}\label{menu_8cc_a509c736c7e43e35f227eabf3856d6137}
+Number of levels \hypertarget{menu_8cc_a8b6d05aff7343292629a96c3f85f8e89}{\index{menu.\-cc@{menu.\-cc}!N\-U\-M\-\_\-\-M\-E\-N\-U\-\_\-\-B\-U\-T\-T\-O\-N\-S@{N\-U\-M\-\_\-\-M\-E\-N\-U\-\_\-\-B\-U\-T\-T\-O\-N\-S}}
+\index{N\-U\-M\-\_\-\-M\-E\-N\-U\-\_\-\-B\-U\-T\-T\-O\-N\-S@{N\-U\-M\-\_\-\-M\-E\-N\-U\-\_\-\-B\-U\-T\-T\-O\-N\-S}!menu.cc@{menu.\-cc}}
+\subsubsection[{N\-U\-M\-\_\-\-M\-E\-N\-U\-\_\-\-B\-U\-T\-T\-O\-N\-S}]{\setlength{\rightskip}{0pt plus 5cm}const int N\-U\-M\-\_\-\-M\-E\-N\-U\-\_\-\-B\-U\-T\-T\-O\-N\-S = 6\hspace{0.3cm}{\ttfamily [static]}}}\label{menu_8cc_a8b6d05aff7343292629a96c3f85f8e89}
+Number of menu buttons (arcade, levels etc) \hypertarget{menu_8cc_a958e091f8929b457621de326b2fde553}{\index{menu.\-cc@{menu.\-cc}!title\-Font@{title\-Font}}
+\index{title\-Font@{title\-Font}!menu.cc@{menu.\-cc}}
+\subsubsection[{title\-Font}]{\setlength{\rightskip}{0pt plus 5cm}A\-L\-L\-E\-G\-R\-O\-\_\-\-F\-O\-N\-T$\ast$ title\-Font}}\label{menu_8cc_a958e091f8929b457621de326b2fde553}
+Font of title \hypertarget{menu_8cc_a59c3bba4b17cd5e19f149ea175fa6989}{\index{menu.\-cc@{menu.\-cc}!W\-I\-D\-T\-H@{W\-I\-D\-T\-H}}
+\index{W\-I\-D\-T\-H@{W\-I\-D\-T\-H}!menu.cc@{menu.\-cc}}
+\subsubsection[{W\-I\-D\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}int W\-I\-D\-T\-H}}\label{menu_8cc_a59c3bba4b17cd5e19f149ea175fa6989}
+Actual W\-I\-D\-T\-H of screen 

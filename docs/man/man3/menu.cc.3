@@ -1,0 +1,537 @@
+.TH "/home/simone/Developer/Project/eclipse/Run Circlest, Run/bin/menu.cc" 3 "Mon Oct 12 2015" "Run Cirrest, Run" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/simone/Developer/Project/eclipse/Run Circlest, Run/bin/menu.cc \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <iostream>\fP
+.br
+\fC#include <allegro5/allegro\&.h>\fP
+.br
+\fC#include <allegro5/allegro_primitives\&.h>\fP
+.br
+\fC#include <allegro5/allegro_font\&.h>\fP
+.br
+\fC#include <allegro5/allegro_ttf\&.h>\fP
+.br
+\fC#include <allegro5/allegro_native_dialog\&.h>\fP
+.br
+\fC#include <allegro5/allegro_acodec\&.h>\fP
+.br
+\fC#include <allegro5/allegro_audio\&.h>\fP
+.br
+\fC#include <cstdlib>\fP
+.br
+\fC#include <cstdio>\fP
+.br
+\fC#include 'headers/objects\&.h'\fP
+.br
+\fC#include 'headers/engine\&.h'\fP
+.br
+\fC#include 'headers/io\&.h'\fP
+.br
+\fC#include 'headers/design\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBDBG\fP(A, B)"
+.br
+.ti -1c
+.RI "#define \fBD1\fP(a)   \fBDBG\fP(1, a)"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBbtn\fP { \fBARCADE\fP, \fBLEVELS\fP, \fBOPTIONS\fP, \fBINSTRUCTION\fP, \fBCREDITS\fP, \fBEXIT\fP }"
+.br
+.ti -1c
+.RI "enum \fBoptionsButton\fP { \fBCLOSE\fP, \fBFULLSCREEN\fP, \fBMUTE\fP, \fBRESET\fP, \fBCLOSE\fP, \fBMUTE\fP, \fBEXIT\fP }"
+.br
+.ti -1c
+.RI "enum \fBcontext\fP { \fBMENU\fP, \fBLEVEL\fP }"
+.br
+.ti -1c
+.RI "enum \fBeventType\fP { \fBNOTHING\fP, \fBDISPLAY_CLOSE\fP, \fBKEYDOWN\fP, \fBKEYUP\fP, \fBRESIZE\fP, \fBMOVEMOUSE\fP, \fBMOUSEDOWN\fP, \fBMOUSEUP\fP }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBstartGame\fP (ALLEGRO_DISPLAY *, int \fBconfig\fP[], int num, int \fBcontext\fP)"
+.br
+.ti -1c
+.RI "static int \fBeventManager\fP (\fBButtons\fP &buttons, ALLEGRO_EVENT &ev, bool \fBeventType\fP[])"
+.br
+.ti -1c
+.RI "void \fBclickedButtonManager\fP (\fBButtons\fP &buttons, int x, int y)"
+.br
+.ti -1c
+.RI "void \fBbuttonFocus\fP (\fBButtons\fP buttons, int x, int y)"
+.br
+.ti -1c
+.RI "static void \fBoptionsButtonManager\fP (int button, ALLEGRO_DISPLAY *display)"
+.br
+.ti -1c
+.RI "void \fBinitMenuButtons\fP (\fBButtons\fP buttons, ALLEGRO_FONT *textFont, int x, int y)"
+.br
+.ti -1c
+.RI "void \fBinitLevelsButtons\fP (\fBButtons\fP buttons, ALLEGRO_FONT *font)"
+.br
+.ti -1c
+.RI "static void \fBallFalse\fP (bool v[], int size)"
+.br
+.ti -1c
+.RI "static void \fBresizeLocalDependences\fP (int width, int height, int &menu_x, int &menu_y)"
+.br
+.ti -1c
+.RI "int \fBmenu\fP (ALLEGRO_DISPLAY *display)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "int \fBWIDTH\fP"
+.br
+.ti -1c
+.RI "int \fBHEIGHT\fP"
+.br
+.ti -1c
+.RI "const char \fBfileScore\fP []"
+.br
+.ti -1c
+.RI "const char \fBfileLevel\fP []"
+.br
+.ti -1c
+.RI "const char \fBfileMute\fP []"
+.br
+.ti -1c
+.RI "const char \fBfileFullScreen\fP []"
+.br
+.ti -1c
+.RI "const char \fBDEFAULT_TTF\fP []"
+.br
+.ti -1c
+.RI "ALLEGRO_FONT * \fBtitleFont\fP"
+.br
+.ti -1c
+.RI "ALLEGRO_COLOR \fBmyColors\fP [8]"
+.br
+.ti -1c
+.RI "int \fBconfig\fP []"
+.br
+.ti -1c
+.RI "int \fBDEFAULT_JUMP_SPEED\fP = 8"
+.br
+.ti -1c
+.RI "int \fBDEFAULT_JUMP_HEIGHT\fP = 55"
+.br
+.ti -1c
+.RI "int \fBDEFAULT_Y\fP"
+.br
+.ti -1c
+.RI "int \fBNUM_LEVELS\fP = 5"
+.br
+.ti -1c
+.RI "static const int \fBNUM_MENU_BUTTONS\fP = 6"
+.br
+.ti -1c
+.RI "static const int \fBNUM_EVENTS\fP = 8"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define D1(a)   \fBDBG\fP(1, a)"
+
+.SS "#define DBG(A, B)"
+
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBbtn\fP"
+Menu button 
+.PP
+\fBSee Also:\fP
+.RS 4
+drawMenu() 
+.PP
+\fBsetButton()\fP; 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIARCADE \fP\fP
+Start Arcade Game 
+.TP
+\fB\fILEVELS \fP\fP
+\fBLevel\fP selection 
+.TP
+\fB\fIOPTIONS \fP\fP
+Game Options 
+.TP
+\fB\fIINSTRUCTION \fP\fP
+Instructions for user 
+.TP
+\fB\fICREDITS \fP\fP
+Credits 
+.TP
+\fB\fIEXIT \fP\fP
+Exit game 
+.SS "enum \fBcontext\fP"
+If screen is in menu or in level selection 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIMENU \fP\fP
+Menu Screen 
+.TP
+\fB\fILEVEL \fP\fP
+\fBLevel\fP Selection Screen 
+.SS "enum \fBeventType\fP"
+What event happened 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fINOTHING \fP\fP
+If nothing happened 
+.TP
+\fB\fIDISPLAY_CLOSE \fP\fP
+Close display 
+.TP
+\fB\fIKEYDOWN \fP\fP
+Key down 
+.TP
+\fB\fIKEYUP \fP\fP
+Release key 
+.TP
+\fB\fIRESIZE \fP\fP
+Resize display 
+.TP
+\fB\fIMOVEMOUSE \fP\fP
+Move cursor 
+.TP
+\fB\fIMOUSEDOWN \fP\fP
+Mouse key down 
+.TP
+\fB\fIMOUSEUP \fP\fP
+Mouse key up 
+.SS "enum \fBoptionsButton\fP"
+Dialog options box buttons 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fICLOSE \fP\fP
+Close dialog 
+.TP
+\fB\fIFULLSCREEN \fP\fP
+Set Fullscreen mode 
+.TP
+\fB\fIMUTE \fP\fP
+Set mute mode 
+.TP
+\fB\fIRESET \fP\fP
+Reset level reached and best score 
+.TP
+\fB\fICLOSE \fP\fP
+Close Dialog 
+.TP
+\fB\fIMUTE \fP\fP
+Mute Music 
+.TP
+\fB\fIEXIT \fP\fP
+Exit game 
+.SH "Function Documentation"
+.PP 
+.SS "static void allFalse (boolv[], intsize)\fC [static]\fP"
+Set false to all bool variables in array 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIv\fP Array of bool 
+.br
+\fIsize\fP array size 
+.RE
+.PP
+
+.SS "void buttonFocus (\fBButtons\fPbuttons, intx, inty)"
+says what button focused, run when movemouse event is true 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbuttons\fP group of buttons to check 
+.br
+\fIx\fP point x of mouse 
+.br
+\fIy\fP point y of mouse 
+.RE
+.PP
+
+.SS "void clickedButtonManager (\fBButtons\fP &buttons, intx, inty)"
+Says what button clicked, run when mousedown event is true 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbuttons\fP group of buttons to check 
+.br
+\fIx\fP point x of mouse click 
+.br
+\fIy\fP point y of mouse click 
+.RE
+.PP
+
+.SS "static int eventManager (\fBButtons\fP &buttons, ALLEGRO_EVENT &ev, booleventType[])\fC [static]\fP"
+Manage event in relative context -If left buttons on mouse pressed check what button pressed (depend by context) -If mouse is moving, check if it's on a button and focus it -Close display if press X -Manage resize dependencies if display is resizing 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbuttons\fP group of buttons that can be pressed 
+.br
+\fIev\fP event 
+.br
+\fIeventType\fP array that contains what event happens 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+return what happens 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBclickedButtonManager()\fP 
+.PP
+\fBbuttonFocus()\fP 
+.PP
+resizeDependencies() 
+.RE
+.PP
+
+.SS "void initLevelsButtons (\fBButtons\fPbuttons, ALLEGRO_FONT *font)"
+Inits levelsButtons 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbuttons\fP group of buttons 
+.br
+\fIfont\fP font of text buttons 
+.RE
+.PP
+
+.SS "void initMenuButtons (\fBButtons\fPbuttons, ALLEGRO_FONT *textFont, intx, inty)"
+Inits menu buttons, they have got same x and different y 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbuttons\fP group of buttons 
+.br
+\fItextFont\fP font of menu buttons 
+.br
+\fIx\fP x of buttons 
+.br
+\fIy\fP y of buttons 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBinitLevelsButtons()\fP 
+.RE
+.PP
+
+.SS "int menu (ALLEGRO_DISPLAY *display)"
+Start menu, show menu buttons and levels button and allow to manage resize and start new game\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdisplay\fP display to draw 
+.RE
+.PP
+< Checks main cycle
+.PP
+< Checks if display need to redraw
+.PP
+< X Position of menu buttons
+.PP
+< Y Position of menu buttons
+.PP
+< X Position of mouse
+.PP
+< Y Position of mouse
+.PP
+< Group of menu buttons 
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBButtons\fP 
+.PP
+\fBButton\fP
+.RE
+.PP
+< Group of level selection buttons 
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBButtons\fP 
+.PP
+\fBButton\fP
+.RE
+.PP
+< What's event happened 
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBeventType\fP 
+.RE
+.PP
+
+.SS "static void optionsButtonManager (intbutton, ALLEGRO_DISPLAY *display)\fC [static]\fP"
+Manage buttons in dialog options 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbutton\fP dialog options button pressed \fBoptionsButton\fP 
+.br
+\fIdisplay\fP dispay which draw dialog 
+.RE
+.PP
+
+.SS "static void resizeLocalDependences (intwidth, intheight, int &menu_x, int &menu_y)\fC [static]\fP"
+there are many variables need to update after resize display 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIwidth\fP new width 
+.br
+\fIheight\fP new height 
+.br
+\fImenu_x\fP variable to update 
+.br
+\fImenu_y\fP variable to update 
+.RE
+.PP
+
+.SS "int startGame (ALLEGRO_DISPLAY *display, intconfig[], intnum, intcontext)"
+Start the real game\&. If I'm in arcade mode, game haven't end, when player die check if defeat best score, in case save it\&. If I'm in level mode, when i finish flag is created, and when it go out of screen start next level and save level reached\&. Going on with game, enemies' speed and probability that a enemy is create increases\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdisplay\fP display to draw 
+.br
+\fIconfig\fP used for check mute,fullscreen and score 
+.br
+\fInum\fP num of level (0 if arcade) 
+.br
+\fIcontext\fP if arcade or level \fBstartGameContext\fP 
+.RE
+.PP
+< If display need to redraw
+.PP
+< Frame for seconds
+.PP
+< Seconds of count down
+.PP
+< Every frame decrease count down so secs must be moltiplied by fps
+.PP
+< Background music file
+.PP
+< Count down bip music file
+.PP
+< \fBPlayer\fP (Hero) 
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBPlayer\fP
+.RE
+.PP
+< \fBEnemy\fP (obstacle) 
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBEnemy\fP
+.RE
+.PP
+< \fBLevel\fP 
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBLevel\fP
+.RE
+.PP
+< Victory flag 
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBFlag\fP
+.RE
+.PP
+< Group of sky images 
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBImages\fP
+.RE
+.PP
+< Background image 
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBImage\fP 
+.RE
+.PP
+
+.SH "Variable Documentation"
+.PP 
+.SS "int \fBconfig\fP[]"
+Configs saved of game (Fullscreen,mute,score etc) 
+.SS "int DEFAULT_JUMP_HEIGHT = 55"
+Default height of player jump 
+.SS "int DEFAULT_JUMP_SPEED = 8"
+Default speed of player jump 
+.SS "const char DEFAULT_TTF[]"
+Theme TTF 
+.SS "int DEFAULT_Y"
+Default height of floor 
+.SS "const char fileFullScreen[]"
+File to save if fullscreen or not 
+.SS "const char fileLevel[]"
+File to save level reached 
+.SS "const char fileMute[]"
+File to save if mute or not 
+.SS "const char fileScore[]"
+File to save best score 
+.SS "int HEIGHT"
+Actual HEIGHT of screen 
+.SS "ALLEGRO_COLOR myColors[8]"
+My Colors 
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBcolors\fP 
+.RE
+.PP
+
+.SS "const int NUM_EVENTS = 8\fC [static]\fP"
+Number of event to manage 
+.SS "int NUM_LEVELS = 5"
+Number of levels 
+.SS "const int NUM_MENU_BUTTONS = 6\fC [static]\fP"
+Number of menu buttons (arcade, levels etc) 
+.SS "ALLEGRO_FONT* titleFont"
+Font of title 
+.SS "int WIDTH"
+Actual WIDTH of screen 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Run Cirrest, Run from the source code\&.

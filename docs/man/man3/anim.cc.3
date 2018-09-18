@@ -1,0 +1,141 @@
+.TH "/home/simone/Developer/Project/eclipse/Run Circlest, Run/bin/anim.cc" 3 "Mon Oct 12 2015" "Run Cirrest, Run" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/simone/Developer/Project/eclipse/Run Circlest, Run/bin/anim.cc \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <iostream>\fP
+.br
+\fC#include <allegro5/allegro\&.h>\fP
+.br
+\fC#include <allegro5/allegro_primitives\&.h>\fP
+.br
+\fC#include <allegro5/allegro_font\&.h>\fP
+.br
+\fC#include <allegro5/allegro_ttf\&.h>\fP
+.br
+\fC#include <allegro5/allegro_audio\&.h>\fP
+.br
+\fC#include <allegro5/allegro_acodec\&.h>\fP
+.br
+\fC#include <cstring>\fP
+.br
+\fC#include 'headers/objects\&.h'\fP
+.br
+\fC#include 'headers/engine\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBDBG\fP(A, B)"
+.br
+.ti -1c
+.RI "#define \fBD1\fP(a)   \fBDBG\fP(1, a)"
+.br
+.ti -1c
+.RI "#define \fBD2\fP(a)   \fBDBG\fP(2, a)"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBboot\fP { \fBPRESENTS\fP, \fBTITLE\fP, \fBEND\fP, \fBFINISH\fP }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "static bool \fBeventManager\fP (ALLEGRO_EVENT &ev)"
+.br
+.ti -1c
+.RI "int \fBmyBoot\fP (ALLEGRO_DISPLAY *display)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "const int \fBconfig\fP []"
+.br
+.ti -1c
+.RI "const int \fBWIDTH\fP"
+.br
+.ti -1c
+.RI "const int \fBHEIGHT\fP"
+.br
+.ti -1c
+.RI "char \fBDEFAULT_TTF\fP []"
+.br
+.ti -1c
+.RI "const ALLEGRO_FONT * \fBtitleFont\fP"
+.br
+.ti -1c
+.RI "static int \fBtitleY\fP = \fBHEIGHT\fP/2"
+.br
+.ti -1c
+.RI "static int \fBboot\fP"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define D1(a)   \fBDBG\fP(1, a)"
+
+.SS "#define D2(a)   \fBDBG\fP(2, a)"
+
+.SS "#define DBG(A, B)"
+
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBboot\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIPRESENTS \fP\fP
+.TP
+\fB\fITITLE \fP\fP
+.TP
+\fB\fIEND \fP\fP
+.TP
+\fB\fIFINISH \fP\fP
+.SH "Function Documentation"
+.PP 
+.SS "static bool eventManager (ALLEGRO_EVENT &ev)\fC [static]\fP"
+Manage events Any keys on keyboard or on mouse is pressed, boot jumps a phase\&. If display is resizing manage dependencies 
+.SS "int myBoot (ALLEGRO_DISPLAY *display)"
+Start boot anim Show author and title 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdisplay\fP display to draw 
+.RE
+.PP
+< FPS of anim
+.PP
+< in boot==TITLE, title is stopped for secsTitle seconds 
+.SH "Variable Documentation"
+.PP 
+.SS "int \fBboot\fP\fC [static]\fP"
+State of boot 
+.SS "const int \fBconfig\fP[]"
+Configs saved of game (Fullscreen,mute,score etc) 
+.SS "char DEFAULT_TTF[]"
+Theme TTF 
+.SS "const int HEIGHT"
+Actual HEIGHT of screen 
+.SS "const ALLEGRO_FONT* titleFont"
+Font of title 
+.SS "int titleY = \fBHEIGHT\fP/2\fC [static]\fP"
+height of title 
+.SS "const int WIDTH"
+Actual WIDTH of screen 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Run Cirrest, Run from the source code\&.

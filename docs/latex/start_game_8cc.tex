@@ -1,0 +1,407 @@
+\hypertarget{start_game_8cc}{\section{/home/simone/\-Developer/\-Project/eclipse/\-Run Circlest, Run/bin/start\-Game.cc File Reference}
+\label{start_game_8cc}\index{/home/simone/\-Developer/\-Project/eclipse/\-Run Circlest, Run/bin/start\-Game.\-cc@{/home/simone/\-Developer/\-Project/eclipse/\-Run Circlest, Run/bin/start\-Game.\-cc}}
+}
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$allegro5/allegro.\-h$>$}\\*
+{\ttfamily \#include $<$allegro5/allegro\-\_\-primitives.\-h$>$}\\*
+{\ttfamily \#include $<$allegro5/allegro\-\_\-font.\-h$>$}\\*
+{\ttfamily \#include $<$allegro5/allegro\-\_\-native\-\_\-dialog.\-h$>$}\\*
+{\ttfamily \#include $<$allegro5/allegro\-\_\-ttf.\-h$>$}\\*
+{\ttfamily \#include $<$allegro5/allegro\-\_\-audio.\-h$>$}\\*
+{\ttfamily \#include $<$allegro5/allegro\-\_\-acodec.\-h$>$}\\*
+{\ttfamily \#include $<$allegro5/allegro\-\_\-image.\-h$>$}\\*
+{\ttfamily \#include $<$cstring$>$}\\*
+{\ttfamily \#include \char`\"{}headers/objects.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}headers/engine.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}headers/design.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}headers/io.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{start_game_8cc_a9fd176efd6d22cb809550f0271c2a93d}{D\-B\-G}(A, B)
+\item 
+\#define \hyperlink{start_game_8cc_a330bea9b36f638349fec0d06c8ab4c38}{D1}(a)~\hyperlink{start_game_8cc_a9fd176efd6d22cb809550f0271c2a93d}{D\-B\-G}(1, a)
+\item 
+\#define \hyperlink{start_game_8cc_a975397c373ae2a9dc28d0297fa18da56}{D2}(a)~\hyperlink{start_game_8cc_a9fd176efd6d22cb809550f0271c2a93d}{D\-B\-G}(2, a)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{start_game_8cc_a826c7f577d9dc0c28a1562ad4b193b27}{sky\-Object} \{ \hyperlink{start_game_8cc_a826c7f577d9dc0c28a1562ad4b193b27a67572d1492c84d8d417b61e864f13f24}{P\-L\-A\-N\-E}, 
+\hyperlink{start_game_8cc_a826c7f577d9dc0c28a1562ad4b193b27a8557c95af3cc59c931d6d130dd2f42a4}{C\-L\-O\-U\-D}
+ \}
+\item 
+enum \hyperlink{start_game_8cc_ae28f0b8e62d0d09242b136db47ee9387}{options\-Button} \{ \\*
+\hyperlink{menu_8cc_ae28f0b8e62d0d09242b136db47ee9387a685f73194ad125cbc784c3210cdb3449}{C\-L\-O\-S\-E}, 
+\hyperlink{menu_8cc_ae28f0b8e62d0d09242b136db47ee9387a5f039f23ee85ddea038ca1ab88ca6755}{F\-U\-L\-L\-S\-C\-R\-E\-E\-N}, 
+\hyperlink{menu_8cc_ae28f0b8e62d0d09242b136db47ee9387a271edf5041b6e7d6307edccd670dc8dc}{M\-U\-T\-E}, 
+\hyperlink{menu_8cc_ae28f0b8e62d0d09242b136db47ee9387a589b7d94a3d91d145720e2fed0eb3a05}{R\-E\-S\-E\-T}, 
+\\*
+\hyperlink{start_game_8cc_ae28f0b8e62d0d09242b136db47ee9387a685f73194ad125cbc784c3210cdb3449}{C\-L\-O\-S\-E}, 
+\hyperlink{start_game_8cc_ae28f0b8e62d0d09242b136db47ee9387a271edf5041b6e7d6307edccd670dc8dc}{M\-U\-T\-E}, 
+\hyperlink{start_game_8cc_ae28f0b8e62d0d09242b136db47ee9387a7a10b5d68d31711288e1fe0fa17dbf4f}{E\-X\-I\-T}
+ \}
+\item 
+enum \hyperlink{start_game_8cc_ab0d96f9d852c2058c2546a1338e87544}{key} \{ \hyperlink{start_game_8cc_ab0d96f9d852c2058c2546a1338e87544aba595d8bca8bc5e67c37c0a9d89becfa}{U\-P}, 
+\hyperlink{start_game_8cc_ab0d96f9d852c2058c2546a1338e87544a9b0b4a95b99523966e0e34ffdadac9da}{D\-O\-W\-N}, 
+\hyperlink{start_game_8cc_ab0d96f9d852c2058c2546a1338e87544af5297152557c7da396243000ca240e89}{E\-S\-C}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{start_game_8cc_af2bc38e71244473c578e0974cde66d2b}{check\-Count\-Down} (int count\-Down)
+\item 
+static bool \hyperlink{start_game_8cc_ae2891d297ff7332877e4898ecc55aeb3}{set\-Score} (int new\-\_\-score, int \&old\-\_\-score)
+\item 
+static void \hyperlink{start_game_8cc_ac32eb2e0a26b894beea479dc5046ea41}{options\-Button\-Manage} (int button)
+\item 
+static bool \hyperlink{start_game_8cc_a5b1ed786dacc6961d31c5020e0c465f3}{event\-Manage} (A\-L\-L\-E\-G\-R\-O\-\_\-\-E\-V\-E\-N\-T \&ev)
+\item 
+static void \hyperlink{start_game_8cc_a21caf5bb8fa314d58896af235e647811}{all\-False} (bool v\mbox{[}$\,$\mbox{]}, int size)
+\item 
+static void \hyperlink{start_game_8cc_a1f2601f19ed70bd7449e6b6fca6b575e}{init\-All} (\hyperlink{struct_player}{Player} \&player, \hyperlink{struct_level}{Level} \&level, int num, \hyperlink{struct_enemy}{Enemy} \&enemy, \hyperlink{struct_flag}{Flag} \&flag)
+\item 
+void \hyperlink{start_game_8cc_a32f2ae985e18a32670f13f974250a908}{init\-Sky\-Objects\-Images} (\hyperlink{struct_images}{Images} images)
+\item 
+int \hyperlink{start_game_8cc_a439d8e2c0e7f30f4dc4251a47c1b3bb0}{start\-Game} (A\-L\-L\-E\-G\-R\-O\-\_\-\-D\-I\-S\-P\-L\-A\-Y $\ast$display, int \hyperlink{objects_8h_ad2256458892609d0533df5d72a7257ad}{config}\mbox{[}$\,$\mbox{]}, int num, int \hyperlink{menu_8cc_a261f9f58ccbeaa962c4e675e4212c9cc}{context})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \hyperlink{start_game_8cc_a9649ab8139c4c2ea5c93625b30d92a05}{W\-I\-D\-T\-H}
+\item 
+const int \hyperlink{start_game_8cc_af728b7647e0b8c49832983a31f9a2e9b}{H\-E\-I\-G\-H\-T}
+\item 
+const char \hyperlink{start_game_8cc_a8ae96d3af19b68f7a7b3899336636bcf}{file\-Score} \mbox{[}$\,$\mbox{]}
+\item 
+const char \hyperlink{start_game_8cc_a45e68afca1d760850728659b3b2d1f04}{file\-Level} \mbox{[}$\,$\mbox{]}
+\item 
+const char \hyperlink{start_game_8cc_acb27551003bb4acedaf1b6a6081d8c33}{file\-Mute} \mbox{[}$\,$\mbox{]}
+\item 
+A\-L\-L\-E\-G\-R\-O\-\_\-\-C\-O\-L\-O\-R \hyperlink{start_game_8cc_a30f55827657659560704faae3f41b589}{my\-Colors} \mbox{[}$\,$\mbox{]}
+\item 
+const char \hyperlink{start_game_8cc_ad8d9c377863d04922dfd37ced584b8ef}{D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-T\-F} \mbox{[}$\,$\mbox{]}
+\item 
+const int \hyperlink{start_game_8cc_ac4c4cd77d296f97bb82b4b8cd061eac3}{D\-E\-F\-A\-U\-L\-T\-\_\-\-Y}
+\item 
+int \hyperlink{start_game_8cc_ac8409579d46367c7eff440cf60f3a913}{config} \mbox{[}\hyperlink{objects_8h_ad2256458892609d0533df5d72a7257ada00825da7e1d11351dfbea22d6ceb93c1}{M\-U\-S\-I\-C\-O\-F\-F}\mbox{]}
+\item 
+int \hyperlink{start_game_8cc_a31762300dff836a8a0df64666ec73a11}{I\-M\-A\-G\-E\-\_\-\-S\-P\-E\-E\-D}
+\item 
+const int \hyperlink{start_game_8cc_aab93ebd4af268b40d02dfd5d233f9821}{N\-U\-M\-\_\-\-L\-E\-V\-E\-L\-S}
+\item 
+static bool \hyperlink{start_game_8cc_a1656129c4a4fd8809254194f08f0ac70}{paused}
+\item 
+static bool \hyperlink{start_game_8cc_add491d010713ee793630c031c2e9a7ce}{over}
+\item 
+static const int \hyperlink{start_game_8cc_a5eee506ffc64ebd717610daac9563df9}{N\-U\-M\-\_\-\-K\-E\-Y} = 3
+\item 
+static const int \hyperlink{start_game_8cc_adbc7a11c8075f67e811ed5e37c1857d6}{N\-U\-M\-\_\-\-S\-K\-Y\-\_\-\-O\-B\-J\-E\-C\-T\-S} = 2
+\item 
+static char \hyperlink{start_game_8cc_aa753e8526b1afc97ae4a9348d894e5fd}{sky\-Objects\-Path} \mbox{[}\hyperlink{start_game_8cc_adbc7a11c8075f67e811ed5e37c1857d6}{N\-U\-M\-\_\-\-S\-K\-Y\-\_\-\-O\-B\-J\-E\-C\-T\-S}\mbox{]}\mbox{[}50\mbox{]}
+\item 
+static bool \hyperlink{start_game_8cc_abaa48b40703524a76498da4627be6481}{K\-E\-Y} \mbox{[}\hyperlink{start_game_8cc_a5eee506ffc64ebd717610daac9563df9}{N\-U\-M\-\_\-\-K\-E\-Y}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{start_game_8cc_a330bea9b36f638349fec0d06c8ab4c38}{\index{start\-Game.\-cc@{start\-Game.\-cc}!D1@{D1}}
+\index{D1@{D1}!startGame.cc@{start\-Game.\-cc}}
+\subsubsection[{D1}]{\setlength{\rightskip}{0pt plus 5cm}\#define D1(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf D\-B\-G}(1, a)}}\label{start_game_8cc_a330bea9b36f638349fec0d06c8ab4c38}
+\hypertarget{start_game_8cc_a975397c373ae2a9dc28d0297fa18da56}{\index{start\-Game.\-cc@{start\-Game.\-cc}!D2@{D2}}
+\index{D2@{D2}!startGame.cc@{start\-Game.\-cc}}
+\subsubsection[{D2}]{\setlength{\rightskip}{0pt plus 5cm}\#define D2(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf D\-B\-G}(2, a)}}\label{start_game_8cc_a975397c373ae2a9dc28d0297fa18da56}
+\hypertarget{start_game_8cc_a9fd176efd6d22cb809550f0271c2a93d}{\index{start\-Game.\-cc@{start\-Game.\-cc}!D\-B\-G@{D\-B\-G}}
+\index{D\-B\-G@{D\-B\-G}!startGame.cc@{start\-Game.\-cc}}
+\subsubsection[{D\-B\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-B\-G(
+\begin{DoxyParamCaption}
+\item[{}]{A, }
+\item[{}]{B}
+\end{DoxyParamCaption}
+)}}\label{start_game_8cc_a9fd176efd6d22cb809550f0271c2a93d}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{start_game_8cc_ab0d96f9d852c2058c2546a1338e87544}{\index{start\-Game.\-cc@{start\-Game.\-cc}!key@{key}}
+\index{key@{key}!startGame.cc@{start\-Game.\-cc}}
+\subsubsection[{key}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf key}}}\label{start_game_8cc_ab0d96f9d852c2058c2546a1338e87544}
+Key pressed \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{U\-P@{U\-P}!start\-Game.\-cc@{start\-Game.\-cc}}\index{start\-Game.\-cc@{start\-Game.\-cc}!U\-P@{U\-P}}\item[{\em 
+\hypertarget{start_game_8cc_ab0d96f9d852c2058c2546a1338e87544aba595d8bca8bc5e67c37c0a9d89becfa}{U\-P}\label{start_game_8cc_ab0d96f9d852c2058c2546a1338e87544aba595d8bca8bc5e67c37c0a9d89becfa}
+}]U\-P key \index{D\-O\-W\-N@{D\-O\-W\-N}!start\-Game.\-cc@{start\-Game.\-cc}}\index{start\-Game.\-cc@{start\-Game.\-cc}!D\-O\-W\-N@{D\-O\-W\-N}}\item[{\em 
+\hypertarget{start_game_8cc_ab0d96f9d852c2058c2546a1338e87544a9b0b4a95b99523966e0e34ffdadac9da}{D\-O\-W\-N}\label{start_game_8cc_ab0d96f9d852c2058c2546a1338e87544a9b0b4a95b99523966e0e34ffdadac9da}
+}]D\-O\-W\-N key \index{E\-S\-C@{E\-S\-C}!start\-Game.\-cc@{start\-Game.\-cc}}\index{start\-Game.\-cc@{start\-Game.\-cc}!E\-S\-C@{E\-S\-C}}\item[{\em 
+\hypertarget{start_game_8cc_ab0d96f9d852c2058c2546a1338e87544af5297152557c7da396243000ca240e89}{E\-S\-C}\label{start_game_8cc_ab0d96f9d852c2058c2546a1338e87544af5297152557c7da396243000ca240e89}
+}]E\-S\-C\-A\-P\-E key \end{description}
+\end{Desc}
+\hypertarget{start_game_8cc_ae28f0b8e62d0d09242b136db47ee9387}{\index{start\-Game.\-cc@{start\-Game.\-cc}!options\-Button@{options\-Button}}
+\index{options\-Button@{options\-Button}!startGame.cc@{start\-Game.\-cc}}
+\subsubsection[{options\-Button}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf options\-Button}}}\label{start_game_8cc_ae28f0b8e62d0d09242b136db47ee9387}
+\hyperlink{struct_buttons}{Buttons} in dialog box \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{C\-L\-O\-S\-E@{C\-L\-O\-S\-E}!start\-Game.\-cc@{start\-Game.\-cc}}\index{start\-Game.\-cc@{start\-Game.\-cc}!C\-L\-O\-S\-E@{C\-L\-O\-S\-E}}\item[{\em 
+\hypertarget{start_game_8cc_ae28f0b8e62d0d09242b136db47ee9387a685f73194ad125cbc784c3210cdb3449}{C\-L\-O\-S\-E}\label{start_game_8cc_ae28f0b8e62d0d09242b136db47ee9387a685f73194ad125cbc784c3210cdb3449}
+}]Close dialog \index{F\-U\-L\-L\-S\-C\-R\-E\-E\-N@{F\-U\-L\-L\-S\-C\-R\-E\-E\-N}!start\-Game.\-cc@{start\-Game.\-cc}}\index{start\-Game.\-cc@{start\-Game.\-cc}!F\-U\-L\-L\-S\-C\-R\-E\-E\-N@{F\-U\-L\-L\-S\-C\-R\-E\-E\-N}}\item[{\em 
+\hypertarget{start_game_8cc_ae28f0b8e62d0d09242b136db47ee9387a5f039f23ee85ddea038ca1ab88ca6755}{F\-U\-L\-L\-S\-C\-R\-E\-E\-N}\label{start_game_8cc_ae28f0b8e62d0d09242b136db47ee9387a5f039f23ee85ddea038ca1ab88ca6755}
+}]Set Fullscreen mode \index{M\-U\-T\-E@{M\-U\-T\-E}!start\-Game.\-cc@{start\-Game.\-cc}}\index{start\-Game.\-cc@{start\-Game.\-cc}!M\-U\-T\-E@{M\-U\-T\-E}}\item[{\em 
+\hypertarget{start_game_8cc_ae28f0b8e62d0d09242b136db47ee9387a271edf5041b6e7d6307edccd670dc8dc}{M\-U\-T\-E}\label{start_game_8cc_ae28f0b8e62d0d09242b136db47ee9387a271edf5041b6e7d6307edccd670dc8dc}
+}]Set mute mode \index{R\-E\-S\-E\-T@{R\-E\-S\-E\-T}!start\-Game.\-cc@{start\-Game.\-cc}}\index{start\-Game.\-cc@{start\-Game.\-cc}!R\-E\-S\-E\-T@{R\-E\-S\-E\-T}}\item[{\em 
+\hypertarget{start_game_8cc_ae28f0b8e62d0d09242b136db47ee9387a589b7d94a3d91d145720e2fed0eb3a05}{R\-E\-S\-E\-T}\label{start_game_8cc_ae28f0b8e62d0d09242b136db47ee9387a589b7d94a3d91d145720e2fed0eb3a05}
+}]Reset level reached and best score \index{C\-L\-O\-S\-E@{C\-L\-O\-S\-E}!start\-Game.\-cc@{start\-Game.\-cc}}\index{start\-Game.\-cc@{start\-Game.\-cc}!C\-L\-O\-S\-E@{C\-L\-O\-S\-E}}\item[{\em 
+\hypertarget{start_game_8cc_ae28f0b8e62d0d09242b136db47ee9387a685f73194ad125cbc784c3210cdb3449}{C\-L\-O\-S\-E}\label{start_game_8cc_ae28f0b8e62d0d09242b136db47ee9387a685f73194ad125cbc784c3210cdb3449}
+}]Close Dialog \index{M\-U\-T\-E@{M\-U\-T\-E}!start\-Game.\-cc@{start\-Game.\-cc}}\index{start\-Game.\-cc@{start\-Game.\-cc}!M\-U\-T\-E@{M\-U\-T\-E}}\item[{\em 
+\hypertarget{start_game_8cc_ae28f0b8e62d0d09242b136db47ee9387a271edf5041b6e7d6307edccd670dc8dc}{M\-U\-T\-E}\label{start_game_8cc_ae28f0b8e62d0d09242b136db47ee9387a271edf5041b6e7d6307edccd670dc8dc}
+}]Mute Music \index{E\-X\-I\-T@{E\-X\-I\-T}!start\-Game.\-cc@{start\-Game.\-cc}}\index{start\-Game.\-cc@{start\-Game.\-cc}!E\-X\-I\-T@{E\-X\-I\-T}}\item[{\em 
+\hypertarget{start_game_8cc_ae28f0b8e62d0d09242b136db47ee9387a7a10b5d68d31711288e1fe0fa17dbf4f}{E\-X\-I\-T}\label{start_game_8cc_ae28f0b8e62d0d09242b136db47ee9387a7a10b5d68d31711288e1fe0fa17dbf4f}
+}]Exit game \end{description}
+\end{Desc}
+\hypertarget{start_game_8cc_a826c7f577d9dc0c28a1562ad4b193b27}{\index{start\-Game.\-cc@{start\-Game.\-cc}!sky\-Object@{sky\-Object}}
+\index{sky\-Object@{sky\-Object}!startGame.cc@{start\-Game.\-cc}}
+\subsubsection[{sky\-Object}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf sky\-Object}}}\label{start_game_8cc_a826c7f577d9dc0c28a1562ad4b193b27}
+Name Sky Objects \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{P\-L\-A\-N\-E@{P\-L\-A\-N\-E}!start\-Game.\-cc@{start\-Game.\-cc}}\index{start\-Game.\-cc@{start\-Game.\-cc}!P\-L\-A\-N\-E@{P\-L\-A\-N\-E}}\item[{\em 
+\hypertarget{start_game_8cc_a826c7f577d9dc0c28a1562ad4b193b27a67572d1492c84d8d417b61e864f13f24}{P\-L\-A\-N\-E}\label{start_game_8cc_a826c7f577d9dc0c28a1562ad4b193b27a67572d1492c84d8d417b61e864f13f24}
+}]Plane \index{C\-L\-O\-U\-D@{C\-L\-O\-U\-D}!start\-Game.\-cc@{start\-Game.\-cc}}\index{start\-Game.\-cc@{start\-Game.\-cc}!C\-L\-O\-U\-D@{C\-L\-O\-U\-D}}\item[{\em 
+\hypertarget{start_game_8cc_a826c7f577d9dc0c28a1562ad4b193b27a8557c95af3cc59c931d6d130dd2f42a4}{C\-L\-O\-U\-D}\label{start_game_8cc_a826c7f577d9dc0c28a1562ad4b193b27a8557c95af3cc59c931d6d130dd2f42a4}
+}]Cloud \end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{start_game_8cc_a21caf5bb8fa314d58896af235e647811}{\index{start\-Game.\-cc@{start\-Game.\-cc}!all\-False@{all\-False}}
+\index{all\-False@{all\-False}!startGame.cc@{start\-Game.\-cc}}
+\subsubsection[{all\-False}]{\setlength{\rightskip}{0pt plus 5cm}static void all\-False (
+\begin{DoxyParamCaption}
+\item[{bool}]{v\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{start_game_8cc_a21caf5bb8fa314d58896af235e647811}
+All false every record on array 
+\begin{DoxyParams}{Parameters}
+{\em v} & array \\
+\hline
+{\em size} & size of array \\
+\hline
+\end{DoxyParams}
+\hypertarget{start_game_8cc_af2bc38e71244473c578e0974cde66d2b}{\index{start\-Game.\-cc@{start\-Game.\-cc}!check\-Count\-Down@{check\-Count\-Down}}
+\index{check\-Count\-Down@{check\-Count\-Down}!startGame.cc@{start\-Game.\-cc}}
+\subsubsection[{check\-Count\-Down}]{\setlength{\rightskip}{0pt plus 5cm}bool check\-Count\-Down (
+\begin{DoxyParamCaption}
+\item[{int}]{count\-Down}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{start_game_8cc_af2bc38e71244473c578e0974cde66d2b}
+Check if count\-Down finished, so start game 
+\begin{DoxyParams}{Parameters}
+{\em count\-Down} & countdown to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if countdown finished 
+\end{DoxyReturn}
+\hypertarget{start_game_8cc_a5b1ed786dacc6961d31c5020e0c465f3}{\index{start\-Game.\-cc@{start\-Game.\-cc}!event\-Manage@{event\-Manage}}
+\index{event\-Manage@{event\-Manage}!startGame.cc@{start\-Game.\-cc}}
+\subsubsection[{event\-Manage}]{\setlength{\rightskip}{0pt plus 5cm}static bool event\-Manage (
+\begin{DoxyParamCaption}
+\item[{A\-L\-L\-E\-G\-R\-O\-\_\-\-E\-V\-E\-N\-T \&}]{ev}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{start_game_8cc_a5b1ed786dacc6961d31c5020e0c465f3}
+\hypertarget{start_game_8cc_a1f2601f19ed70bd7449e6b6fca6b575e}{\index{start\-Game.\-cc@{start\-Game.\-cc}!init\-All@{init\-All}}
+\index{init\-All@{init\-All}!startGame.cc@{start\-Game.\-cc}}
+\subsubsection[{init\-All}]{\setlength{\rightskip}{0pt plus 5cm}void init\-All (
+\begin{DoxyParamCaption}
+\item[{{\bf Player} \&}]{player, }
+\item[{{\bf Level} \&}]{level, }
+\item[{int}]{num, }
+\item[{{\bf Enemy} \&}]{enemy, }
+\item[{{\bf Flag} \&}]{flag}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{start_game_8cc_a1f2601f19ed70bd7449e6b6fca6b575e}
+Init all those objects 
+\begin{DoxyParams}{Parameters}
+{\em player} & player \\
+\hline
+{\em level} & level \\
+\hline
+{\em num} & level number (if i'm not in arcade) \\
+\hline
+{\em enemy} & enemy \\
+\hline
+{\em flag} & flag \\
+\hline
+\end{DoxyParams}
+\hypertarget{start_game_8cc_a32f2ae985e18a32670f13f974250a908}{\index{start\-Game.\-cc@{start\-Game.\-cc}!init\-Sky\-Objects\-Images@{init\-Sky\-Objects\-Images}}
+\index{init\-Sky\-Objects\-Images@{init\-Sky\-Objects\-Images}!startGame.cc@{start\-Game.\-cc}}
+\subsubsection[{init\-Sky\-Objects\-Images}]{\setlength{\rightskip}{0pt plus 5cm}void init\-Sky\-Objects\-Images (
+\begin{DoxyParamCaption}
+\item[{{\bf Images}}]{images}
+\end{DoxyParamCaption}
+)}}\label{start_game_8cc_a32f2ae985e18a32670f13f974250a908}
+Init sky images 
+\begin{DoxyParams}{Parameters}
+{\em images} & group of images \\
+\hline
+\end{DoxyParams}
+\hypertarget{start_game_8cc_ac32eb2e0a26b894beea479dc5046ea41}{\index{start\-Game.\-cc@{start\-Game.\-cc}!options\-Button\-Manage@{options\-Button\-Manage}}
+\index{options\-Button\-Manage@{options\-Button\-Manage}!startGame.cc@{start\-Game.\-cc}}
+\subsubsection[{options\-Button\-Manage}]{\setlength{\rightskip}{0pt plus 5cm}static void options\-Button\-Manage (
+\begin{DoxyParamCaption}
+\item[{int}]{button}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{start_game_8cc_ac32eb2e0a26b894beea479dc5046ea41}
+Manage dialog button 
+\begin{DoxyParams}{Parameters}
+{\em button} & button pressed \hyperlink{start_game_8cc_ae28f0b8e62d0d09242b136db47ee9387}{options\-Button} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+options\-Button enum 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{start_game_8cc_ae28f0b8e62d0d09242b136db47ee9387}{options\-Button} 
+\end{DoxySeeAlso}
+\hypertarget{start_game_8cc_ae2891d297ff7332877e4898ecc55aeb3}{\index{start\-Game.\-cc@{start\-Game.\-cc}!set\-Score@{set\-Score}}
+\index{set\-Score@{set\-Score}!startGame.cc@{start\-Game.\-cc}}
+\subsubsection[{set\-Score}]{\setlength{\rightskip}{0pt plus 5cm}bool set\-Score (
+\begin{DoxyParamCaption}
+\item[{int}]{new\-\_\-score, }
+\item[{int \&}]{old\-\_\-score}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{start_game_8cc_ae2891d297ff7332877e4898ecc55aeb3}
+Set new score if it's greater than old 
+\begin{DoxyParams}{Parameters}
+{\em new\-\_\-score} & New score done \\
+\hline
+{\em old\-\_\-score} & Actual best score \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if new\-\_\-score if greater than old 
+\end{DoxyReturn}
+\hypertarget{start_game_8cc_a439d8e2c0e7f30f4dc4251a47c1b3bb0}{\index{start\-Game.\-cc@{start\-Game.\-cc}!start\-Game@{start\-Game}}
+\index{start\-Game@{start\-Game}!startGame.cc@{start\-Game.\-cc}}
+\subsubsection[{start\-Game}]{\setlength{\rightskip}{0pt plus 5cm}int start\-Game (
+\begin{DoxyParamCaption}
+\item[{A\-L\-L\-E\-G\-R\-O\-\_\-\-D\-I\-S\-P\-L\-A\-Y $\ast$}]{display, }
+\item[{int}]{config\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{num, }
+\item[{int}]{context}
+\end{DoxyParamCaption}
+)}}\label{start_game_8cc_a439d8e2c0e7f30f4dc4251a47c1b3bb0}
+Start the real game. If I'm in arcade mode, game haven't end, when player die check if defeat best score, in case save it. If I'm in level mode, when i finish flag is created, and when it go out of screen start next level and save level reached. Going on with game, enemies' speed and probability that a enemy is create increases. 
+\begin{DoxyParams}{Parameters}
+{\em display} & display to draw \\
+\hline
+{\em config} & used for check mute,fullscreen and score \\
+\hline
+{\em num} & num of level (0 if arcade) \\
+\hline
+{\em context} & if arcade or level \hyperlink{objects_8h_a1a9f233dc4cf5918a7dbaa99574c10c6}{start\-Game\-Context} \\
+\hline
+\end{DoxyParams}
+$<$ If display need to redraw
+
+$<$ Frame for seconds
+
+$<$ Seconds of count down
+
+$<$ Every frame decrease count down so secs must be moltiplied by fps
+
+$<$ Background music file
+
+$<$ Count down bip music file
+
+$<$ \hyperlink{struct_player}{Player} (Hero) \begin{DoxySeeAlso}{See Also}
+\hyperlink{struct_player}{Player}
+\end{DoxySeeAlso}
+$<$ \hyperlink{struct_enemy}{Enemy} (obstacle) \begin{DoxySeeAlso}{See Also}
+\hyperlink{struct_enemy}{Enemy}
+\end{DoxySeeAlso}
+$<$ \hyperlink{struct_level}{Level} \begin{DoxySeeAlso}{See Also}
+\hyperlink{struct_level}{Level}
+\end{DoxySeeAlso}
+$<$ Victory flag \begin{DoxySeeAlso}{See Also}
+\hyperlink{struct_flag}{Flag}
+\end{DoxySeeAlso}
+$<$ Group of sky images \begin{DoxySeeAlso}{See Also}
+\hyperlink{struct_images}{Images}
+\end{DoxySeeAlso}
+$<$ Background image \begin{DoxySeeAlso}{See Also}
+\hyperlink{struct_image}{Image} 
+\end{DoxySeeAlso}
+
+
+\subsection{Variable Documentation}
+\hypertarget{start_game_8cc_ac8409579d46367c7eff440cf60f3a913}{\index{start\-Game.\-cc@{start\-Game.\-cc}!config@{config}}
+\index{config@{config}!startGame.cc@{start\-Game.\-cc}}
+\subsubsection[{config}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf config}\mbox{[}{\bf M\-U\-S\-I\-C\-O\-F\-F}\mbox{]}}}\label{start_game_8cc_ac8409579d46367c7eff440cf60f3a913}
+Configs saved of game (Fullscreen,mute,score etc) \hypertarget{start_game_8cc_ad8d9c377863d04922dfd37ced584b8ef}{\index{start\-Game.\-cc@{start\-Game.\-cc}!D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-T\-F@{D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-T\-F}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-T\-F@{D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-T\-F}!startGame.cc@{start\-Game.\-cc}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-T\-F}]{\setlength{\rightskip}{0pt plus 5cm}const char D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-T\-F\mbox{[}$\,$\mbox{]}}}\label{start_game_8cc_ad8d9c377863d04922dfd37ced584b8ef}
+Theme T\-T\-F \hypertarget{start_game_8cc_ac4c4cd77d296f97bb82b4b8cd061eac3}{\index{start\-Game.\-cc@{start\-Game.\-cc}!D\-E\-F\-A\-U\-L\-T\-\_\-\-Y@{D\-E\-F\-A\-U\-L\-T\-\_\-\-Y}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-Y@{D\-E\-F\-A\-U\-L\-T\-\_\-\-Y}!startGame.cc@{start\-Game.\-cc}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-Y}]{\setlength{\rightskip}{0pt plus 5cm}const int D\-E\-F\-A\-U\-L\-T\-\_\-\-Y}}\label{start_game_8cc_ac4c4cd77d296f97bb82b4b8cd061eac3}
+Default height of floor \hypertarget{start_game_8cc_a45e68afca1d760850728659b3b2d1f04}{\index{start\-Game.\-cc@{start\-Game.\-cc}!file\-Level@{file\-Level}}
+\index{file\-Level@{file\-Level}!startGame.cc@{start\-Game.\-cc}}
+\subsubsection[{file\-Level}]{\setlength{\rightskip}{0pt plus 5cm}const char file\-Level\mbox{[}$\,$\mbox{]}}}\label{start_game_8cc_a45e68afca1d760850728659b3b2d1f04}
+File to save level reached \hypertarget{start_game_8cc_acb27551003bb4acedaf1b6a6081d8c33}{\index{start\-Game.\-cc@{start\-Game.\-cc}!file\-Mute@{file\-Mute}}
+\index{file\-Mute@{file\-Mute}!startGame.cc@{start\-Game.\-cc}}
+\subsubsection[{file\-Mute}]{\setlength{\rightskip}{0pt plus 5cm}const char file\-Mute\mbox{[}$\,$\mbox{]}}}\label{start_game_8cc_acb27551003bb4acedaf1b6a6081d8c33}
+File to save if mute or not \hypertarget{start_game_8cc_a8ae96d3af19b68f7a7b3899336636bcf}{\index{start\-Game.\-cc@{start\-Game.\-cc}!file\-Score@{file\-Score}}
+\index{file\-Score@{file\-Score}!startGame.cc@{start\-Game.\-cc}}
+\subsubsection[{file\-Score}]{\setlength{\rightskip}{0pt plus 5cm}const char file\-Score\mbox{[}$\,$\mbox{]}}}\label{start_game_8cc_a8ae96d3af19b68f7a7b3899336636bcf}
+File to save best score \hypertarget{start_game_8cc_af728b7647e0b8c49832983a31f9a2e9b}{\index{start\-Game.\-cc@{start\-Game.\-cc}!H\-E\-I\-G\-H\-T@{H\-E\-I\-G\-H\-T}}
+\index{H\-E\-I\-G\-H\-T@{H\-E\-I\-G\-H\-T}!startGame.cc@{start\-Game.\-cc}}
+\subsubsection[{H\-E\-I\-G\-H\-T}]{\setlength{\rightskip}{0pt plus 5cm}const int H\-E\-I\-G\-H\-T}}\label{start_game_8cc_af728b7647e0b8c49832983a31f9a2e9b}
+Actual H\-E\-I\-G\-H\-T of screen \hypertarget{start_game_8cc_a31762300dff836a8a0df64666ec73a11}{\index{start\-Game.\-cc@{start\-Game.\-cc}!I\-M\-A\-G\-E\-\_\-\-S\-P\-E\-E\-D@{I\-M\-A\-G\-E\-\_\-\-S\-P\-E\-E\-D}}
+\index{I\-M\-A\-G\-E\-\_\-\-S\-P\-E\-E\-D@{I\-M\-A\-G\-E\-\_\-\-S\-P\-E\-E\-D}!startGame.cc@{start\-Game.\-cc}}
+\subsubsection[{I\-M\-A\-G\-E\-\_\-\-S\-P\-E\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}int I\-M\-A\-G\-E\-\_\-\-S\-P\-E\-E\-D}}\label{start_game_8cc_a31762300dff836a8a0df64666ec73a11}
+\hyperlink{struct_image}{Image} speed, it rises as enemy speed \hypertarget{start_game_8cc_abaa48b40703524a76498da4627be6481}{\index{start\-Game.\-cc@{start\-Game.\-cc}!K\-E\-Y@{K\-E\-Y}}
+\index{K\-E\-Y@{K\-E\-Y}!startGame.cc@{start\-Game.\-cc}}
+\subsubsection[{K\-E\-Y}]{\setlength{\rightskip}{0pt plus 5cm}bool K\-E\-Y\mbox{[}{\bf N\-U\-M\-\_\-\-K\-E\-Y}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{start_game_8cc_abaa48b40703524a76498da4627be6481}
+What key pressed \hypertarget{start_game_8cc_a30f55827657659560704faae3f41b589}{\index{start\-Game.\-cc@{start\-Game.\-cc}!my\-Colors@{my\-Colors}}
+\index{my\-Colors@{my\-Colors}!startGame.cc@{start\-Game.\-cc}}
+\subsubsection[{my\-Colors}]{\setlength{\rightskip}{0pt plus 5cm}A\-L\-L\-E\-G\-R\-O\-\_\-\-C\-O\-L\-O\-R my\-Colors\mbox{[}$\,$\mbox{]}}}\label{start_game_8cc_a30f55827657659560704faae3f41b589}
+My Colors \begin{DoxySeeAlso}{See Also}
+\hyperlink{objects_8h_aedd64c3f92da850b93776c65fd1cced3}{colors} 
+\end{DoxySeeAlso}
+\hypertarget{start_game_8cc_a5eee506ffc64ebd717610daac9563df9}{\index{start\-Game.\-cc@{start\-Game.\-cc}!N\-U\-M\-\_\-\-K\-E\-Y@{N\-U\-M\-\_\-\-K\-E\-Y}}
+\index{N\-U\-M\-\_\-\-K\-E\-Y@{N\-U\-M\-\_\-\-K\-E\-Y}!startGame.cc@{start\-Game.\-cc}}
+\subsubsection[{N\-U\-M\-\_\-\-K\-E\-Y}]{\setlength{\rightskip}{0pt plus 5cm}const int N\-U\-M\-\_\-\-K\-E\-Y = 3\hspace{0.3cm}{\ttfamily [static]}}}\label{start_game_8cc_a5eee506ffc64ebd717610daac9563df9}
+Number of key on keyboard that do something when pressed \hypertarget{start_game_8cc_aab93ebd4af268b40d02dfd5d233f9821}{\index{start\-Game.\-cc@{start\-Game.\-cc}!N\-U\-M\-\_\-\-L\-E\-V\-E\-L\-S@{N\-U\-M\-\_\-\-L\-E\-V\-E\-L\-S}}
+\index{N\-U\-M\-\_\-\-L\-E\-V\-E\-L\-S@{N\-U\-M\-\_\-\-L\-E\-V\-E\-L\-S}!startGame.cc@{start\-Game.\-cc}}
+\subsubsection[{N\-U\-M\-\_\-\-L\-E\-V\-E\-L\-S}]{\setlength{\rightskip}{0pt plus 5cm}const int N\-U\-M\-\_\-\-L\-E\-V\-E\-L\-S}}\label{start_game_8cc_aab93ebd4af268b40d02dfd5d233f9821}
+Number of levels \hypertarget{start_game_8cc_adbc7a11c8075f67e811ed5e37c1857d6}{\index{start\-Game.\-cc@{start\-Game.\-cc}!N\-U\-M\-\_\-\-S\-K\-Y\-\_\-\-O\-B\-J\-E\-C\-T\-S@{N\-U\-M\-\_\-\-S\-K\-Y\-\_\-\-O\-B\-J\-E\-C\-T\-S}}
+\index{N\-U\-M\-\_\-\-S\-K\-Y\-\_\-\-O\-B\-J\-E\-C\-T\-S@{N\-U\-M\-\_\-\-S\-K\-Y\-\_\-\-O\-B\-J\-E\-C\-T\-S}!startGame.cc@{start\-Game.\-cc}}
+\subsubsection[{N\-U\-M\-\_\-\-S\-K\-Y\-\_\-\-O\-B\-J\-E\-C\-T\-S}]{\setlength{\rightskip}{0pt plus 5cm}const int N\-U\-M\-\_\-\-S\-K\-Y\-\_\-\-O\-B\-J\-E\-C\-T\-S = 2\hspace{0.3cm}{\ttfamily [static]}}}\label{start_game_8cc_adbc7a11c8075f67e811ed5e37c1857d6}
+Number of sky images Path of images for draw sky objects \hypertarget{start_game_8cc_add491d010713ee793630c031c2e9a7ce}{\index{start\-Game.\-cc@{start\-Game.\-cc}!over@{over}}
+\index{over@{over}!startGame.cc@{start\-Game.\-cc}}
+\subsubsection[{over}]{\setlength{\rightskip}{0pt plus 5cm}bool over\hspace{0.3cm}{\ttfamily [static]}}}\label{start_game_8cc_add491d010713ee793630c031c2e9a7ce}
+Check end of game, so return to menu \hypertarget{start_game_8cc_a1656129c4a4fd8809254194f08f0ac70}{\index{start\-Game.\-cc@{start\-Game.\-cc}!paused@{paused}}
+\index{paused@{paused}!startGame.cc@{start\-Game.\-cc}}
+\subsubsection[{paused}]{\setlength{\rightskip}{0pt plus 5cm}bool paused\hspace{0.3cm}{\ttfamily [static]}}}\label{start_game_8cc_a1656129c4a4fd8809254194f08f0ac70}
+If game paused \hypertarget{start_game_8cc_aa753e8526b1afc97ae4a9348d894e5fd}{\index{start\-Game.\-cc@{start\-Game.\-cc}!sky\-Objects\-Path@{sky\-Objects\-Path}}
+\index{sky\-Objects\-Path@{sky\-Objects\-Path}!startGame.cc@{start\-Game.\-cc}}
+\subsubsection[{sky\-Objects\-Path}]{\setlength{\rightskip}{0pt plus 5cm}char sky\-Objects\-Path\mbox{[}{\bf N\-U\-M\-\_\-\-S\-K\-Y\-\_\-\-O\-B\-J\-E\-C\-T\-S}\mbox{]}\mbox{[}50\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{start_game_8cc_aa753e8526b1afc97ae4a9348d894e5fd}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+        \{\textcolor{stringliteral}{"../res/img/skyObjects/plane.png"},\textcolor{stringliteral}{"../res/img/skyObjects/cloud.png"}\}
+\end{DoxyCode}
+\hypertarget{start_game_8cc_a9649ab8139c4c2ea5c93625b30d92a05}{\index{start\-Game.\-cc@{start\-Game.\-cc}!W\-I\-D\-T\-H@{W\-I\-D\-T\-H}}
+\index{W\-I\-D\-T\-H@{W\-I\-D\-T\-H}!startGame.cc@{start\-Game.\-cc}}
+\subsubsection[{W\-I\-D\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}const int W\-I\-D\-T\-H}}\label{start_game_8cc_a9649ab8139c4c2ea5c93625b30d92a05}
+Actual W\-I\-D\-T\-H of screen 

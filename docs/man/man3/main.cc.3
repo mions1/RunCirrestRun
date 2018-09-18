@@ -1,0 +1,207 @@
+.TH "/home/simone/Developer/Project/eclipse/Run Circlest, Run/bin/main.cc" 3 "Mon Oct 12 2015" "Run Cirrest, Run" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/simone/Developer/Project/eclipse/Run Circlest, Run/bin/main.cc \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <iostream>\fP
+.br
+\fC#include <allegro5/allegro\&.h>\fP
+.br
+\fC#include <allegro5/allegro_primitives\&.h>\fP
+.br
+\fC#include <allegro5/allegro_font\&.h>\fP
+.br
+\fC#include <allegro5/allegro_ttf\&.h>\fP
+.br
+\fC#include <allegro5/allegro_native_dialog\&.h>\fP
+.br
+\fC#include <allegro5/allegro_image\&.h>\fP
+.br
+\fC#include <cstdlib>\fP
+.br
+\fC#include <cstdio>\fP
+.br
+\fC#include 'headers/objects\&.h'\fP
+.br
+\fC#include 'headers/io\&.h'\fP
+.br
+\fC#include 'headers/engine\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBDBG\fP(A, B)"
+.br
+.ti -1c
+.RI "#define \fBD1\fP(a)   \fBDBG\fP(1, a)"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBmyBoot\fP (ALLEGRO_DISPLAY *display)"
+.br
+.ti -1c
+.RI "int \fBmenu\fP (ALLEGRO_DISPLAY *display)"
+.br
+.ti -1c
+.RI "int \fBmain\fP ()"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "int \fBconfig\fP [4]"
+.br
+.ti -1c
+.RI "ALLEGRO_FONT * \fBtitleFont\fP"
+.br
+.ti -1c
+.RI "int \fBWIDTH\fP = 780"
+.br
+.ti -1c
+.RI "int \fBHEIGHT\fP = 480"
+.br
+.ti -1c
+.RI "char \fBfileScore\fP [] = '\&.\&./res/\fBconfig\fP/score\&.dat'"
+.br
+.ti -1c
+.RI "char \fBfileLevel\fP [] = '\&.\&./res/\fBconfig\fP/level\&.dat'"
+.br
+.ti -1c
+.RI "char \fBfileMute\fP [] = '\&.\&./res/\fBconfig\fP/mute\&.dat'"
+.br
+.ti -1c
+.RI "char \fBfileFullScreen\fP [] = '\&.\&./res/\fBconfig\fP/fullscreen\&.dat'"
+.br
+.ti -1c
+.RI "char \fBDEFAULT_TTF\fP [] = '\&.\&./res/font/arial\&.ttf'"
+.br
+.ti -1c
+.RI "char \fBTITLE_TTF\fP [] = '\&.\&./res/font/chambre\&.ttf'"
+.br
+.ti -1c
+.RI "ALLEGRO_COLOR \fBmyColors\fP [8]"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define D1(a)   \fBDBG\fP(1, a)"
+
+.SS "#define DBG(A, B)"
+
+.SH "Function Documentation"
+.PP 
+.SS "int main ()"
+Main do: load all configs from files,creates display, creates colors,creates titlefont, start boot and then start menu 
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBmyBoot()\fP 
+.PP
+\fBmenu()\fP 
+.RE
+.PP
+
+.SS "int menu (ALLEGRO_DISPLAY *display)"
+Declared in \fBmenu\&.cc\fP
+.PP
+Start menu, show menu buttons and levels button and allow to manage resize and start new game\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdisplay\fP display to draw 
+.RE
+.PP
+< Checks main cycle
+.PP
+< Checks if display need to redraw
+.PP
+< X Position of menu buttons
+.PP
+< Y Position of menu buttons
+.PP
+< X Position of mouse
+.PP
+< Y Position of mouse
+.PP
+< Group of menu buttons 
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBButtons\fP 
+.PP
+\fBButton\fP
+.RE
+.PP
+< Group of level selection buttons 
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBButtons\fP 
+.PP
+\fBButton\fP
+.RE
+.PP
+< What's event happened 
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBeventType\fP 
+.RE
+.PP
+
+.SS "int myBoot (ALLEGRO_DISPLAY *display)"
+Declared in \fBanim\&.cc\fP
+.PP
+Start boot anim Show author and title 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdisplay\fP display to draw 
+.RE
+.PP
+< FPS of anim
+.PP
+< in boot==TITLE, title is stopped for secsTitle seconds 
+.SH "Variable Documentation"
+.PP 
+.SS "int \fBconfig\fP[4]"
+Configs saved of game (Fullscreen,mute,score etc) 
+.SS "char DEFAULT_TTF[] = '\&.\&./res/font/arial\&.ttf'"
+Theme TTF 
+.SS "char fileFullScreen[] = '\&.\&./res/\fBconfig\fP/fullscreen\&.dat'"
+File to save if fullscreen or not 
+.SS "char fileLevel[] = '\&.\&./res/\fBconfig\fP/level\&.dat'"
+File to save level reached 
+.SS "char fileMute[] = '\&.\&./res/\fBconfig\fP/mute\&.dat'"
+File to save if mute or not 
+.SS "char fileScore[] = '\&.\&./res/\fBconfig\fP/score\&.dat'"
+File to save best score 
+.SS "int HEIGHT = 480"
+Actual HEIGHT of screen 
+.SS "ALLEGRO_COLOR myColors[8]"
+My Colors 
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBcolors\fP 
+.RE
+.PP
+
+.SS "char TITLE_TTF[] = '\&.\&./res/font/chambre\&.ttf'"
+Title TTF 
+.SS "ALLEGRO_FONT* titleFont"
+Font of title 
+.SS "int WIDTH = 780"
+Actual WIDTH of screen 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Run Cirrest, Run from the source code\&.

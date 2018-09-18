@@ -1,0 +1,148 @@
+\hypertarget{anim_8cc}{\section{/home/simone/\-Developer/\-Project/eclipse/\-Run Circlest, Run/bin/anim.cc File Reference}
+\label{anim_8cc}\index{/home/simone/\-Developer/\-Project/eclipse/\-Run Circlest, Run/bin/anim.\-cc@{/home/simone/\-Developer/\-Project/eclipse/\-Run Circlest, Run/bin/anim.\-cc}}
+}
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$allegro5/allegro.\-h$>$}\\*
+{\ttfamily \#include $<$allegro5/allegro\-\_\-primitives.\-h$>$}\\*
+{\ttfamily \#include $<$allegro5/allegro\-\_\-font.\-h$>$}\\*
+{\ttfamily \#include $<$allegro5/allegro\-\_\-ttf.\-h$>$}\\*
+{\ttfamily \#include $<$allegro5/allegro\-\_\-audio.\-h$>$}\\*
+{\ttfamily \#include $<$allegro5/allegro\-\_\-acodec.\-h$>$}\\*
+{\ttfamily \#include $<$cstring$>$}\\*
+{\ttfamily \#include \char`\"{}headers/objects.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}headers/engine.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{anim_8cc_a9fd176efd6d22cb809550f0271c2a93d}{D\-B\-G}(A, B)
+\item 
+\#define \hyperlink{anim_8cc_a330bea9b36f638349fec0d06c8ab4c38}{D1}(a)~\hyperlink{start_game_8cc_a9fd176efd6d22cb809550f0271c2a93d}{D\-B\-G}(1, a)
+\item 
+\#define \hyperlink{anim_8cc_a975397c373ae2a9dc28d0297fa18da56}{D2}(a)~\hyperlink{start_game_8cc_a9fd176efd6d22cb809550f0271c2a93d}{D\-B\-G}(2, a)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{anim_8cc_a043fd06eac885bf9b09c495972c6bc67}{boot} \{ \hyperlink{anim_8cc_a043fd06eac885bf9b09c495972c6bc67ab553ee1b1833933c28f92bc312d1d621}{P\-R\-E\-S\-E\-N\-T\-S}, 
+\hyperlink{anim_8cc_a043fd06eac885bf9b09c495972c6bc67a0a041e18d712f7b239eac5375daf4a05}{T\-I\-T\-L\-E}, 
+\hyperlink{anim_8cc_a043fd06eac885bf9b09c495972c6bc67adc6f24fd6915a3f2786a1b7045406924}{E\-N\-D}, 
+\hyperlink{anim_8cc_a043fd06eac885bf9b09c495972c6bc67a8b9af67858708d770f017e4aae85900d}{F\-I\-N\-I\-S\-H}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{anim_8cc_a526497eb3db7ea28441678c035989920}{event\-Manager} (A\-L\-L\-E\-G\-R\-O\-\_\-\-E\-V\-E\-N\-T \&ev)
+\item 
+int \hyperlink{anim_8cc_a5879e81a1d38a3a6293a30ca1956abe5}{my\-Boot} (A\-L\-L\-E\-G\-R\-O\-\_\-\-D\-I\-S\-P\-L\-A\-Y $\ast$display)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \hyperlink{anim_8cc_a3c01016c5dfddc67aa548b9b1d64e4ca}{config} \mbox{[}$\,$\mbox{]}
+\item 
+const int \hyperlink{anim_8cc_a9649ab8139c4c2ea5c93625b30d92a05}{W\-I\-D\-T\-H}
+\item 
+const int \hyperlink{anim_8cc_af728b7647e0b8c49832983a31f9a2e9b}{H\-E\-I\-G\-H\-T}
+\item 
+char \hyperlink{anim_8cc_a3a94d2649cda5cda8433d89386d62ace}{D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-T\-F} \mbox{[}$\,$\mbox{]}
+\item 
+const A\-L\-L\-E\-G\-R\-O\-\_\-\-F\-O\-N\-T $\ast$ \hyperlink{anim_8cc_a3d48197a5b3d27315aa8aace35bc5f87}{title\-Font}
+\item 
+static int \hyperlink{anim_8cc_adecb6f59f6dc67f46030068c58001e9a}{title\-Y} = \hyperlink{start_game_8cc_af728b7647e0b8c49832983a31f9a2e9b}{H\-E\-I\-G\-H\-T}/2
+\item 
+static int \hyperlink{anim_8cc_a2ff60d1af738e4529f799025e6a668c0}{boot}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{anim_8cc_a330bea9b36f638349fec0d06c8ab4c38}{\index{anim.\-cc@{anim.\-cc}!D1@{D1}}
+\index{D1@{D1}!anim.cc@{anim.\-cc}}
+\subsubsection[{D1}]{\setlength{\rightskip}{0pt plus 5cm}\#define D1(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf D\-B\-G}(1, a)}}\label{anim_8cc_a330bea9b36f638349fec0d06c8ab4c38}
+\hypertarget{anim_8cc_a975397c373ae2a9dc28d0297fa18da56}{\index{anim.\-cc@{anim.\-cc}!D2@{D2}}
+\index{D2@{D2}!anim.cc@{anim.\-cc}}
+\subsubsection[{D2}]{\setlength{\rightskip}{0pt plus 5cm}\#define D2(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~{\bf D\-B\-G}(2, a)}}\label{anim_8cc_a975397c373ae2a9dc28d0297fa18da56}
+\hypertarget{anim_8cc_a9fd176efd6d22cb809550f0271c2a93d}{\index{anim.\-cc@{anim.\-cc}!D\-B\-G@{D\-B\-G}}
+\index{D\-B\-G@{D\-B\-G}!anim.cc@{anim.\-cc}}
+\subsubsection[{D\-B\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-B\-G(
+\begin{DoxyParamCaption}
+\item[{}]{A, }
+\item[{}]{B}
+\end{DoxyParamCaption}
+)}}\label{anim_8cc_a9fd176efd6d22cb809550f0271c2a93d}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{anim_8cc_a043fd06eac885bf9b09c495972c6bc67}{\index{anim.\-cc@{anim.\-cc}!boot@{boot}}
+\index{boot@{boot}!anim.cc@{anim.\-cc}}
+\subsubsection[{boot}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf boot}}}\label{anim_8cc_a043fd06eac885bf9b09c495972c6bc67}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{P\-R\-E\-S\-E\-N\-T\-S@{P\-R\-E\-S\-E\-N\-T\-S}!anim.\-cc@{anim.\-cc}}\index{anim.\-cc@{anim.\-cc}!P\-R\-E\-S\-E\-N\-T\-S@{P\-R\-E\-S\-E\-N\-T\-S}}\item[{\em 
+\hypertarget{anim_8cc_a043fd06eac885bf9b09c495972c6bc67ab553ee1b1833933c28f92bc312d1d621}{P\-R\-E\-S\-E\-N\-T\-S}\label{anim_8cc_a043fd06eac885bf9b09c495972c6bc67ab553ee1b1833933c28f92bc312d1d621}
+}]\index{T\-I\-T\-L\-E@{T\-I\-T\-L\-E}!anim.\-cc@{anim.\-cc}}\index{anim.\-cc@{anim.\-cc}!T\-I\-T\-L\-E@{T\-I\-T\-L\-E}}\item[{\em 
+\hypertarget{anim_8cc_a043fd06eac885bf9b09c495972c6bc67a0a041e18d712f7b239eac5375daf4a05}{T\-I\-T\-L\-E}\label{anim_8cc_a043fd06eac885bf9b09c495972c6bc67a0a041e18d712f7b239eac5375daf4a05}
+}]\index{E\-N\-D@{E\-N\-D}!anim.\-cc@{anim.\-cc}}\index{anim.\-cc@{anim.\-cc}!E\-N\-D@{E\-N\-D}}\item[{\em 
+\hypertarget{anim_8cc_a043fd06eac885bf9b09c495972c6bc67adc6f24fd6915a3f2786a1b7045406924}{E\-N\-D}\label{anim_8cc_a043fd06eac885bf9b09c495972c6bc67adc6f24fd6915a3f2786a1b7045406924}
+}]\index{F\-I\-N\-I\-S\-H@{F\-I\-N\-I\-S\-H}!anim.\-cc@{anim.\-cc}}\index{anim.\-cc@{anim.\-cc}!F\-I\-N\-I\-S\-H@{F\-I\-N\-I\-S\-H}}\item[{\em 
+\hypertarget{anim_8cc_a043fd06eac885bf9b09c495972c6bc67a8b9af67858708d770f017e4aae85900d}{F\-I\-N\-I\-S\-H}\label{anim_8cc_a043fd06eac885bf9b09c495972c6bc67a8b9af67858708d770f017e4aae85900d}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{anim_8cc_a526497eb3db7ea28441678c035989920}{\index{anim.\-cc@{anim.\-cc}!event\-Manager@{event\-Manager}}
+\index{event\-Manager@{event\-Manager}!anim.cc@{anim.\-cc}}
+\subsubsection[{event\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}static bool event\-Manager (
+\begin{DoxyParamCaption}
+\item[{A\-L\-L\-E\-G\-R\-O\-\_\-\-E\-V\-E\-N\-T \&}]{ev}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{anim_8cc_a526497eb3db7ea28441678c035989920}
+Manage events Any keys on keyboard or on mouse is pressed, boot jumps a phase. If display is resizing manage dependencies \hypertarget{anim_8cc_a5879e81a1d38a3a6293a30ca1956abe5}{\index{anim.\-cc@{anim.\-cc}!my\-Boot@{my\-Boot}}
+\index{my\-Boot@{my\-Boot}!anim.cc@{anim.\-cc}}
+\subsubsection[{my\-Boot}]{\setlength{\rightskip}{0pt plus 5cm}int my\-Boot (
+\begin{DoxyParamCaption}
+\item[{A\-L\-L\-E\-G\-R\-O\-\_\-\-D\-I\-S\-P\-L\-A\-Y $\ast$}]{display}
+\end{DoxyParamCaption}
+)}}\label{anim_8cc_a5879e81a1d38a3a6293a30ca1956abe5}
+Start boot anim Show author and title 
+\begin{DoxyParams}{Parameters}
+{\em display} & display to draw \\
+\hline
+\end{DoxyParams}
+$<$ F\-P\-S of anim
+
+$<$ in boot==T\-I\-T\-L\-E, title is stopped for secs\-Title seconds 
+
+\subsection{Variable Documentation}
+\hypertarget{anim_8cc_a2ff60d1af738e4529f799025e6a668c0}{\index{anim.\-cc@{anim.\-cc}!boot@{boot}}
+\index{boot@{boot}!anim.cc@{anim.\-cc}}
+\subsubsection[{boot}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf boot}\hspace{0.3cm}{\ttfamily [static]}}}\label{anim_8cc_a2ff60d1af738e4529f799025e6a668c0}
+State of boot \hypertarget{anim_8cc_a3c01016c5dfddc67aa548b9b1d64e4ca}{\index{anim.\-cc@{anim.\-cc}!config@{config}}
+\index{config@{config}!anim.cc@{anim.\-cc}}
+\subsubsection[{config}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf config}\mbox{[}$\,$\mbox{]}}}\label{anim_8cc_a3c01016c5dfddc67aa548b9b1d64e4ca}
+Configs saved of game (Fullscreen,mute,score etc) \hypertarget{anim_8cc_a3a94d2649cda5cda8433d89386d62ace}{\index{anim.\-cc@{anim.\-cc}!D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-T\-F@{D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-T\-F}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-T\-F@{D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-T\-F}!anim.cc@{anim.\-cc}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-T\-F}]{\setlength{\rightskip}{0pt plus 5cm}char D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-T\-F\mbox{[}$\,$\mbox{]}}}\label{anim_8cc_a3a94d2649cda5cda8433d89386d62ace}
+Theme T\-T\-F \hypertarget{anim_8cc_af728b7647e0b8c49832983a31f9a2e9b}{\index{anim.\-cc@{anim.\-cc}!H\-E\-I\-G\-H\-T@{H\-E\-I\-G\-H\-T}}
+\index{H\-E\-I\-G\-H\-T@{H\-E\-I\-G\-H\-T}!anim.cc@{anim.\-cc}}
+\subsubsection[{H\-E\-I\-G\-H\-T}]{\setlength{\rightskip}{0pt plus 5cm}const int H\-E\-I\-G\-H\-T}}\label{anim_8cc_af728b7647e0b8c49832983a31f9a2e9b}
+Actual H\-E\-I\-G\-H\-T of screen \hypertarget{anim_8cc_a3d48197a5b3d27315aa8aace35bc5f87}{\index{anim.\-cc@{anim.\-cc}!title\-Font@{title\-Font}}
+\index{title\-Font@{title\-Font}!anim.cc@{anim.\-cc}}
+\subsubsection[{title\-Font}]{\setlength{\rightskip}{0pt plus 5cm}const A\-L\-L\-E\-G\-R\-O\-\_\-\-F\-O\-N\-T$\ast$ title\-Font}}\label{anim_8cc_a3d48197a5b3d27315aa8aace35bc5f87}
+Font of title \hypertarget{anim_8cc_adecb6f59f6dc67f46030068c58001e9a}{\index{anim.\-cc@{anim.\-cc}!title\-Y@{title\-Y}}
+\index{title\-Y@{title\-Y}!anim.cc@{anim.\-cc}}
+\subsubsection[{title\-Y}]{\setlength{\rightskip}{0pt plus 5cm}int title\-Y = {\bf H\-E\-I\-G\-H\-T}/2\hspace{0.3cm}{\ttfamily [static]}}}\label{anim_8cc_adecb6f59f6dc67f46030068c58001e9a}
+height of title \hypertarget{anim_8cc_a9649ab8139c4c2ea5c93625b30d92a05}{\index{anim.\-cc@{anim.\-cc}!W\-I\-D\-T\-H@{W\-I\-D\-T\-H}}
+\index{W\-I\-D\-T\-H@{W\-I\-D\-T\-H}!anim.cc@{anim.\-cc}}
+\subsubsection[{W\-I\-D\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}const int W\-I\-D\-T\-H}}\label{anim_8cc_a9649ab8139c4c2ea5c93625b30d92a05}
+Actual W\-I\-D\-T\-H of screen 

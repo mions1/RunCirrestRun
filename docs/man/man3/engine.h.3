@@ -1,0 +1,448 @@
+.TH "/home/simone/Developer/Project/eclipse/Run Circlest, Run/bin/headers/engine.h" 3 "Mon Oct 12 2015" "Run Cirrest, Run" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/simone/Developer/Project/eclipse/Run Circlest, Run/bin/headers/engine.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <allegro5/allegro\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBInitDefaultPlayer\fP (\fBPlayer\fP &player)"
+.br
+.ti -1c
+.RI "void \fBInitDefaultEnemy\fP (\fBEnemy\fP &enemy)"
+.br
+.ti -1c
+.RI "void \fBInitDefaultLevel\fP (\fBLevel\fP &level, int nlevel)"
+.br
+.ti -1c
+.RI "void \fBInitDefaultFlag\fP (\fBFlag\fP &flag)"
+.br
+.ti -1c
+.RI "void \fBsetImage\fP (\fBImage\fP &image, char *text, int x, int y, int y_displacement, int width, int height, int speed, bool isShow)"
+.br
+.ti -1c
+.RI "void \fBsetButton\fP (\fBButton\fP &button, int x, int y, int x2, int y2, char *text, ALLEGRO_FONT *font, int textColor, int buttonColor)"
+.br
+.ti -1c
+.RI "void \fBupdateEnvironment\fP (\fBLevel\fP &level)"
+.br
+.ti -1c
+.RI "void \fBupdatePlayer\fP (\fBPlayer\fP &player)"
+.br
+.ti -1c
+.RI "void \fBupdateFlag\fP (\fBFlag\fP &flag)"
+.br
+.ti -1c
+.RI "void \fBupdateImage\fP (\fBImages\fP images)"
+.br
+.ti -1c
+.RI "void \fBupdatePoint\fP (\fBPlayer\fP &player)"
+.br
+.ti -1c
+.RI "void \fBupdateBackground\fP (\fBImage\fP &image)"
+.br
+.ti -1c
+.RI "void \fBresizeDisplay\fP (int width, int height)"
+.br
+.ti -1c
+.RI "void \fBdrawPlayer\fP (\fBPlayer\fP &player)"
+.br
+.ti -1c
+.RI "void \fBdrawEnemy\fP (\fBLevel\fP &level)"
+.br
+.ti -1c
+.RI "void \fBdrawBackground\fP (\fBImage\fP image)"
+.br
+.ti -1c
+.RI "void \fBdrawImage\fP (\fBImages\fP &images)"
+.br
+.ti -1c
+.RI "void \fBdrawFlag\fP (\fBFlag\fP &flag)"
+.br
+.ti -1c
+.RI "void \fBcreateEnemy\fP (\fBLevel\fP &level)"
+.br
+.ti -1c
+.RI "void \fBcreateImage\fP (\fBImages\fP &images)"
+.br
+.ti -1c
+.RI "ALLEGRO_BITMAP * \fBloadBitmap\fP (const char *filename, int width, int height)"
+.br
+.ti -1c
+.RI "bool \fBoutOfBoundEnemy\fP (\fBLevel\fP &level)"
+.br
+.ti -1c
+.RI "bool \fBoutOfBoundImage\fP (\fBImages\fP &images)"
+.br
+.ti -1c
+.RI "bool \fBoutOfBoundBackground\fP (\fBImage\fP &image)"
+.br
+.ti -1c
+.RI "void \fBcollision\fP (\fBLevel\fP &level, \fBPlayer\fP &player)"
+.br
+.ti -1c
+.RI "bool \fBcheckForEnd\fP (\fBLevel\fP &level)"
+.br
+.ti -1c
+.RI "bool \fBendLevel\fP (\fBFlag\fP &flag)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "bool checkForEnd (\fBLevel\fP &level)"
+check if level must to finish (so if enemies in level all died) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlevel\fP level 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBendLevel()\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if all enemies died 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBendLevel()\fP 
+.RE
+.PP
+
+.SS "void collision (\fBLevel\fP &level, \fBPlayer\fP &player)"
+Verify if player collide with an enemy 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlevel\fP level 
+.br
+\fIplayer\fP player 
+.RE
+.PP
+
+.SS "void createEnemy (\fBLevel\fP &level)"
+If some conditions are true, create enemy\&. Create enemy if last enemy is enough far, if number of enemies alive is lower than NUM_ENEMIES and if randIfCreate return true 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlevel\fP level 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBrandIfCreate()\fP 
+.RE
+.PP
+
+.SS "void createImage (\fBImages\fP &images)"
+If some conditions are true, create image 
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBcreateEnemy()\fP 
+.PP
+\fBrandIfCreate()\fP 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimages\fP group of images 
+.RE
+.PP
+
+.SS "void drawBackground (\fBImage\fPimage)"
+Draw background 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP background image 
+.RE
+.PP
+
+.SS "void drawEnemy (\fBLevel\fP &level)"
+Draw live enemies in level 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlevel\fP level 
+.RE
+.PP
+
+.SS "void drawFlag (\fBFlag\fP &flag)"
+Draw flag if exist 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIflag\fP flag to draw 
+.RE
+.PP
+
+.SS "void drawImage (\fBImages\fP &images)"
+Draw showed images in group 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimages\fP images group 
+.RE
+.PP
+
+.SS "void drawPlayer (\fBPlayer\fP &player)"
+Draw player in his position 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIplayer\fP player to draw 
+.RE
+.PP
+
+.SS "bool endLevel (\fBFlag\fP &flag)"
+check if flag level finished (so if flag exits from level) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIflag\fP flag 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if flag exits from level 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBcheckForEnd()\fP 
+.RE
+.PP
+
+.SS "void InitDefaultEnemy (\fBEnemy\fP &enemy)"
+Init \fBEnemy\fP with default values 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIenemy\fP enemy to setting up 
+.RE
+.PP
+
+.SS "void InitDefaultFlag (\fBFlag\fP &flag)"
+Init \fBFlag\fP with default values 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIflag\fP flag to setting up 
+.RE
+.PP
+
+.SS "void InitDefaultLevel (\fBLevel\fP &level, intnlevel)"
+Init \fBLevel\fP with default values 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlevel\fP level to setting up 
+.RE
+.PP
+
+.SS "void InitDefaultPlayer (\fBPlayer\fP &player)"
+Init \fBPlayer\fP with default values 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIplayer\fP player to setting up 
+.RE
+.PP
+
+.SS "ALLEGRO_BITMAP* loadBitmap (const char *filename, intwidth, intheight)"
+Load bitmap whit declared size 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP path of image 
+.br
+\fIwidth\fP width of image 
+.br
+\fIheight\fP height of image 
+.RE
+.PP
+
+.SS "bool outOfBoundBackground (\fBImage\fP &image)"
+Verify if backgroud is out of bound 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP background 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if background is out of bound 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBoutOfBoundEnemy()\fP 
+.PP
+\fBoutOfBoundImage()\fP 
+.RE
+.PP
+
+.SS "bool outOfBoundEnemy (\fBLevel\fP &level)"
+Verify if an enemy is out of bound 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlevel\fP level 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+return true if an enemy is out of bound 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBoutOfBoundImage()\fP 
+.PP
+\fBoutOfBoundBackground()\fP 
+.RE
+.PP
+
+.SS "bool outOfBoundImage (\fBImages\fP &images)"
+Verify if an image is out of bound 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimages\fP group of image 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if an image is out of bound 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBoutOfBoundEnemy()\fP 
+.PP
+\fBoutOfBoundBackground()\fP 
+.RE
+.PP
+
+.SS "void resizeDisplay (intwidth, intheight)"
+Resize display 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIwidth\fP new display width 
+.br
+\fIheight\fP new display height 
+.RE
+.PP
+
+.SS "void setButton (\fBButton\fP &button, intx, inty, intx2, inty2, char *text, ALLEGRO_FONT *font, inttextColor, intbuttonColor)"
+Set button params 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbutton\fP button to setting up 
+.br
+\fIx\fP x of button 
+.br
+\fIy\fP y of button 
+.br
+\fIx2\fP destination x of button 
+.br
+\fIy2\fP destination y of button 
+.br
+\fItext\fP text of button 
+.br
+\fIfont\fP font of text 
+.br
+\fItextColor\fP color of text 
+.br
+\fIbuttonColor\fP color of button 
+.RE
+.PP
+
+.SS "void setImage (\fBImage\fP &image, char *text, intx, inty, inty_displacement, intwidth, intheight, intspeed, boolisShow)"
+Set image params 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimage\fP image to setting up 
+.br
+\fItext\fP path of image 
+.br
+\fIx\fP x of image 
+.br
+\fIy\fP y of image 
+.br
+\fIy_dispacement\fP same image can have different height with this phase displacement 
+.br
+\fIwidth\fP width of image 
+.br
+\fIheight\fP height of image 
+.br
+\fIspeed\fP movement speed of image 
+.RE
+.PP
+
+.SS "void updateBackground (\fBImage\fP &image)"
+
+.SS "void updateEnvironment (\fBLevel\fP &level)"
+Rise enemy speed and image speed too when need and move enemy alive 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlevel\fP relative level 
+.RE
+.PP
+
+.SS "void updateFlag (\fBFlag\fP &flag)"
+update flag if exist 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIflag\fP flag to update 
+.RE
+.PP
+
+.SS "void updateImage (\fBImages\fPimages)"
+update only image showed in groups 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimages\fP group of images to update 
+.RE
+.PP
+
+.SS "void updatePlayer (\fBPlayer\fP &player)"
+update player jump 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIplayer\fP player to update 
+.RE
+.PP
+
+.SS "void updatePoint (\fBPlayer\fP &player)"
+Rise point 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIplayer\fP player to set point 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Run Cirrest, Run from the source code\&.

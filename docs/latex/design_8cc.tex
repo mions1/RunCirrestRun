@@ -1,0 +1,206 @@
+\hypertarget{design_8cc}{\section{/home/simone/\-Developer/\-Project/eclipse/\-Run Circlest, Run/bin/design.cc File Reference}
+\label{design_8cc}\index{/home/simone/\-Developer/\-Project/eclipse/\-Run Circlest, Run/bin/design.\-cc@{/home/simone/\-Developer/\-Project/eclipse/\-Run Circlest, Run/bin/design.\-cc}}
+}
+{\ttfamily \#include $<$allegro5/allegro.\-h$>$}\\*
+{\ttfamily \#include $<$allegro5/allegro\-\_\-primitives.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}headers/objects.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}headers/design.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{design_8cc_a8c70394d8fe5bdb9395f8e104e19a2ec}{circle} (int cx, int cy, int rad, int color)
+\item 
+void \hyperlink{design_8cc_a17c00e6c7ed655d15dc3065e7973081b}{sword} (int x1, int y1, int x2, int y2, int color, int width)
+\item 
+void \hyperlink{design_8cc_a3182bebfaaa03a9e6481054aa678ff73}{triangle} (int x, int tip, int side)
+\item 
+void \hyperlink{design_8cc_a610846ac760bbf825b2b32c682d9c03f}{wall} (int x, int height)
+\item 
+void \hyperlink{design_8cc_a09ac45d399c41fc6c676f68910606cc3}{dflag} (int x, int y)
+\item 
+void \hyperlink{design_8cc_a9a49e91d1e30d3bc085582f757b203b1}{draw\-Buttons} (const \hyperlink{struct_button}{Button} button\mbox{[}$\,$\mbox{]}, int size)
+\item 
+void \hyperlink{design_8cc_a3771280978a66c8ef8f7fc4961320b52}{draw\-Levels} (const \hyperlink{struct_button}{Button} button\mbox{[}$\,$\mbox{]}, int num\-\_\-levels)
+\item 
+void \hyperlink{design_8cc_a154806612750b32a1b1b01804f309f9a}{loading} (A\-L\-L\-E\-G\-R\-O\-\_\-\-F\-O\-N\-T $\ast$font, int color)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+A\-L\-L\-E\-G\-R\-O\-\_\-\-C\-O\-L\-O\-R \hyperlink{design_8cc_a30f55827657659560704faae3f41b589}{my\-Colors} \mbox{[}$\,$\mbox{]}
+\item 
+const int \hyperlink{design_8cc_ac4c4cd77d296f97bb82b4b8cd061eac3}{D\-E\-F\-A\-U\-L\-T\-\_\-\-Y}
+\item 
+const int \hyperlink{design_8cc_a9649ab8139c4c2ea5c93625b30d92a05}{W\-I\-D\-T\-H}
+\item 
+const int \hyperlink{design_8cc_af728b7647e0b8c49832983a31f9a2e9b}{H\-E\-I\-G\-H\-T}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{design_8cc_a8c70394d8fe5bdb9395f8e104e19a2ec}{\index{design.\-cc@{design.\-cc}!circle@{circle}}
+\index{circle@{circle}!design.cc@{design.\-cc}}
+\subsubsection[{circle}]{\setlength{\rightskip}{0pt plus 5cm}void circle (
+\begin{DoxyParamCaption}
+\item[{int}]{cx, }
+\item[{int}]{cy, }
+\item[{int}]{rad, }
+\item[{int}]{color}
+\end{DoxyParamCaption}
+)}}\label{design_8cc_a8c70394d8fe5bdb9395f8e104e19a2ec}
+draw filled circle 
+\begin{DoxyParams}{Parameters}
+{\em cx} & center x \\
+\hline
+{\em cy} & center y \\
+\hline
+{\em rad} & radious \\
+\hline
+{\em color} & color of circle \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{design_8h_a30f55827657659560704faae3f41b589}{my\-Colors} 
+\end{DoxySeeAlso}
+\hypertarget{design_8cc_a09ac45d399c41fc6c676f68910606cc3}{\index{design.\-cc@{design.\-cc}!dflag@{dflag}}
+\index{dflag@{dflag}!design.cc@{design.\-cc}}
+\subsubsection[{dflag}]{\setlength{\rightskip}{0pt plus 5cm}void dflag (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}}\label{design_8cc_a09ac45d399c41fc6c676f68910606cc3}
+draw flag 
+\begin{DoxyParams}{Parameters}
+{\em x} & x left \\
+\hline
+{\em y} & y of flag \\
+\hline
+\end{DoxyParams}
+\hypertarget{design_8cc_a9a49e91d1e30d3bc085582f757b203b1}{\index{design.\-cc@{design.\-cc}!draw\-Buttons@{draw\-Buttons}}
+\index{draw\-Buttons@{draw\-Buttons}!design.cc@{design.\-cc}}
+\subsubsection[{draw\-Buttons}]{\setlength{\rightskip}{0pt plus 5cm}void draw\-Buttons (
+\begin{DoxyParamCaption}
+\item[{const {\bf Button}}]{button\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{size}
+\end{DoxyParamCaption}
+)}}\label{design_8cc_a9a49e91d1e30d3bc085582f757b203b1}
+crate group of button 
+\begin{DoxyParams}{Parameters}
+{\em button} & group of buttons \\
+\hline
+{\em size} & number of buttons \\
+\hline
+\end{DoxyParams}
+\hypertarget{design_8cc_a3771280978a66c8ef8f7fc4961320b52}{\index{design.\-cc@{design.\-cc}!draw\-Levels@{draw\-Levels}}
+\index{draw\-Levels@{draw\-Levels}!design.cc@{design.\-cc}}
+\subsubsection[{draw\-Levels}]{\setlength{\rightskip}{0pt plus 5cm}void draw\-Levels (
+\begin{DoxyParamCaption}
+\item[{const {\bf Button}}]{button\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{num\-\_\-levels}
+\end{DoxyParamCaption}
+)}}\label{design_8cc_a3771280978a66c8ef8f7fc4961320b52}
+draw levels buttons 
+\begin{DoxyParams}{Parameters}
+{\em button} & buttons of levels \\
+\hline
+{\em num\-\_\-levels} & size of group buttons \\
+\hline
+\end{DoxyParams}
+\hypertarget{design_8cc_a154806612750b32a1b1b01804f309f9a}{\index{design.\-cc@{design.\-cc}!loading@{loading}}
+\index{loading@{loading}!design.cc@{design.\-cc}}
+\subsubsection[{loading}]{\setlength{\rightskip}{0pt plus 5cm}void loading (
+\begin{DoxyParamCaption}
+\item[{A\-L\-L\-E\-G\-R\-O\-\_\-\-F\-O\-N\-T $\ast$}]{font, }
+\item[{int}]{color}
+\end{DoxyParamCaption}
+)}}\label{design_8cc_a154806612750b32a1b1b01804f309f9a}
+Draw loading written 
+\begin{DoxyParams}{Parameters}
+{\em font} & font of written \\
+\hline
+{\em color} & color of written \\
+\hline
+\end{DoxyParams}
+\hypertarget{design_8cc_a17c00e6c7ed655d15dc3065e7973081b}{\index{design.\-cc@{design.\-cc}!sword@{sword}}
+\index{sword@{sword}!design.cc@{design.\-cc}}
+\subsubsection[{sword}]{\setlength{\rightskip}{0pt plus 5cm}void sword (
+\begin{DoxyParamCaption}
+\item[{int}]{x1, }
+\item[{int}]{y1, }
+\item[{int}]{x2, }
+\item[{int}]{y2, }
+\item[{int}]{color, }
+\item[{int}]{width}
+\end{DoxyParamCaption}
+)}}\label{design_8cc_a17c00e6c7ed655d15dc3065e7973081b}
+Draw player' sword, used for draw hilt and blade 
+\begin{DoxyParams}{Parameters}
+{\em x1} & start x \\
+\hline
+{\em y1} & start y \\
+\hline
+{\em x2} & end x \\
+\hline
+{\em y2} & end y \\
+\hline
+{\em color} & color \\
+\hline
+{\em width} & width \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{design_8h_a30f55827657659560704faae3f41b589}{my\-Colors} 
+\end{DoxySeeAlso}
+\hypertarget{design_8cc_a3182bebfaaa03a9e6481054aa678ff73}{\index{design.\-cc@{design.\-cc}!triangle@{triangle}}
+\index{triangle@{triangle}!design.cc@{design.\-cc}}
+\subsubsection[{triangle}]{\setlength{\rightskip}{0pt plus 5cm}void triangle (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{tip, }
+\item[{int}]{side}
+\end{DoxyParamCaption}
+)}}\label{design_8cc_a3182bebfaaa03a9e6481054aa678ff73}
+draw eq triangle 
+\begin{DoxyParams}{Parameters}
+{\em x} & left x \\
+\hline
+{\em tip} & y of triangle tip \\
+\hline
+{\em side} & width of side \\
+\hline
+\end{DoxyParams}
+\hypertarget{design_8cc_a610846ac760bbf825b2b32c682d9c03f}{\index{design.\-cc@{design.\-cc}!wall@{wall}}
+\index{wall@{wall}!design.cc@{design.\-cc}}
+\subsubsection[{wall}]{\setlength{\rightskip}{0pt plus 5cm}void wall (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{height}
+\end{DoxyParamCaption}
+)}}\label{design_8cc_a610846ac760bbf825b2b32c682d9c03f}
+draw wall(vertical line) 
+\begin{DoxyParams}{Parameters}
+{\em x} & left x \\
+\hline
+{\em height} & wall height(height as display) \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Variable Documentation}
+\hypertarget{design_8cc_ac4c4cd77d296f97bb82b4b8cd061eac3}{\index{design.\-cc@{design.\-cc}!D\-E\-F\-A\-U\-L\-T\-\_\-\-Y@{D\-E\-F\-A\-U\-L\-T\-\_\-\-Y}}
+\index{D\-E\-F\-A\-U\-L\-T\-\_\-\-Y@{D\-E\-F\-A\-U\-L\-T\-\_\-\-Y}!design.cc@{design.\-cc}}
+\subsubsection[{D\-E\-F\-A\-U\-L\-T\-\_\-\-Y}]{\setlength{\rightskip}{0pt plus 5cm}const int D\-E\-F\-A\-U\-L\-T\-\_\-\-Y}}\label{design_8cc_ac4c4cd77d296f97bb82b4b8cd061eac3}
+Default height of floor \hypertarget{design_8cc_af728b7647e0b8c49832983a31f9a2e9b}{\index{design.\-cc@{design.\-cc}!H\-E\-I\-G\-H\-T@{H\-E\-I\-G\-H\-T}}
+\index{H\-E\-I\-G\-H\-T@{H\-E\-I\-G\-H\-T}!design.cc@{design.\-cc}}
+\subsubsection[{H\-E\-I\-G\-H\-T}]{\setlength{\rightskip}{0pt plus 5cm}const int H\-E\-I\-G\-H\-T}}\label{design_8cc_af728b7647e0b8c49832983a31f9a2e9b}
+Actual H\-E\-I\-G\-H\-T of screen \hypertarget{design_8cc_a30f55827657659560704faae3f41b589}{\index{design.\-cc@{design.\-cc}!my\-Colors@{my\-Colors}}
+\index{my\-Colors@{my\-Colors}!design.cc@{design.\-cc}}
+\subsubsection[{my\-Colors}]{\setlength{\rightskip}{0pt plus 5cm}A\-L\-L\-E\-G\-R\-O\-\_\-\-C\-O\-L\-O\-R my\-Colors\mbox{[}$\,$\mbox{]}}}\label{design_8cc_a30f55827657659560704faae3f41b589}
+My Colors \begin{DoxySeeAlso}{See Also}
+\hyperlink{objects_8h_aedd64c3f92da850b93776c65fd1cced3}{colors} 
+\end{DoxySeeAlso}
+\hypertarget{design_8cc_a9649ab8139c4c2ea5c93625b30d92a05}{\index{design.\-cc@{design.\-cc}!W\-I\-D\-T\-H@{W\-I\-D\-T\-H}}
+\index{W\-I\-D\-T\-H@{W\-I\-D\-T\-H}!design.cc@{design.\-cc}}
+\subsubsection[{W\-I\-D\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}const int W\-I\-D\-T\-H}}\label{design_8cc_a9649ab8139c4c2ea5c93625b30d92a05}
+Actual W\-I\-D\-T\-H of screen 

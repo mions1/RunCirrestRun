@@ -1,0 +1,489 @@
+\hypertarget{engine_8h}{\section{/home/simone/\-Developer/\-Project/eclipse/\-Run Circlest, Run/bin/headers/engine.h File Reference}
+\label{engine_8h}\index{/home/simone/\-Developer/\-Project/eclipse/\-Run Circlest, Run/bin/headers/engine.\-h@{/home/simone/\-Developer/\-Project/eclipse/\-Run Circlest, Run/bin/headers/engine.\-h}}
+}
+{\ttfamily \#include $<$allegro5/allegro.\-h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{engine_8h_a23a752d85ae7bfc68c92ce2a8504ff74}{Init\-Default\-Player} (\hyperlink{struct_player}{Player} \&player)
+\item 
+void \hyperlink{engine_8h_ad795f9892564d044b804805626a02c9a}{Init\-Default\-Enemy} (\hyperlink{struct_enemy}{Enemy} \&enemy)
+\item 
+void \hyperlink{engine_8h_a84e0e2b975f1b0b99edc148680b38b6e}{Init\-Default\-Level} (\hyperlink{struct_level}{Level} \&level, int nlevel)
+\item 
+void \hyperlink{engine_8h_ab73dbeacd87062bd5a2c6284f475eba1}{Init\-Default\-Flag} (\hyperlink{struct_flag}{Flag} \&flag)
+\item 
+void \hyperlink{engine_8h_a4d11777317698e633bb1d5f8c5fcc633}{set\-Image} (\hyperlink{struct_image}{Image} \&image, char $\ast$text, int x, int y, int y\-\_\-displacement, int width, int height, int speed, bool is\-Show)
+\item 
+void \hyperlink{engine_8h_a84ca1ff59c1d71e62a0fd688410312d4}{set\-Button} (\hyperlink{struct_button}{Button} \&button, int x, int y, int x2, int y2, char $\ast$text, A\-L\-L\-E\-G\-R\-O\-\_\-\-F\-O\-N\-T $\ast$font, int text\-Color, int button\-Color)
+\item 
+void \hyperlink{engine_8h_adebae278b9d8ff71fb3e6a6c0fe68b8e}{update\-Environment} (\hyperlink{struct_level}{Level} \&level)
+\item 
+void \hyperlink{engine_8h_a325e64b903098a0f2a4250e2849dc286}{update\-Player} (\hyperlink{struct_player}{Player} \&player)
+\item 
+void \hyperlink{engine_8h_a24a744d5f2cd4c804640d810ec36126e}{update\-Flag} (\hyperlink{struct_flag}{Flag} \&flag)
+\item 
+void \hyperlink{engine_8h_a546b51d3e66cdd3c3a982f4e14c9dced}{update\-Image} (\hyperlink{struct_images}{Images} images)
+\item 
+void \hyperlink{engine_8h_a5be85bfe2043cd90f74f4387b5d7a97a}{update\-Point} (\hyperlink{struct_player}{Player} \&player)
+\item 
+void \hyperlink{engine_8h_a4dffa83bea563fbcb167a7549cc5a6e5}{update\-Background} (\hyperlink{struct_image}{Image} \&image)
+\item 
+void \hyperlink{engine_8h_a78657936ea6185f07b143b1762fecb64}{resize\-Display} (int width, int height)
+\item 
+void \hyperlink{engine_8h_ad6596f5b37bb2eb80f7243854b052929}{draw\-Player} (\hyperlink{struct_player}{Player} \&player)
+\item 
+void \hyperlink{engine_8h_af51dc11fa302ea817309275b53878692}{draw\-Enemy} (\hyperlink{struct_level}{Level} \&level)
+\item 
+void \hyperlink{engine_8h_af0bb2afdc081296219b8b9d2f2b3b429}{draw\-Background} (\hyperlink{struct_image}{Image} image)
+\item 
+void \hyperlink{engine_8h_a2e0461a67e10b740a803451a1a5b07f5}{draw\-Image} (\hyperlink{struct_images}{Images} \&images)
+\item 
+void \hyperlink{engine_8h_a9c9de7e3364b810aa3cbab6457c3577a}{draw\-Flag} (\hyperlink{struct_flag}{Flag} \&flag)
+\item 
+void \hyperlink{engine_8h_ab086375f2cce93e2cd785de79c9f8996}{create\-Enemy} (\hyperlink{struct_level}{Level} \&level)
+\item 
+void \hyperlink{engine_8h_a454ce5d16d856b7d352e2fa3d7e90260}{create\-Image} (\hyperlink{struct_images}{Images} \&images)
+\item 
+A\-L\-L\-E\-G\-R\-O\-\_\-\-B\-I\-T\-M\-A\-P $\ast$ \hyperlink{engine_8h_af982d4ce4c431071ac41894feaf68349}{load\-Bitmap} (const char $\ast$filename, int width, int height)
+\item 
+bool \hyperlink{engine_8h_a19b5f69d6e5a143b8f020c1c9a7f6dd7}{out\-Of\-Bound\-Enemy} (\hyperlink{struct_level}{Level} \&level)
+\item 
+bool \hyperlink{engine_8h_af65788426740c1ac531fa6cbc44c913d}{out\-Of\-Bound\-Image} (\hyperlink{struct_images}{Images} \&images)
+\item 
+bool \hyperlink{engine_8h_a9debb1abe05712ec7f825f736d58b3bb}{out\-Of\-Bound\-Background} (\hyperlink{struct_image}{Image} \&image)
+\item 
+void \hyperlink{engine_8h_a551423c5c9d85befd1bbb501ff2988e9}{collision} (\hyperlink{struct_level}{Level} \&level, \hyperlink{struct_player}{Player} \&player)
+\item 
+bool \hyperlink{engine_8h_a988c919c9e9ad131509e07b9defc677e}{check\-For\-End} (\hyperlink{struct_level}{Level} \&level)
+\item 
+bool \hyperlink{engine_8h_a8ba60fb90f093505581e562f21a55f5a}{end\-Level} (\hyperlink{struct_flag}{Flag} \&flag)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{engine_8h_a988c919c9e9ad131509e07b9defc677e}{\index{engine.\-h@{engine.\-h}!check\-For\-End@{check\-For\-End}}
+\index{check\-For\-End@{check\-For\-End}!engine.h@{engine.\-h}}
+\subsubsection[{check\-For\-End}]{\setlength{\rightskip}{0pt plus 5cm}bool check\-For\-End (
+\begin{DoxyParamCaption}
+\item[{{\bf Level} \&}]{level}
+\end{DoxyParamCaption}
+)}}\label{engine_8h_a988c919c9e9ad131509e07b9defc677e}
+check if level must to finish (so if enemies in level all died) 
+\begin{DoxyParams}{Parameters}
+{\em level} & level \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{engine_8h_a8ba60fb90f093505581e562f21a55f5a}{end\-Level()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+true if all enemies died 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{engine_8h_a8ba60fb90f093505581e562f21a55f5a}{end\-Level()} 
+\end{DoxySeeAlso}
+\hypertarget{engine_8h_a551423c5c9d85befd1bbb501ff2988e9}{\index{engine.\-h@{engine.\-h}!collision@{collision}}
+\index{collision@{collision}!engine.h@{engine.\-h}}
+\subsubsection[{collision}]{\setlength{\rightskip}{0pt plus 5cm}void collision (
+\begin{DoxyParamCaption}
+\item[{{\bf Level} \&}]{level, }
+\item[{{\bf Player} \&}]{player}
+\end{DoxyParamCaption}
+)}}\label{engine_8h_a551423c5c9d85befd1bbb501ff2988e9}
+Verify if player collide with an enemy 
+\begin{DoxyParams}{Parameters}
+{\em level} & level \\
+\hline
+{\em player} & player \\
+\hline
+\end{DoxyParams}
+\hypertarget{engine_8h_ab086375f2cce93e2cd785de79c9f8996}{\index{engine.\-h@{engine.\-h}!create\-Enemy@{create\-Enemy}}
+\index{create\-Enemy@{create\-Enemy}!engine.h@{engine.\-h}}
+\subsubsection[{create\-Enemy}]{\setlength{\rightskip}{0pt plus 5cm}void create\-Enemy (
+\begin{DoxyParamCaption}
+\item[{{\bf Level} \&}]{level}
+\end{DoxyParamCaption}
+)}}\label{engine_8h_ab086375f2cce93e2cd785de79c9f8996}
+If some conditions are true, create enemy. Create enemy if last enemy is enough far, if number of enemies alive is lower than N\-U\-M\-\_\-\-E\-N\-E\-M\-I\-E\-S and if rand\-If\-Create return true 
+\begin{DoxyParams}{Parameters}
+{\em level} & level \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{engine_8cc_a1f7e47dc24ab9ca922e4be6a79dde2a0}{rand\-If\-Create()} 
+\end{DoxySeeAlso}
+\hypertarget{engine_8h_a454ce5d16d856b7d352e2fa3d7e90260}{\index{engine.\-h@{engine.\-h}!create\-Image@{create\-Image}}
+\index{create\-Image@{create\-Image}!engine.h@{engine.\-h}}
+\subsubsection[{create\-Image}]{\setlength{\rightskip}{0pt plus 5cm}void create\-Image (
+\begin{DoxyParamCaption}
+\item[{{\bf Images} \&}]{images}
+\end{DoxyParamCaption}
+)}}\label{engine_8h_a454ce5d16d856b7d352e2fa3d7e90260}
+If some conditions are true, create image \begin{DoxySeeAlso}{See Also}
+\hyperlink{engine_8h_ab086375f2cce93e2cd785de79c9f8996}{create\-Enemy()} 
+
+\hyperlink{engine_8cc_a1f7e47dc24ab9ca922e4be6a79dde2a0}{rand\-If\-Create()} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em images} & group of images \\
+\hline
+\end{DoxyParams}
+\hypertarget{engine_8h_af0bb2afdc081296219b8b9d2f2b3b429}{\index{engine.\-h@{engine.\-h}!draw\-Background@{draw\-Background}}
+\index{draw\-Background@{draw\-Background}!engine.h@{engine.\-h}}
+\subsubsection[{draw\-Background}]{\setlength{\rightskip}{0pt plus 5cm}void draw\-Background (
+\begin{DoxyParamCaption}
+\item[{{\bf Image}}]{image}
+\end{DoxyParamCaption}
+)}}\label{engine_8h_af0bb2afdc081296219b8b9d2f2b3b429}
+Draw background 
+\begin{DoxyParams}{Parameters}
+{\em image} & background image \\
+\hline
+\end{DoxyParams}
+\hypertarget{engine_8h_af51dc11fa302ea817309275b53878692}{\index{engine.\-h@{engine.\-h}!draw\-Enemy@{draw\-Enemy}}
+\index{draw\-Enemy@{draw\-Enemy}!engine.h@{engine.\-h}}
+\subsubsection[{draw\-Enemy}]{\setlength{\rightskip}{0pt plus 5cm}void draw\-Enemy (
+\begin{DoxyParamCaption}
+\item[{{\bf Level} \&}]{level}
+\end{DoxyParamCaption}
+)}}\label{engine_8h_af51dc11fa302ea817309275b53878692}
+Draw live enemies in level 
+\begin{DoxyParams}{Parameters}
+{\em level} & level \\
+\hline
+\end{DoxyParams}
+\hypertarget{engine_8h_a9c9de7e3364b810aa3cbab6457c3577a}{\index{engine.\-h@{engine.\-h}!draw\-Flag@{draw\-Flag}}
+\index{draw\-Flag@{draw\-Flag}!engine.h@{engine.\-h}}
+\subsubsection[{draw\-Flag}]{\setlength{\rightskip}{0pt plus 5cm}void draw\-Flag (
+\begin{DoxyParamCaption}
+\item[{{\bf Flag} \&}]{flag}
+\end{DoxyParamCaption}
+)}}\label{engine_8h_a9c9de7e3364b810aa3cbab6457c3577a}
+Draw flag if exist 
+\begin{DoxyParams}{Parameters}
+{\em flag} & flag to draw \\
+\hline
+\end{DoxyParams}
+\hypertarget{engine_8h_a2e0461a67e10b740a803451a1a5b07f5}{\index{engine.\-h@{engine.\-h}!draw\-Image@{draw\-Image}}
+\index{draw\-Image@{draw\-Image}!engine.h@{engine.\-h}}
+\subsubsection[{draw\-Image}]{\setlength{\rightskip}{0pt plus 5cm}void draw\-Image (
+\begin{DoxyParamCaption}
+\item[{{\bf Images} \&}]{images}
+\end{DoxyParamCaption}
+)}}\label{engine_8h_a2e0461a67e10b740a803451a1a5b07f5}
+Draw showed images in group 
+\begin{DoxyParams}{Parameters}
+{\em images} & images group \\
+\hline
+\end{DoxyParams}
+\hypertarget{engine_8h_ad6596f5b37bb2eb80f7243854b052929}{\index{engine.\-h@{engine.\-h}!draw\-Player@{draw\-Player}}
+\index{draw\-Player@{draw\-Player}!engine.h@{engine.\-h}}
+\subsubsection[{draw\-Player}]{\setlength{\rightskip}{0pt plus 5cm}void draw\-Player (
+\begin{DoxyParamCaption}
+\item[{{\bf Player} \&}]{player}
+\end{DoxyParamCaption}
+)}}\label{engine_8h_ad6596f5b37bb2eb80f7243854b052929}
+Draw player in his position 
+\begin{DoxyParams}{Parameters}
+{\em player} & player to draw \\
+\hline
+\end{DoxyParams}
+\hypertarget{engine_8h_a8ba60fb90f093505581e562f21a55f5a}{\index{engine.\-h@{engine.\-h}!end\-Level@{end\-Level}}
+\index{end\-Level@{end\-Level}!engine.h@{engine.\-h}}
+\subsubsection[{end\-Level}]{\setlength{\rightskip}{0pt plus 5cm}bool end\-Level (
+\begin{DoxyParamCaption}
+\item[{{\bf Flag} \&}]{flag}
+\end{DoxyParamCaption}
+)}}\label{engine_8h_a8ba60fb90f093505581e562f21a55f5a}
+check if flag level finished (so if flag exits from level) 
+\begin{DoxyParams}{Parameters}
+{\em flag} & flag \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if flag exits from level 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{engine_8h_a988c919c9e9ad131509e07b9defc677e}{check\-For\-End()} 
+\end{DoxySeeAlso}
+\hypertarget{engine_8h_ad795f9892564d044b804805626a02c9a}{\index{engine.\-h@{engine.\-h}!Init\-Default\-Enemy@{Init\-Default\-Enemy}}
+\index{Init\-Default\-Enemy@{Init\-Default\-Enemy}!engine.h@{engine.\-h}}
+\subsubsection[{Init\-Default\-Enemy}]{\setlength{\rightskip}{0pt plus 5cm}void Init\-Default\-Enemy (
+\begin{DoxyParamCaption}
+\item[{{\bf Enemy} \&}]{enemy}
+\end{DoxyParamCaption}
+)}}\label{engine_8h_ad795f9892564d044b804805626a02c9a}
+Init \hyperlink{struct_enemy}{Enemy} with default values 
+\begin{DoxyParams}{Parameters}
+{\em enemy} & enemy to setting up \\
+\hline
+\end{DoxyParams}
+\hypertarget{engine_8h_ab73dbeacd87062bd5a2c6284f475eba1}{\index{engine.\-h@{engine.\-h}!Init\-Default\-Flag@{Init\-Default\-Flag}}
+\index{Init\-Default\-Flag@{Init\-Default\-Flag}!engine.h@{engine.\-h}}
+\subsubsection[{Init\-Default\-Flag}]{\setlength{\rightskip}{0pt plus 5cm}void Init\-Default\-Flag (
+\begin{DoxyParamCaption}
+\item[{{\bf Flag} \&}]{flag}
+\end{DoxyParamCaption}
+)}}\label{engine_8h_ab73dbeacd87062bd5a2c6284f475eba1}
+Init \hyperlink{struct_flag}{Flag} with default values 
+\begin{DoxyParams}{Parameters}
+{\em flag} & flag to setting up \\
+\hline
+\end{DoxyParams}
+\hypertarget{engine_8h_a84e0e2b975f1b0b99edc148680b38b6e}{\index{engine.\-h@{engine.\-h}!Init\-Default\-Level@{Init\-Default\-Level}}
+\index{Init\-Default\-Level@{Init\-Default\-Level}!engine.h@{engine.\-h}}
+\subsubsection[{Init\-Default\-Level}]{\setlength{\rightskip}{0pt plus 5cm}void Init\-Default\-Level (
+\begin{DoxyParamCaption}
+\item[{{\bf Level} \&}]{level, }
+\item[{int}]{nlevel}
+\end{DoxyParamCaption}
+)}}\label{engine_8h_a84e0e2b975f1b0b99edc148680b38b6e}
+Init \hyperlink{struct_level}{Level} with default values 
+\begin{DoxyParams}{Parameters}
+{\em level} & level to setting up \\
+\hline
+\end{DoxyParams}
+\hypertarget{engine_8h_a23a752d85ae7bfc68c92ce2a8504ff74}{\index{engine.\-h@{engine.\-h}!Init\-Default\-Player@{Init\-Default\-Player}}
+\index{Init\-Default\-Player@{Init\-Default\-Player}!engine.h@{engine.\-h}}
+\subsubsection[{Init\-Default\-Player}]{\setlength{\rightskip}{0pt plus 5cm}void Init\-Default\-Player (
+\begin{DoxyParamCaption}
+\item[{{\bf Player} \&}]{player}
+\end{DoxyParamCaption}
+)}}\label{engine_8h_a23a752d85ae7bfc68c92ce2a8504ff74}
+Init \hyperlink{struct_player}{Player} with default values 
+\begin{DoxyParams}{Parameters}
+{\em player} & player to setting up \\
+\hline
+\end{DoxyParams}
+\hypertarget{engine_8h_af982d4ce4c431071ac41894feaf68349}{\index{engine.\-h@{engine.\-h}!load\-Bitmap@{load\-Bitmap}}
+\index{load\-Bitmap@{load\-Bitmap}!engine.h@{engine.\-h}}
+\subsubsection[{load\-Bitmap}]{\setlength{\rightskip}{0pt plus 5cm}A\-L\-L\-E\-G\-R\-O\-\_\-\-B\-I\-T\-M\-A\-P$\ast$ load\-Bitmap (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{filename, }
+\item[{int}]{width, }
+\item[{int}]{height}
+\end{DoxyParamCaption}
+)}}\label{engine_8h_af982d4ce4c431071ac41894feaf68349}
+Load bitmap whit declared size 
+\begin{DoxyParams}{Parameters}
+{\em filename} & path of image \\
+\hline
+{\em width} & width of image \\
+\hline
+{\em height} & height of image \\
+\hline
+\end{DoxyParams}
+\hypertarget{engine_8h_a9debb1abe05712ec7f825f736d58b3bb}{\index{engine.\-h@{engine.\-h}!out\-Of\-Bound\-Background@{out\-Of\-Bound\-Background}}
+\index{out\-Of\-Bound\-Background@{out\-Of\-Bound\-Background}!engine.h@{engine.\-h}}
+\subsubsection[{out\-Of\-Bound\-Background}]{\setlength{\rightskip}{0pt plus 5cm}bool out\-Of\-Bound\-Background (
+\begin{DoxyParamCaption}
+\item[{{\bf Image} \&}]{image}
+\end{DoxyParamCaption}
+)}}\label{engine_8h_a9debb1abe05712ec7f825f736d58b3bb}
+Verify if backgroud is out of bound 
+\begin{DoxyParams}{Parameters}
+{\em image} & background \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if background is out of bound 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{engine_8h_a19b5f69d6e5a143b8f020c1c9a7f6dd7}{out\-Of\-Bound\-Enemy()} 
+
+\hyperlink{engine_8h_af65788426740c1ac531fa6cbc44c913d}{out\-Of\-Bound\-Image()} 
+\end{DoxySeeAlso}
+\hypertarget{engine_8h_a19b5f69d6e5a143b8f020c1c9a7f6dd7}{\index{engine.\-h@{engine.\-h}!out\-Of\-Bound\-Enemy@{out\-Of\-Bound\-Enemy}}
+\index{out\-Of\-Bound\-Enemy@{out\-Of\-Bound\-Enemy}!engine.h@{engine.\-h}}
+\subsubsection[{out\-Of\-Bound\-Enemy}]{\setlength{\rightskip}{0pt plus 5cm}bool out\-Of\-Bound\-Enemy (
+\begin{DoxyParamCaption}
+\item[{{\bf Level} \&}]{level}
+\end{DoxyParamCaption}
+)}}\label{engine_8h_a19b5f69d6e5a143b8f020c1c9a7f6dd7}
+Verify if an enemy is out of bound 
+\begin{DoxyParams}{Parameters}
+{\em level} & level \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return true if an enemy is out of bound 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{engine_8h_af65788426740c1ac531fa6cbc44c913d}{out\-Of\-Bound\-Image()} 
+
+\hyperlink{engine_8h_a9debb1abe05712ec7f825f736d58b3bb}{out\-Of\-Bound\-Background()} 
+\end{DoxySeeAlso}
+\hypertarget{engine_8h_af65788426740c1ac531fa6cbc44c913d}{\index{engine.\-h@{engine.\-h}!out\-Of\-Bound\-Image@{out\-Of\-Bound\-Image}}
+\index{out\-Of\-Bound\-Image@{out\-Of\-Bound\-Image}!engine.h@{engine.\-h}}
+\subsubsection[{out\-Of\-Bound\-Image}]{\setlength{\rightskip}{0pt plus 5cm}bool out\-Of\-Bound\-Image (
+\begin{DoxyParamCaption}
+\item[{{\bf Images} \&}]{images}
+\end{DoxyParamCaption}
+)}}\label{engine_8h_af65788426740c1ac531fa6cbc44c913d}
+Verify if an image is out of bound 
+\begin{DoxyParams}{Parameters}
+{\em images} & group of image \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if an image is out of bound 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{engine_8h_a19b5f69d6e5a143b8f020c1c9a7f6dd7}{out\-Of\-Bound\-Enemy()} 
+
+\hyperlink{engine_8h_a9debb1abe05712ec7f825f736d58b3bb}{out\-Of\-Bound\-Background()} 
+\end{DoxySeeAlso}
+\hypertarget{engine_8h_a78657936ea6185f07b143b1762fecb64}{\index{engine.\-h@{engine.\-h}!resize\-Display@{resize\-Display}}
+\index{resize\-Display@{resize\-Display}!engine.h@{engine.\-h}}
+\subsubsection[{resize\-Display}]{\setlength{\rightskip}{0pt plus 5cm}void resize\-Display (
+\begin{DoxyParamCaption}
+\item[{int}]{width, }
+\item[{int}]{height}
+\end{DoxyParamCaption}
+)}}\label{engine_8h_a78657936ea6185f07b143b1762fecb64}
+Resize display 
+\begin{DoxyParams}{Parameters}
+{\em width} & new display width \\
+\hline
+{\em height} & new display height \\
+\hline
+\end{DoxyParams}
+\hypertarget{engine_8h_a84ca1ff59c1d71e62a0fd688410312d4}{\index{engine.\-h@{engine.\-h}!set\-Button@{set\-Button}}
+\index{set\-Button@{set\-Button}!engine.h@{engine.\-h}}
+\subsubsection[{set\-Button}]{\setlength{\rightskip}{0pt plus 5cm}void set\-Button (
+\begin{DoxyParamCaption}
+\item[{{\bf Button} \&}]{button, }
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{int}]{x2, }
+\item[{int}]{y2, }
+\item[{char $\ast$}]{text, }
+\item[{A\-L\-L\-E\-G\-R\-O\-\_\-\-F\-O\-N\-T $\ast$}]{font, }
+\item[{int}]{text\-Color, }
+\item[{int}]{button\-Color}
+\end{DoxyParamCaption}
+)}}\label{engine_8h_a84ca1ff59c1d71e62a0fd688410312d4}
+Set button params 
+\begin{DoxyParams}{Parameters}
+{\em button} & button to setting up \\
+\hline
+{\em x} & x of button \\
+\hline
+{\em y} & y of button \\
+\hline
+{\em x2} & destination x of button \\
+\hline
+{\em y2} & destination y of button \\
+\hline
+{\em text} & text of button \\
+\hline
+{\em font} & font of text \\
+\hline
+{\em text\-Color} & color of text \\
+\hline
+{\em button\-Color} & color of button \\
+\hline
+\end{DoxyParams}
+\hypertarget{engine_8h_a4d11777317698e633bb1d5f8c5fcc633}{\index{engine.\-h@{engine.\-h}!set\-Image@{set\-Image}}
+\index{set\-Image@{set\-Image}!engine.h@{engine.\-h}}
+\subsubsection[{set\-Image}]{\setlength{\rightskip}{0pt plus 5cm}void set\-Image (
+\begin{DoxyParamCaption}
+\item[{{\bf Image} \&}]{image, }
+\item[{char $\ast$}]{text, }
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{int}]{y\-\_\-displacement, }
+\item[{int}]{width, }
+\item[{int}]{height, }
+\item[{int}]{speed, }
+\item[{bool}]{is\-Show}
+\end{DoxyParamCaption}
+)}}\label{engine_8h_a4d11777317698e633bb1d5f8c5fcc633}
+Set image params 
+\begin{DoxyParams}{Parameters}
+{\em image} & image to setting up \\
+\hline
+{\em text} & path of image \\
+\hline
+{\em x} & x of image \\
+\hline
+{\em y} & y of image \\
+\hline
+{\em y\-\_\-dispacement} & same image can have different height with this phase displacement \\
+\hline
+{\em width} & width of image \\
+\hline
+{\em height} & height of image \\
+\hline
+{\em speed} & movement speed of image \\
+\hline
+\end{DoxyParams}
+\hypertarget{engine_8h_a4dffa83bea563fbcb167a7549cc5a6e5}{\index{engine.\-h@{engine.\-h}!update\-Background@{update\-Background}}
+\index{update\-Background@{update\-Background}!engine.h@{engine.\-h}}
+\subsubsection[{update\-Background}]{\setlength{\rightskip}{0pt plus 5cm}void update\-Background (
+\begin{DoxyParamCaption}
+\item[{{\bf Image} \&}]{image}
+\end{DoxyParamCaption}
+)}}\label{engine_8h_a4dffa83bea563fbcb167a7549cc5a6e5}
+\hypertarget{engine_8h_adebae278b9d8ff71fb3e6a6c0fe68b8e}{\index{engine.\-h@{engine.\-h}!update\-Environment@{update\-Environment}}
+\index{update\-Environment@{update\-Environment}!engine.h@{engine.\-h}}
+\subsubsection[{update\-Environment}]{\setlength{\rightskip}{0pt plus 5cm}void update\-Environment (
+\begin{DoxyParamCaption}
+\item[{{\bf Level} \&}]{level}
+\end{DoxyParamCaption}
+)}}\label{engine_8h_adebae278b9d8ff71fb3e6a6c0fe68b8e}
+Rise enemy speed and image speed too when need and move enemy alive 
+\begin{DoxyParams}{Parameters}
+{\em level} & relative level \\
+\hline
+\end{DoxyParams}
+\hypertarget{engine_8h_a24a744d5f2cd4c804640d810ec36126e}{\index{engine.\-h@{engine.\-h}!update\-Flag@{update\-Flag}}
+\index{update\-Flag@{update\-Flag}!engine.h@{engine.\-h}}
+\subsubsection[{update\-Flag}]{\setlength{\rightskip}{0pt plus 5cm}void update\-Flag (
+\begin{DoxyParamCaption}
+\item[{{\bf Flag} \&}]{flag}
+\end{DoxyParamCaption}
+)}}\label{engine_8h_a24a744d5f2cd4c804640d810ec36126e}
+update flag if exist 
+\begin{DoxyParams}{Parameters}
+{\em flag} & flag to update \\
+\hline
+\end{DoxyParams}
+\hypertarget{engine_8h_a546b51d3e66cdd3c3a982f4e14c9dced}{\index{engine.\-h@{engine.\-h}!update\-Image@{update\-Image}}
+\index{update\-Image@{update\-Image}!engine.h@{engine.\-h}}
+\subsubsection[{update\-Image}]{\setlength{\rightskip}{0pt plus 5cm}void update\-Image (
+\begin{DoxyParamCaption}
+\item[{{\bf Images}}]{images}
+\end{DoxyParamCaption}
+)}}\label{engine_8h_a546b51d3e66cdd3c3a982f4e14c9dced}
+update only image showed in groups 
+\begin{DoxyParams}{Parameters}
+{\em images} & group of images to update \\
+\hline
+\end{DoxyParams}
+\hypertarget{engine_8h_a325e64b903098a0f2a4250e2849dc286}{\index{engine.\-h@{engine.\-h}!update\-Player@{update\-Player}}
+\index{update\-Player@{update\-Player}!engine.h@{engine.\-h}}
+\subsubsection[{update\-Player}]{\setlength{\rightskip}{0pt plus 5cm}void update\-Player (
+\begin{DoxyParamCaption}
+\item[{{\bf Player} \&}]{player}
+\end{DoxyParamCaption}
+)}}\label{engine_8h_a325e64b903098a0f2a4250e2849dc286}
+update player jump 
+\begin{DoxyParams}{Parameters}
+{\em player} & player to update \\
+\hline
+\end{DoxyParams}
+\hypertarget{engine_8h_a5be85bfe2043cd90f74f4387b5d7a97a}{\index{engine.\-h@{engine.\-h}!update\-Point@{update\-Point}}
+\index{update\-Point@{update\-Point}!engine.h@{engine.\-h}}
+\subsubsection[{update\-Point}]{\setlength{\rightskip}{0pt plus 5cm}void update\-Point (
+\begin{DoxyParamCaption}
+\item[{{\bf Player} \&}]{player}
+\end{DoxyParamCaption}
+)}}\label{engine_8h_a5be85bfe2043cd90f74f4387b5d7a97a}
+Rise point 
+\begin{DoxyParams}{Parameters}
+{\em player} & player to set point \\
+\hline
+\end{DoxyParams}
