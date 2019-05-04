@@ -398,7 +398,7 @@ int menu(ALLEGRO_DISPLAY *display){
 			al_draw_text(titleFont,al_map_rgb(255,255,255),
 					WIDTH/2,0,ALLEGRO_ALIGN_CENTRE,"RUN CIRREST RUN");
 			//Draw best arcade score
-			al_draw_textf(fontBest,myColors[DEFAULT_COLOR],0,HEIGHT-fontBest->height,0,"BEST: %i",config[SCORE]);
+			al_draw_textf(fontBest,myColors[DEFAULT_COLOR],0,HEIGHT-al_get_font_line_height(fontBest),0,"BEST: %i",config[SCORE]);
 			al_flip_display();
 			al_clear_to_color(myColors[BLACK]);
 		}
@@ -541,9 +541,9 @@ void initMenuButtons(Buttons menuButtons, ALLEGRO_FONT *font,int x, int y){
 	for (int i=0; i<menuButtons.size; i++) {
 		setButton(menuButtons.button[i],
 				x,
-				y+i*(font->height+10),
-				x + (font->height/2*10), //Change last '10' for buttons bigger
-				y+i*(font->height+10) +23,
+				y+i*(al_get_font_line_height(font)+10),
+				x + (al_get_font_line_height(font)/2*10), //Change last '10' for buttons bigger
+				y+i*(al_get_font_line_height(font)+10) +23,
 				menuButtons.button[i].text,
 				font,
 				DEFAULT_COLOR,

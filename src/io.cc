@@ -7,7 +7,7 @@ bool saveToFile(int data,const char file[]){
 	if (!f)
 		return false ;
 	f<<data ;
-	return f;
+	return true;
 }
 
 bool loadFromFile(int &data,const char file[]) {
@@ -19,5 +19,5 @@ bool loadFromFile(int &data,const char file[]) {
 	}
 	f>>data ;
 	f.close();
-	return f ;
+	return true ;
 }

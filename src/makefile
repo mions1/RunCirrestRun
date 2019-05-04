@@ -2,7 +2,7 @@ OBJS = main.o menu.o startGame.o engine.o design.o io.o anim.o
 CC = g++
 DEBUG = -D DEB
 ALLEGRO = -lallegro_dialog -lallegro_color -lallegro_audio -lallegro_image -lallegro_physfs -lallegro -lallegro_font -lallegro_acodec -lallegro_main \
--lallegro_memfile -lallegro_primitives -lallegro_ttf `pkg-config --libs allegro-5.0`
+-lallegro_memfile -lallegro_primitives -lallegro_ttf `pkg-config --libs allegro-5`
 CFLAGS = -Wall -c
 LFLAGS = -Wall
 

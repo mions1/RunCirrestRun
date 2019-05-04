@@ -22,7 +22,7 @@ void circle(int cx,int cy,int rad,int color);
  * @param width width
  * @see myColors
  */
-void sword(int x1,int y1,int x2,int y2,int color,int width);
+void sword(int x1,int y1,int x2,int y2,int colorHilt,int colorBlade,int width);
 /**
  * draw eq triangle
  * @param x left x

@@ -116,7 +116,7 @@ static void allFalse(bool v[],int size);
  * @param enemy enemy
  * @param flag flag
  */
-static void initAll(Player &player,Level &level,int num,Enemy &enemy,Flag &flag);
+static void initAll(Player &player, Level &level,int num,Enemy &enemy,Flag &flag);
 /**
  * Init sky images
  * @param images group of images
@@ -154,6 +154,7 @@ int startGame(ALLEGRO_DISPLAY *display,int config[],int num,int context){
 
 	//Objects Variables
 	Player player; /*!< Player (Hero) @see Player */
+	//Sword sword; /*!< Sword (weapon) @see Sword */
 	Enemy enemy; /*!< Enemy (obstacle) @see Enemy */
 	Level level; /*!< Level @see Level */
 	Flag flag; /*!< Victory flag @see Flag */
@@ -408,8 +409,9 @@ bool checkCountDown(int countDown){
 		return false;
 	return true;
 }
-void initAll(Player &player,Level &level,int num,Enemy &enemy,Flag &flag) {
+void initAll(Player &player, Level &level,int num,Enemy &enemy,Flag &flag) {
 	InitDefaultPlayer(player);
+	//InitDefaultSword(sword);
 	InitDefaultLevel(level,num);
 	InitDefaultEnemy(enemy);
 	InitDefaultFlag(flag);

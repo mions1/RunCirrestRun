@@ -106,6 +106,25 @@ void reverseJump(Player &player){
 		player.isReverseJumping = false;
 }
 
+/*
+ * Manage sword attack
+ *
+ */
+ /*
+void swordAttack() {
+//If still didn't reach end of attack, continue to sink the shot
+	if (player.isAttacking &&
+			player.cy > (DEFAULT_Y - player.jumpHeight) )
+		player.cy -= DEFAULT_JUMP_SPEED;
+	//If still didn't reach floor, continue to go down
+	else if (!player.isJumping && player.cy < DEFAULT_Y)
+			player.cy += DEFAULT_JUMP_SPEED;
+	//If it reached max height, it start to go down
+	if(player.isJumping &&
+			player.cy <= DEFAULT_Y - player.jumpHeight)
+		player.isJumping = false;
+}
+*/
 
 //Init Object with default params
 void InitDefaultPlayer(Player &player){
@@ -186,12 +205,9 @@ void drawPlayer(Player &player){
 	circle(player.x2-player.rad/2,player.cy-4,2,BLACK);
 
 	//LightSaber
-	//Hilt
-	sword(player.cx-8,player.cy+8,player.cx,player.cy,
-			GREY,3);
-	//Blade
-	sword(player.cx,player.cy,player.cx+30,player.cy-30,
-			GREEN,3);
+	//Hilt and Blade
+	sword(player.cx,player.cy,player.cx,player.cy,
+			GREY, GREEN,3);
 }
 void drawEnemy(Level &level){
 	/*

@@ -15,9 +15,13 @@ void circle(int cx,int cy,int rad,int color){
 	al_init_primitives_addon();
 	al_draw_filled_circle(cx,cy,rad,myColors[color]);
 }
-void sword(int x1,int y1,int x2,int y2,int color,int width){
-	al_draw_line(x1,y1,x2,y2,myColors[color],width);
+void sword(int x1,int y1,int x2,int y2,int colorHilt,int colorBlade,int width){
+	//hilt
+	al_draw_line(x1-8,y1+8,x2,y2,myColors[colorHilt],width);
+	//blade
+	al_draw_line(x1,y1,x2+30,y2-30,myColors[colorBlade],width);
 }
+
 void triangle(int x,int tip,int side){
 	/*
 	 * Draw a eq triangle start by x and floor(Default_y)
@@ -44,7 +48,7 @@ void dflag(int x,int y){
 void drawButtons(const Button button[],int size){
 	//Default menu button
 	/*
-	 * Use font->height for draw buttons big as text
+	 * Use al_get_font_line_height(font) for draw buttons big as text
 	 */
 	for (int i=0;i<size;i++) {
 		al_draw_rounded_rectangle(button[i].x,button[i].y,
@@ -53,7 +57,7 @@ void drawButtons(const Button button[],int size){
 				myColors[button[i].buttonColor],1);
 
 		al_draw_text(button[i].font,myColors[button[i].textColor],
-					button[i].x + (button[i].font->height/2),button[i].y,0,button[i].text);
+					button[i].x + (al_get_font_line_height(button[i].font)/2),button[i].y,0,button[i].text);
 	}
 }
 void drawLevels(const Button button[],int num_levels){
